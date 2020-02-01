@@ -15,4 +15,9 @@ public class HomeController {
     public String viewHome() {
         return "index";
     }
+    
+    @RequestMapping("/hello")
+    public String customerDataAngularJS() {
+        return "hello";
+    }
 }
