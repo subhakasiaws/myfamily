@@ -9,6 +9,47 @@
   <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
    <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
    <link href="css/mystyle.css" rel="stylesheet" />
+   <script>
+   $(document).ready(function() {
+
+	    if ($('.content').height() > $('.container').height()) {
+	        setInterval(function () {
+
+	            start();
+	       }, 3000); 
+	   
+	    }
+	});
+
+	function animateContent(direction) {  
+	    var animationOffset = $('.container').height() - $('.content').height()-30;
+	    if (direction == 'up') {
+	        animationOffset = 0;
+	    }
+
+	    console.log("animationOffset:"+animationOffset);
+	    $('.content').animate({ "marginTop": (animationOffset)+ "px" }, 5000);
+	}
+
+	function up(){
+	    animateContent("up")
+	}
+	function down(){
+	    animateContent("down")
+	}
+
+	function start(){
+	 setTimeout(function () {
+	    down();
+	}, 2000);
+	 setTimeout(function () {
+	    up();
+	}, 2000);
+	   setTimeout(function () {
+	    console.log("wait...");
+	}, 5000);
+	}
+   </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -53,7 +94,7 @@
  <div class="container">
    <!-- Page Content -->
   <div class="container">
-    <div class="row">
+    <div>
       <div class="col-lg-12 text-center">
         <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
         <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
@@ -62,6 +103,19 @@
           <li>jQuery 3.4.1</li>
         </ul>
       </div>
+      <div class="content" align="right">
+        <p>string1</p>
+        <p>string</p>
+        <p>string</p>
+        <p>string</p>
+        <p>string</p>
+        <p>string</p>
+        <p>string0</p>
+        <p>string1</p>
+        <p>string2</p>
+        <p>string3</p>
+        <p>string4</p>
+    </div>
     </div>
   </div>
  </div>
