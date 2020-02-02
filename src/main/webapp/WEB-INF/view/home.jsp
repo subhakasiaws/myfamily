@@ -11,6 +11,7 @@
 </head>
 <body>
  <div class="container">
+ 	<div class="d-flex justify-content-center h-100">
   <h1>Bootstrap 4 Example</h1>
   <table class="table">
    <thead>
@@ -36,6 +37,7 @@
     </tr>
    </tbody>
   </table>
+  </div>
  </div>
 </body>
 </html>
