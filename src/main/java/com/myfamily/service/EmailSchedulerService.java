@@ -15,7 +15,7 @@ public class EmailSchedulerService {
 
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-	@Scheduled(fixedRate = 5000)
+//	@Scheduled(fixedRate = 5000)
 	public void sendEmail() {
 		String fetivalName = getTeluguFestival();
 		LOG.info("The time is now {}"+ dateFormat.format(new Date()));
