@@ -1,5 +1,7 @@
 package com.myfamily.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
+	private static final Logger LOG = LogManager.getLogger(HomeController.class);
+	
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
@@ -26,15 +30,18 @@ public class HomeController {
         return "welcome";
     }
     
-    @RequestMapping("/login")
+    @RequestMapping("/")
     public String login(){
         return "login";
     }
     
-    @RequestMapping(value="/", method=RequestMethod.GET)
+    @RequestMapping(value="/home", method=RequestMethod.GET)
     public ModelAndView home() {
+    
+    LOG.info("HomeController method home-started ");
      ModelAndView model = new ModelAndView();
      model.setViewName("home");
+     LOG.info("HomeController method home -end ");
      return model;
     }
 }

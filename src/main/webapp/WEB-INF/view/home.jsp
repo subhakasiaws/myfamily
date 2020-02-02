@@ -4,10 +4,10 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
- <title>Bootstrap 4 Example</title>
-  <script src="webjars/jquery/1.9.1/jquery.min.js" ></script>
-  <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
-   <link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+ <title>MyFamily</title>
+  <script src="webjars/jquery/3.2.1/jquery.min.js" ></script>
+  <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+   <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
    <link href="css/mystyle.css" rel="stylesheet" />
 </head>
 <body>
