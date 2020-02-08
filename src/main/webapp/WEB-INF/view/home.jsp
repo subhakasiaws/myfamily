@@ -12,7 +12,7 @@
    <script>
    $(document).ready(function() {
 
-	    if ($('.content').height() > $('.container').height()) {
+	    if ($('.content').height() > $('.container1').height()) {
 	        setInterval(function () {
 
 	            start();
@@ -22,7 +22,7 @@
 	});
 
 	function animateContent(direction) {  
-	    var animationOffset = $('.container').height() - $('.content').height()-30;
+	    var animationOffset = $('.container1').height() - $('.content').height()-30;
 	    if (direction == 'up') {
 	        animationOffset = 0;
 	    }
@@ -54,7 +54,7 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #2d6d3b!important">
-    <div class="container">
+    <div class="container"  style="height:71% !important">
       <a class="navbar-brand" href="#">WELCOME</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -91,10 +91,8 @@
       </div>
     </div>
   </nav>
- <div class="container">
    <!-- Page Content -->
-  <div class="container">
-    <div>
+  <div class="container" style="height:64% !important">
       <div class="col-lg-12 text-center">
         <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
         <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
@@ -103,22 +101,8 @@
           <li>jQuery 3.4.1</li>
         </ul>
       </div>
-      <div class="content" align="right">
-        <p>string1</p>
-        <p>string</p>
-        <p>string</p>
-        <p>string</p>
-        <p>string</p>
-        <p>string</p>
-        <p>string0</p>
-        <p>string1</p>
-        <p>string2</p>
-        <p>string3</p>
-        <p>string4</p>
-    </div>
-    </div>
   </div>
-  <footer class="page-footer font-small special-color-dark pt-4" style="background-color: red;">
+  <footer class="page-footer font-small special-color-dark pt-4" style="background-color: #2d6d3b!important">
 
   <!-- Footer Elements -->
   <div class="container">
@@ -167,6 +151,6 @@
   <!-- Copyright -->
 
 </footer>
- </div>
+
 </body>
 </html>
