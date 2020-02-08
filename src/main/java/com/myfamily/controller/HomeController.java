@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,10 +36,10 @@ public class HomeController {
         return "login";
     }
     
-    @RequestMapping(value="/home", method=RequestMethod.GET)
-    public ModelAndView home() {
+    @RequestMapping(value="/home", method=RequestMethod.POST)
+    public ModelAndView home(Object name) {
     
-    LOG.info("HomeController method home-started ");
+    LOG.info("HomeController method home-started "+name);
      ModelAndView model = new ModelAndView();
      model.setViewName("home");
      LOG.info("HomeController method home -end ");
