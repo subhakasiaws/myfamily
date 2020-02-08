@@ -145,8 +145,8 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
+  <div class="footer-copyright text-center py-3 color:white">© 2020 Copyright:
+    <a style="color:white" href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
   </div>
   <!-- Copyright -->
 
