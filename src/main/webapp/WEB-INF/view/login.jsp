@@ -23,6 +23,12 @@
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
+	<select class="selectpicker" data-width="fit">
+    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>తెలుగు </option>   
+  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>हिन्दी</option>
+</select>
+
 		<div class="card">
 			<div class="card-header">
 				<h3>Sign In</h3>
@@ -45,4 +51,17 @@
 		</div>
 </div>
 </body>
+<script type="text/javascript">
+function changeLang(lang) {
+    jQuery.i18n.properties({
+        name: 'Messages', 
+        path: 'bundle/', 
+        mode: 'both',
+        language: lang, 
+        callback: function() {
+            $("#msg_welcome").text(jQuery.i18n.prop('msg_welcome'));
+        }
+    });
+}
+</script>
 </html>
