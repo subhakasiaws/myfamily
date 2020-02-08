@@ -6,7 +6,6 @@ html,body{
 background-image: url('images/544750.jpg');
 background-size: cover;
 background-repeat: no-repeat;
-height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
@@ -14,7 +13,9 @@ font-family: 'Numans', sans-serif;
 height: 100%;
 align-content: center;
 }
-
+.wcolor{
+color: white;	
+}
 .card{
 height: 370px;
 margin-top: auto;

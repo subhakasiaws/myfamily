@@ -30,8 +30,8 @@
    </script>
 </head>
 <body>
-<div class="container">
-		<div class="page-header">
+<div class="container" style="height:91% !important">
+		<div class="page-header" style="margin-top:5px">
 			<div style="text-align:right">
 				<select class="selectpicker" data-width="fit">
 					<option	data-content='<span class="flag-icon flag-icon-us"></span> English'	value="en_EN">English</option>
@@ -58,19 +58,19 @@
 				</form>
 			</div>
 			</div>
+			
 		</div>
-		
-<footer class="page-footer font-small blue" style="background-color:green">
+</div>		
+
+<footer class="page-footer font-small blue" style="background-color:#9370DB">
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-   <a href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
+  <div class="footer-copyright text-center py-3 wcolor" style="padding-bottom: 2rem!important; color:white">© 2020 Copyright:
+   <a style="color:white" href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
   </div>
   <!-- Copyright -->
 
 </footer>
-
-</div>
 
 </body>
   <script type="text/javascript" language="JavaScript"  src="js/jquery.i18n.properties.min.js"></script>
