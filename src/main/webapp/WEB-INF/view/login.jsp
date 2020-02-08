@@ -38,7 +38,7 @@
 				</select>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center h-100">
+		<div class="d-flex justify-content-center h-100" style="margin-top: 100px">
 	<div class="card">
 			<div class="card-header">
 				<h3>Sign In</h3>
@@ -62,7 +62,8 @@
 		</div>
 </div>		
 
-<footer class="page-footer font-small blue" style="background-color:#9370DB">
+<div style="margin-top: 90px;">
+<footer class="page-footer font-small blue" style="background-color:#9370DB" >
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3 wcolor" style="padding-bottom: 2rem!important; color:white">© 2020 Copyright:
@@ -71,7 +72,7 @@
   <!-- Copyright -->
 
 </footer>
-
+</div>
 </body>
   <script type="text/javascript" language="JavaScript"  src="js/jquery.i18n.properties.min.js"></script>
 <script type="text/javascript">
