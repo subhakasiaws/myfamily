@@ -37,7 +37,7 @@ public class HomeController {
     }
     
     @RequestMapping(value="/home", method=RequestMethod.POST)
-    public ModelAndView home(Object name) {
+    public ModelAndView home(String name) {
     
     LOG.info("HomeController method home-started "+name);
      ModelAndView model = new ModelAndView();

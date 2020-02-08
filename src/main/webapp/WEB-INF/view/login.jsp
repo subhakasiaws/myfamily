@@ -32,7 +32,7 @@
 												console.log("correct name");
 												$('#myLogin').addClass(
 														"was-validated");
-												$("body").load("/home", {temp:temp});
+												$("body").load("/home", {name:temp});
 											}
 											return false;
 										});
