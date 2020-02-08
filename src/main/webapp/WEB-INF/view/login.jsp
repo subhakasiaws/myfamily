@@ -60,11 +60,11 @@
 			</div>
 		</div>
 		
-<footer class="page-footer font-small blue">
+<footer class="page-footer font-small blue" style="background-color:green">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+   <a href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
   </div>
   <!-- Copyright -->
 
