@@ -94,8 +94,8 @@
    <!-- Page Content -->
   <div class="container" style="height:64% !important">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
+        <h1 class="mt-5">WELCOME</h1>
+        <p class="lead">MR Name!</p>
         <ul class="list-unstyled">
           <li>Bootstrap 4.3.1</li>
           <li>jQuery 3.4.1</li>
