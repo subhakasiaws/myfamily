@@ -11,6 +11,8 @@
 <script src="js/jquery.min.js"></script>
 <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"
 	rel="stylesheet" />
+<link href="css/font-awesome.min.css"
+	rel="stylesheet" />	
 
 <link href="css/style.css" rel="stylesheet" />
 <script type="text/javascript">
@@ -27,7 +29,7 @@
 												console.log("worng name");
 												$('#myLogin')
 														.addClass(
-																"alert alert-danger alert-dismissible fade show");
+																"alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");
 											} else {
 												console.log("correct name");
 												$('#myLogin').addClass(
@@ -68,7 +70,7 @@
 					<form>
 						<div id="myLogin" class="input-group form-group">
 							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
+								<!-- <span class="input-group-text"><i class="fa fa-user"></i></span> -->
 							</div>
 							<input id="name" type="text" class="form-control"
 								placeholder="Enter Your Name">
