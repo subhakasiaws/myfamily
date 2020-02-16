@@ -1,3 +1,6 @@
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<spring:message code=""/>
+
    <link href="css/mystyle.css" rel="stylesheet" />
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #2d6d3b!important">
