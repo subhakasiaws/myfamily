@@ -18,51 +18,48 @@
 
 <link href="css/style.css" rel="stylesheet" />
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$('#login')
-								.click(
-										function() {
-											console.log("your clicked");
-											var $regexname = /^([a-zA-Z]{3,16})$/;
-											var temp = $('#name').val();
-											if (!temp.match($regexname)) {
-												console.log("worng name");
-												$('#myLogin')
-														.addClass(
-																"alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");
-											} else {
-												console.log("correct name");
-												$('#myLogin').addClass(
-														"was-validated");
-												$("body").load("/home", {name:temp});
-											}
-											return false;
-										});
+$(document).ready(function() {
+						
+		$('#login').click(function() {
+			console.log("your clicked");
+			var $regexname = /^([a-zA-Z]{3,16})$/;
+			var temp = $('#name').val();
+			
+			if (!temp.match($regexname)) {
+			
+				console.log("worng name");
+				$('#myLogin').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");
+				} else {
+					console.log("correct name");
+					$('#myLogin').addClass("was-validated");
+					$("body").load("/home", {name:temp});
+					}
+					
+			return false;
+		});
 
- 						$('.selectpicker').on('change', function() {
-							var selected = $(this).val();
-							console.log("selected val is" + selected);
-							$('.selectpicker option[value='+selected+']').attr('selected','selected');
-
-							localStorage.setItem("selectedLanguage", selected);
-							if("1" == selected ){
-								selected = "?lang=te";
-							}else if("2" == selected){
-								selected = "?lang=en";
-							}else if("3" == selected){
-								selected = "?lang=hi";
-							}
-							
-							window.location.href=selected;
-						}); 
-
- 						var sLang= localStorage.getItem("selectedLanguage");
- 						if(null !=sLang){
- 							$('.selectpicker option[value='+sLang+']').attr('selected','selected');
- 						}
-					});
+			$('.selectpicker').on('change', function() {
+				var selected = $(this).val();
+				console.log("selected val is" + selected);
+				$('.selectpicker option[value='+selected+']').attr('selected','selected');
+	
+				localStorage.setItem("selectedLanguage", selected);
+				if("1" == selected ){
+					selected = "?lang=te";
+				}else if("2" == selected){
+					selected = "?lang=en";
+				}else if("3" == selected){
+					selected = "?lang=hi";
+				}
+				
+				window.location.href=selected;
+			}); 
+	
+		 	var sLang= localStorage.getItem("selectedLanguage");
+		 	if(null !=sLang){
+		 		$('.selectpicker option[value='+sLang+']').attr('selected','selected');
+		 	}
+});
 </script>
 </head>
 <body>

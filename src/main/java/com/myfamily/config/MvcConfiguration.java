@@ -1,7 +1,10 @@
 package com.myfamily.config;
 
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,6 +26,8 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan("com.myfamily.controller")
 public class MvcConfiguration implements WebMvcConfigurer{
+	
+	private static final Logger LOG = LogManager.getLogger(MvcConfiguration.class);
 	
     @Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
@@ -53,12 +58,16 @@ public class MvcConfiguration implements WebMvcConfigurer{
     @Bean
     public LocaleResolver localeResolver() {
        CookieLocaleResolver localeResolver = new CookieLocaleResolver();
+       Locale local=new Locale("hi", "IN");
+       localeResolver.setDefaultLocale(local);
        return localeResolver;
     }
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+    	LOG.info("addInterceptors start");
        LocaleChangeInterceptor localeChangeInterceptor = new LocaleChangeInterceptor();
        localeChangeInterceptor.setParamName("lang");
        registry.addInterceptor(localeChangeInterceptor);
+       LOG.info("addInterceptors start");
     }
 }

@@ -30,9 +30,14 @@ public class HomeController {
         return "welcome";
     }
     
+    @RequestMapping("/login")
+    public String loginWithLocale(){
+        return "login";
+    }
+    
     @RequestMapping("/")
     public String login(){
-        return "login";
+        return "redirect:login?lang=te";
     }
     
     @RequestMapping(value="/home", method=RequestMethod.POST)

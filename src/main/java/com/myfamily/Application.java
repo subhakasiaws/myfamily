@@ -8,8 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.myfamily.service.EmailSchedulerService;
-
-
 /**
  * @author ChandraThulasi
  *
