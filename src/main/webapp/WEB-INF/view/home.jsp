@@ -41,11 +41,11 @@
    <!-- Page Content -->
   <div class="container" style="height:64% !important">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">WELCOME</h1>
-        <p class="lead">MR Name!</p>
+      
+        <h1 class="mt-5">Hello <label for="name" id="name" >${name}</label> </h1>
         <ul class="list-unstyled">
-          <li>Bootstrap 4.3.1</li>
-          <li>jQuery 3.4.1</li>
+          <li></li>
+          <li></li>
         </ul>
       </div>
   </div>
@@ -64,25 +64,13 @@
         <form class="form-inline">
           <input class="form-control form-control-sm mr-3" type="text" placeholder="Search"
             aria-label="Search">
-          <i class="fas fa-search" aria-hidden="true"></i>
         </form>
         <!-- Form -->
 
       </div>
       <!--Grid column-->
 
-      <!--Grid column-->
-      <div class="col-md-6 mb-4">
 
-        <form class="input-group">
-          <input type="text" class="form-control form-control-sm" placeholder="Your email"
-            aria-label="Your email" aria-describedby="basic-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-sm btn-outline-white my-0" type="button">Sign up</button>
-          </div>
-        </form>
-
-      </div>
       <!--Grid column-->
 
     </div>
@@ -98,4 +86,11 @@
   <!-- Copyright -->
 
 </footer>
-
+<script type="text/javascript">
+$(window).on('load', function () { 
+   var modelAttributeValue = '${name}';
+   $("#name").val(modelAttributeValue);
+   console.log("modelAttributeValue");
+   console.log(modelAttributeValue);
+});
+</script>

@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<spring:message code=""/>
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport"
@@ -9,6 +10,7 @@
 <script src="webjars/jquery/3.2.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery.i18n.properties.min.js"></script>
 <link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"
 	rel="stylesheet" />
 <link href="css/font-awesome.min.css"
@@ -39,13 +41,27 @@
 											return false;
 										});
 
-						$('.selectpicker').on('change', function() {
+ 						$('.selectpicker').on('change', function() {
 							var selected = $(this).val();
 							console.log("selected val is" + selected);
-							//changeLang('en_EN');
-							// changeLang('pt_PT');
-						});
+							$('.selectpicker option[value='+selected+']').attr('selected','selected');
 
+							localStorage.setItem("selectedLanguage", selected);
+							if("1" == selected ){
+								selected = "?lang=te";
+							}else if("2" == selected){
+								selected = "?lang=en";
+							}else if("3" == selected){
+								selected = "?lang=hi";
+							}
+							
+							window.location.href=selected;
+						}); 
+
+ 						var sLang= localStorage.getItem("selectedLanguage");
+ 						if(null !=sLang){
+ 							$('.selectpicker option[value='+sLang+']').attr('selected','selected');
+ 						}
 					});
 </script>
 </head>
@@ -53,10 +69,16 @@
 	<div class="container" style="height: 91% !important">
 		<div class="page-header" style="margin-top: 5px">
 			<div style="text-align: right">
-				<select class="selectpicker" data-width="fit">
+				<select class="selectpicker" data-width="fit"> <!--  onchange="location = this.value;" -->
+					<option 
+						data-content='<span class="flag-icon flag-icon-us"></span> Telugu'
+						value="1"><spring:message code="app.lang.telugu"/></option>	
 					<option
 						data-content='<span class="flag-icon flag-icon-us"></span> English'
-						value="en_EN">English</option>
+						value="2"><spring:message code="app.lang.english"/></option>
+											<option
+						data-content='<span class="flag-icon flag-icon-us"></span> English'
+						value="3"><spring:message code="app.lang.hindi"/></option>
 				</select>
 			</div>
 		</div>
@@ -64,20 +86,18 @@
 			style="margin-top: 100px">
 			<div class="card">
 				<div class="card-header">
-					<h3>Sign In</h3>
+					<h3><spring:message code="app.page.signin"/></h3>
 				</div>
 				<div class="card-body">
 					<form>
 						<div id="myLogin" class="input-group form-group">
 							<div class="input-group-prepend">
-								<!-- <span class="input-group-text"><i class="fa fa-user"></i></span> -->
 							</div>
-							<input id="name" type="text" class="form-control"
-								placeholder="Enter Your Name">
+							<input id="name" type="text" class="form-control" placeholder="<spring:message code="app.page.enteryourname"/>">
 
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Login" id="login"
+							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"
 								class="btn float-right login_btn">
 						</div>
 					</form>
@@ -98,19 +118,4 @@
 		<!-- Copyright --> </footer>
 	</div>
 </body>
-<script type="text/javascript" language="JavaScript"
-	src="js/jquery.i18n.properties.min.js"></script>
-<script type="text/javascript">
-	function changeLang(lang) {
-		jQuery.i18n.properties({
-			name : 'Messages',
-			path : 'bundle/',
-			mode : 'both',
-			language : lang,
-			callback : function() {
-				$("#msg_hello").text(jQuery.i18n.prop('msg_hello'));
-			}
-		});
-	}
-</script>
 </html>
