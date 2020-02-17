@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <spring:message code=""/>
 
@@ -45,7 +46,7 @@
   <div class="container" style="height:64% !important">
       <div class="col-lg-12 text-center">
       
-        <h1 class="mt-5">Hello <label for="name" id="name" >${name}</label> </h1>
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
         <ul class="list-unstyled">
           <li></li>
           <li></li>
@@ -83,7 +84,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3" style="color:white" >© 2020 Copyright:
+  <div class="footer-copyright text-center py-3" style="color:white" >Â© 2020 Copyright:
     <a style="color:white" href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
   </div>
   <!-- Copyright -->
