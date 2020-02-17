@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import com.myfamily.service.EmailSchedulerService;
 /**
- * @author ChandraThulasi
+ * @author Chandra
  *
  */
 @SpringBootApplication
