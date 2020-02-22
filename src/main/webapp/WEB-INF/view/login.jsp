@@ -79,7 +79,7 @@ $(document).ready(function() {
 			</div>
 		</div>
 		<div class="d-flex justify-content-center h-100">
-			<div class="card" style="margin-top:5rem;">
+			<div class="card" >
 				<div class="card-header">
 					<h3><spring:message code="app.page.title"/></h3>
 				</div>
