@@ -6,11 +6,11 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>MyFamily</title>
-<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
-<script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.i18n.properties.min.js"></script>
-<link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"	rel="stylesheet" />
+<link href="css/bootstrap.min.css"	rel="stylesheet" />
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
 <link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
 
