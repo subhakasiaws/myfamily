@@ -13,6 +13,7 @@
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
 <link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
 <link rel="stylesheet" href="css/all.css" >
+<link rel="stylesheet" href="css/mystyle.css" >
 
 
 <link href="css/style.css" rel="stylesheet" />
@@ -80,7 +81,7 @@ $(document).ready(function() {
 		</div>
 		<div class="d-flex justify-content-center h-100">
 			<div class="card" >
-				<div class="card-header">
+				<div class="card-header font20">
 					<h3><spring:message code="app.page.title"/></h3>
 				</div>
 				<div class="card-body">
