@@ -67,25 +67,19 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-	<div class="container" style="height: 91% !important">
+	<div class="container" >
 		<div class="page-header" style="margin-top: 5px">
 			<div style="text-align: right">
 				<select class="selectpicker" data-width="fit"> <!--  onchange="location = this.value;" -->
-					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu'
-						value="1"><spring:message code="app.lang.telugu"/></option>	
-					<option data-content='<span class="flag-icon flag-icon-us"></span> English'
-						value="2"><spring:message code="app.lang.english"/></option>
-					<option data-content='<span class="flag-icon flag-icon-us"></span> Hindi'
-						value="3"><spring:message code="app.lang.hindi"/></option>
-					<option data-content='<span class="flag-icon flag-icon-us"></span> Chinese'
-						value="4"><spring:message code="app.lang.chinese"/></option>
-					<option data-content='<span class="flag-icon flag-icon-us"></span> German'
-						value="5"><spring:message code="app.lang.german"/></option>
+					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu' value="1"><spring:message code="app.lang.telugu"/></option>	
+					<option data-content='<span class="flag-icon flag-icon-us"></span> English' value="2"><spring:message code="app.lang.english"/></option>
+					<option data-content='<span class="flag-icon flag-icon-us"></span> Hindi' value="3"><spring:message code="app.lang.hindi"/></option>
+					<option data-content='<span class="flag-icon flag-icon-us"></span> Chinese' value="4"><spring:message code="app.lang.chinese"/></option>
+					<option data-content='<span class="flag-icon flag-icon-us"></span> German' value="5"><spring:message code="app.lang.german"/></option>
 				</select>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center h-100"
-			style="margin-top: 100px">
+		<div class="d-flex justify-content-center h-100" style="margin-top: 40px">
 			<div class="card">
 				<div class="card-header">
 					<h3><spring:message code="app.page.title"/></h3>
@@ -109,7 +103,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-	<div style="margin-top: 90px;">
+	<div>
 		<footer class="page-footer font-small blue"
 			style="background-color:#9370DB"> <!-- Copyright -->
 		<div class="footer-copyright text-center py-3 wcolor"
@@ -117,7 +111,7 @@ $(document).ready(function() {
 			 <a style="color: white"
 				href="http://manafamily.herokuapp.com"> <spring:message code="app.page.footer"/></a>
 		</div>
-		<!-- Copyright --> </footer>
+		</footer>
 	</div>
 </body>
 </html>

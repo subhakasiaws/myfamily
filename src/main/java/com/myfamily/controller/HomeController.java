@@ -20,6 +20,10 @@ public class HomeController {
     public String loginWithLocale(){
         return "login";
     }
+    @RequestMapping("/OurHome")
+    public String OurHome(){
+        return "OurHome";
+    }
     
     @RequestMapping("/")
     public String login(){
