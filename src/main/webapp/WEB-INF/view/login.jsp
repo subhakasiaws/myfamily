@@ -4,17 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>MyFamily</title>
 <script src="webjars/jquery/3.2.1/jquery.min.js"></script>
 <script src="webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.i18n.properties.min.js"></script>
-<link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"
-	rel="stylesheet" />
-<link href="css/font-awesome.min.css"
-	rel="stylesheet" />	
+<link href="webjars/bootstrap/4.1.3/css/bootstrap.min.css"	rel="stylesheet" />
+<link href="css/font-awesome.min.css"	rel="stylesheet" />	
+<link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
+
 
 <link href="css/style.css" rel="stylesheet" />
 <script type="text/javascript">
@@ -79,8 +78,8 @@ $(document).ready(function() {
 				</select>
 			</div>
 		</div>
-		<div class="d-flex justify-content-center h-100" style="margin-top: 40px">
-			<div class="card">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card" style="margin:5rem;">
 				<div class="card-header">
 					<h3><spring:message code="app.page.title"/></h3>
 				</div>
