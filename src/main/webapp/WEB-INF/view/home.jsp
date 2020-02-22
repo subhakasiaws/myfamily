@@ -53,36 +53,18 @@
         </ul>
       </div>
   </div>
+ <div class="fixed-bottom">
   <footer class="page-footer font-small special-color-dark pt-4" style="background-color: #2d6d3b!important">
-
-  <!-- Footer Elements -->
   <div class="container">
-
-    <!--Grid row-->
     <div class="row">
-
-      <!--Grid column-->
       <div class="col-md-6 mb-4">
-
-        <!-- Form -->
         <form class="form-inline">
           <input class="form-control form-control-sm mr-3" type="text" placeholder="Search"
             aria-label="Search">
         </form>
-        <!-- Form -->
-
       </div>
-      <!--Grid column-->
-
-
-      <!--Grid column-->
-
     </div>
-    <!--Grid row-->
-
   </div>
-  <!-- Footer Elements -->
-
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3" style="color:white" >© 2020 Copyright:
     <a style="color:white" href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
@@ -90,6 +72,7 @@
   <!-- Copyright -->
 
 </footer>
+</div>
 <script type="text/javascript">
 $(window).on('load', function () { 
    var modelAttributeValue = '${name}';

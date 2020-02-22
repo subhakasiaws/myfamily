@@ -6,8 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
-
-import com.myfamily.service.EmailSchedulerService;
 /**
  * @author Chandra
  *
@@ -17,7 +15,7 @@ import com.myfamily.service.EmailSchedulerService;
 @ComponentScan("com.myfamily")
 public class Application {
 
-	private static final Logger LOG = LogManager.getLogger(EmailSchedulerService.class);
+	private static final Logger LOG = LogManager.getLogger(Application.class);
 	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
