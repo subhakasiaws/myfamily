@@ -56,7 +56,7 @@
  <div class="fixed-bottom">
 
   <footer class="page-footer font-small special-color-dark" style="background-color: #2d6d3b!important">
-  <div>
+  <div  class="row">
 <a class="btn btn-primary" href="#" role="button">HOME</a>
 <a class="btn btn-primary" href="#" role="button">Calendar</a>
 <a class="btn btn-primary" href="#" role="button">Tasks</a>
