@@ -8,11 +8,11 @@
 <title>MyFamily</title>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.min.js"></script>
 <script src="js/jquery.i18n.properties.min.js"></script>
 <link href="css/bootstrap.min.css"	rel="stylesheet" />
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
 <link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
+<link rel="stylesheet" href="css/all.css" >
 
 
 <link href="css/style.css" rel="stylesheet" />
