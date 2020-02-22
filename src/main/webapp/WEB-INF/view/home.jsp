@@ -43,7 +43,7 @@
     </div>
   </nav>
    <!-- Page Content -->
-  <div class="container" style="height:64% !important">
+  <div class="container-fluid" style="height:64% !important">
       <div class="col-lg-12 text-center">
       
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
@@ -54,23 +54,16 @@
       </div>
   </div>
  <div class="fixed-bottom">
-  <footer class="page-footer font-small special-color-dark pt-4" style="background-color: #2d6d3b!important">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <form class="form-inline">
-          <input class="form-control form-control-sm mr-3" type="text" placeholder="Search"
-            aria-label="Search">
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3" style="color:white" >© 2020 Copyright:
-    <a style="color:white" href="http://manafamily.herokuapp.com"> MANAFAMILY.com</a>
-  </div>
-  <!-- Copyright -->
 
+  <footer class="page-footer font-small special-color-dark" style="background-color: #2d6d3b!important">
+  <div>
+<a class="btn btn-primary" href="#" role="button">HOME</a>
+<a class="btn btn-primary" href="#" role="button">Calendar</a>
+<a class="btn btn-primary" href="#" role="button">Tasks</a>
+<a class="btn btn-primary" href="#" role="button">Rewards</a>
+<a class="btn btn-primary" href="#" role="button">LeaderBoard</a>
+<a class="btn btn-primary" href="#" role="button">Shopping/Groceries</a>
+</div>
 </footer>
 </div>
 <script type="text/javascript">
