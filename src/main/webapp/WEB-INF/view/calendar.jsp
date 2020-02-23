@@ -1,205 +1,121 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<spring:message code=""/>
 <!DOCTYPE html>
-<html data-showscrollbars="true" lang="en">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style id="react-native-modality">:focus { outline: none; }</style>
-
-    <title>OurHome</title>
-    <meta name="description" content="OurHome App">
-
-     <!-- via Grunt Sass -->
-    <link rel="stylesheet" href="css/ourhome.css">
-    
-    <!-- modernizr bundle output via webpack -->
-  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>My Family</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" href="css/mycal.css" >
+<!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
+    <div class="container">
+		<div class="row">
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+				<ul class="event-list">
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day">4</span>
+							<span class="month">Jul</span>
+							<span class="year">2014</span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+						<div class="info">
+							<h2 class="title">Independence Day</h2>
+							<p class="desc">United States Holiday</p>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
 
-    <!-- For App -->
-    <div class="app-root" data-app-name="our-home">
-	<div class="page-loader">
-  <div class="page-loader-spinner"></div>
-  <div class="page-loader-message"></div>
-</div>
-<div class="app-background-loader-container"><div class="_3Rc8B"><div class="_3-3jP" style="background-color: #A1BCE1"></div></div></div>
-<div class="app-bar-container"><div class="app-bar"><div class="app-bar-action-container app-bar-action-container-left">
-<div class="app-bar-action" data-action="search"><div class="app-bar-icon icon-magnifying-glass"></div></div></div>
-<div class="app-bar-title">Tasks</div>
-<div class="app-bar-action-container app-bar-action-container-right"><div class="app-bar-action" data-action="add">
-<div class="app-bar-icon icon-plus"></div></div></div>
-<div class="app-bar-custom-view-container"></div>
-<div class="app-bar-loader"><div class="spinner"></div></div></div></div>
-<div class="app-dashboard-container"><div class="app-dashboard"><div class="app-dashboard-tab" data-slug="people">
-  
-  <div class="app-dashboard-tab-icon-container" style="color: #f8d769;">
-  
-    <div class="app-dashboard-tab-icon icon-users"></div>
-  
-  </div>
-  <div class="app-dashboard-tab-label">Family</div>
-</div>
-<div class="app-dashboard-tab" data-slug="calendar">
-  
-  <div class="app-dashboard-tab-icon-container" style="color: #90b0dc;">
-  
-    <div class="
-  
-      app-dashboard-tab-icon
-  
-      app-dashboard-tab-icon-calendar
-  
-      icon-calendar-empty
-  
-    "></div>
-  
-    <div class="app-dashboard-calendar-date">
-  
-      <div class="app-dashboard-calendar-date-day">2</div>
-  
-    </div>
-  
-  </div>
-  <div class="app-dashboard-tab-label">Calendar</div>
-</div>
-<div class="app-dashboard-tab current" data-slug="tasks">
-  
-  <div class="app-dashboard-tab-icon-container" style="color: #9dcc80;">
-  
-    <div class="app-dashboard-tab-icon icon-tick-thin"></div>
-  
-  </div>
-  <div class="app-dashboard-tab-label">Tasks</div>
-</div>
-<div class="app-dashboard-tab" data-slug="rewards">
-  
-  <div class="app-dashboard-tab-icon-container" style="color: #bb80b7;">
-  
-    <div class="app-dashboard-tab-icon icon-gift"></div>
-  
-  </div>
-  <div class="app-dashboard-tab-label">Rewards</div>
-</div>
-<div class="app-dashboard-tab" data-slug="shopping">
-  
-  <div class="app-dashboard-tab-icon-container" style="color: #f2ac67;">
-  
-    <div class="app-dashboard-tab-icon icon-shopping-basket"></div>
-  
-  </div>
-  <div class="app-dashboard-tab-label">Groceries</div>
-</div></div></div>
-<div class="internet-status-bar"></div>
-<div class="toasts toasts__empty"><div class="toast-container"></div></div>
-<div class="app-stack-body"><div class="app-stack-view task-list" style="z-index: 0;"><div class="task-list-list-container">
-<div class="mega-list"><div class="mega-list-filter-container"><div class="filter-bar user-filter-bar filter-bar-has-labels" data-filter="ALL">
-<div class="filter-bar-items-container" style="opacity: 1;"><div class="filter-bar-item current" data-filter-value="ALL">
-  <div class="filter-bar-item-content"><div class="filter-bar-icon icon-ourhome-house"></div></div>
-  <div class="filter-bar-item-label">All</div>
-</div><div class="filter-bar-item" data-filter-value="1661532">
-  <div class="filter-bar-item-content"><div class="profile-pic no-photo has-avatar">   <div class="avatar" data-avatar="dog" data-color="red">
-  </div> </div></div>
-  <div class="filter-bar-item-label">Chandra</div>
-</div><div class="filter-bar-item" data-filter-value="1661538">
-  <div class="filter-bar-item-content"><div class="profile-pic no-photo has-avatar">   <div class="avatar" data-avatar="cat" data-color="yellow">
-  </div> </div></div>
-  <div class="filter-bar-item-label">Thulasi</div>
-</div><div class="filter-bar-item" data-filter-value="EDIT_FILTER_TYPE">
-  <div class="filter-bar-item-content"><div class="filter-bar-icon icon-filter"></div></div>
-  <div class="filter-bar-item-label">Filter</div>
-</div><div class="filter-bar-item" data-filter-value="EDIT_SORT">
-  <div class="filter-bar-item-content"><div class="filter-bar-icon icon-sort-list"></div></div>
-  <div class="filter-bar-item-label">Sort</div>
-</div></div></div></div>
-<div class="mega-list-items-container">
-  <div class="mega-list-items" style="height: 0px;"><div class="swipe-list-divider" data-active="true" style="display: none;">
-  <div class="swipe-list-divider-content">
-  <div class="swipe-list-divider-title">To-do</div>
-  <div class="swipe-list-divider-count">0</div>
-</div></div><div class="swipe-list-divider" data-active="true" style="display: none;"><div class="swipe-list-divider-content">
-  <div class="swipe-list-divider-title">Upcoming</div>
-  <div class="swipe-list-divider-count">0</div>
-</div></div><div class="swipe-list-divider" data-active="true" style="display: none;"><div class="swipe-list-divider-content">
-  <div class="swipe-list-divider-title">Completed</div>
-  <div class="swipe-list-divider-count">0</div>
-</div></div></div>
-  <div class="mega-list-suggested-list-container"><div class="suggested-list" style=""><div class="swipe-list-divider" data-active="true">
-  <div class="swipe-list-divider-content">
-  <div class="swipe-list-divider-title">Suggestions</div>
-  
-</div></div><div class="suggested-list-items-container" style="height: 428px;"><div class="suggested-list-item" style="transform: translateY(0px);">
-<div class="multi-stage-swipe-bar"><div class="swipe-container">
-  <div class="pre-swipe swipe-section"><i></i></div>
-  <div class="main swipe-section"><div class="suggested-list-item-action suggested-list-item-add">
-  <i></i>
-</div>
-<div class="swipe-list-item-content suggested-list-item-content" style="border-left-color: #81A5D7">
-  <div class="swipe-list-item-content-body">
-    <div class="
-        swipe-list-item-title
-        swipe-list-item-title-center-v
-        suggested-list-item-title
-      ">
-      Wipe down walls
-    </div>
-  </div>
-</div>
-<div class="suggested-list-item-action suggested-list-item-dismiss">
-  <i></i>
-</div></div>
-  <div class="post-swipe swipe-section"><i></i></div>
-</div>
-<div class="swipe-actions-bar-container"></div></div></div><div class="suggested-list-item" style="transform: translateY(69px);">
-<div class="multi-stage-swipe-bar"><div class="swipe-container">
-  <div class="pre-swipe swipe-section"><i></i></div>
-  <div class="main swipe-section"><div class="suggested-list-item-action suggested-list-item-add">
-  <i></i>
-</div>
+					<li>
+						<time datetime="2014-07-20 0000">
+							<span class="day">8</span>
+							<span class="month">Jul</span>
+							<span class="year">2014</span>
+							<span class="time">12:00 AM</span>
+						</time>
+						<div class="info">
+							<h2 class="title">One Piece Unlimited World Red</h2>
+							<p class="desc">PS Vita</p>
+							<ul>
+								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
+								<li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
 
-<div class="suggested-list-item-action suggested-list-item-dismiss">
-  <i></i>
-</div></div>
-  <div class="post-swipe swipe-section"><i></i></div>
-</div>
-<div class="swipe-actions-bar-container"></div></div></div><div class="suggested-list-item" style="transform: translateY(138px);">
-<div class="multi-stage-swipe-bar"><div class="swipe-container">
-  <div class="pre-swipe swipe-section"><i></i></div>
-  <div class="main swipe-section"><div class="suggested-list-item-action suggested-list-item-add">
-  <i></i>
-</div>
+					<li>
+						<time datetime="2014-07-20 2000">
+							<span class="day">20</span>
+							<span class="month">Jan</span>
+							<span class="year">2014</span>
+							<span class="time">8:00 PM</span>
+						</time>
+						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+						<div class="info">
+							<h2 class="title">Mouse0270's 24th Birthday!</h2>
+							<p class="desc">Bar Hopping in Erie, Pa.</p>
+							<ul>
+								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
+								<li style="width:34%;">3 <span class="fa fa-question"></span></li>
+								<li style="width:33%;">103 <span class="fa fa-envelope"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
 
-<div class="suggested-list-item-action suggested-list-item-dismiss">
-  <i></i>
-</div></div>
-  <div class="post-swipe swipe-section"><i></i></div>
-</div>
-<div class="swipe-actions-bar-container"></div></div></div></div>
-<div class="suggested-list-more-button-container" style="">
-  <div class="suggested-list-more-button" data-onclick="showMore">More suggestions</div>
-</div></div></div>
-  <div class="mega-list-extra-list-container"></div>
-  <div class="mega-list-list-loading-indicator-container"><div class="list-loading-indicator"></div></div>
-  <div class="mega-list-nothing-listed-message-container">
-    <div class="mega-list-nothing-listed-message">
-      <div class="mega-list-nothing-listed-message-title">
-        Nothing here yet!
-      </div>
-      <div class="mega-list-nothing-listed-message-body">
-        Tap the plus icon in the top right hand corner to add to your list.
-      </div>
-    </div>
-  </div>
-</div></div></div>
-<div class="task-list-footer-container"><div class="app-footer-bar" style="transform: translateY(100%); transition: none 0s ease 0s;">
-<div class="
-  app-footer-bar-region
-  app-footer-bar-region-left
-"><div class="app-footer-bar-action" data-id="app-bar-action-25"><div class="profile-pic no-photo has-avatar">
-  <div class="avatar" data-avatar="dog" data-color="red"></div>
-</div></div>
-
-</div>
-
-</div></div></div></div></div>
-
-
-</body></html>
+					<li>
+						<time datetime="2014-07-31 1600">
+							<span class="day">31</span>
+							<span class="month">Jan</span>
+							<span class="year">2014</span>
+							<span class="time">4:00 PM</span>
+						</time>
+						<img alt="Disney Junior Live On Tour!" src="http://www.thechaifetzarena.com/images/main/DL13_PiratePrincess_thumb.jpg" />
+						<div class="info">
+							<h2 class="title">Disney Junior Live On Tour!</h2>
+							<p class="desc"> Pirate and Princess Adventure</p>
+							<ul>
+								<li style="width:33%;">$49.99 <span class="fa fa-male"></span></li>
+								<li style="width:34%;">$29.99 <span class="fa fa-child"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+</html>
