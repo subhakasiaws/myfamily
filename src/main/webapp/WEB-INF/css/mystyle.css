@@ -10,10 +10,6 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
-body {
-  overflow-y:hidden;
-}
-
 .container{
 height: 100%;
 align-content: center;
@@ -100,4 +96,9 @@ background-color: #2d6d3b!important
 }
 .homeccbg{
 border-color: #a9cfd5!important
+}
+
+.makeScroll{
+  height:100%;
+  overflow-y: scroll;
 }
