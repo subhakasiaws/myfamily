@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>MyFamily</title>
+<title>My Family</title>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.i18n.properties.min.js"></script>
@@ -22,7 +22,7 @@ $(document).ready(function() {
 						
 		$('#login').click(function() {
 			console.log("your clicked");
-			var $regexname = /^([a-zA-Z]{3,16})$/;
+			var $regexname = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 			var temp = $('#name').val();
 			
 			if (!temp.match($regexname)) {
@@ -70,7 +70,7 @@ $(document).ready(function() {
 	<div class="container" >
 		<div class="page-header" style="margin-top: 5px">
 			<div style="text-align: right">
-				<select class="selectpicker" data-width="fit"> <!--  onchange="location = this.value;" -->
+				<select class="selectpicker" data-width="fit"> 
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu' value="1"><spring:message code="app.lang.telugu"/></option>	
 					<option data-content='<span class="flag-icon flag-icon-us"></span> English' value="2"><spring:message code="app.lang.english"/></option>
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Hindi' value="3"><spring:message code="app.lang.hindi"/></option>

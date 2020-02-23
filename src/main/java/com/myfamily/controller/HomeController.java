@@ -16,18 +16,14 @@ public class HomeController {
 
 	private static final Logger LOG = LogManager.getLogger(HomeController.class);
 	
-    @RequestMapping("/login")
-    public String loginWithLocale(){
-        return "login";
-    }
-    @RequestMapping("/OurHome")
-    public String OurHome(){
-        return "OurHome";
-    }
-    
     @RequestMapping("/")
     public String login(){
         return "redirect:login?lang=te";
+    }
+
+    @RequestMapping("/login")
+    public String loginWithLocale(){
+        return "login";
     }
     
     @RequestMapping(value="/home", method=RequestMethod.POST)
@@ -39,5 +35,18 @@ public class HomeController {
      model.setViewName("home");
      LOG.info("HomeController method home -end ");
      return model;
+    }
+    
+    @RequestMapping("/calendar")
+    public String Calendar(){
+        return "calendar";
+    }
+    @RequestMapping("/tasks")
+    public String Task(){
+        return "task";
+    }
+    @RequestMapping("/board")
+    public String Board(){
+        return "board";
     }
 }
