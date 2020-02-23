@@ -98,6 +98,9 @@ background-color: #2d6d3b!important
 border-color: #a9cfd5!important
 }
 
+.homeccbground{
+background-color: #a9cfd5!important
+}
 .makeScroll{
   height:100%;
   overflow-y: scroll;
