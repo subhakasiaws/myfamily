@@ -4,45 +4,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><spring:message code="app.title"/> </title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>My Family</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.i18n.properties.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<link href="css/bootstrap.min.css"	rel="stylesheet" />
+<link href="css/font-awesome.min.css"	rel="stylesheet" />	
+<link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
+<link rel="stylesheet" href="css/all.css" >
+<link rel="stylesheet" href="css/mystyle.css" >
+<link rel="stylesheet" href="css/task.css" >
+<script src="js/task.js"></script>
+
 
 </head>
-<body>
-   <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#"><spring:message code="app.title"/></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
+    <div class="container-fluid"  style="height:71% !important">
+      <a class="navbar-brand" href="#">WELCOME</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="#"><spring:message code="app.nav.home"/> <span class="sr-only"></span></a></li>
-         </ul>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shopping</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <div style="margin-left: 1rem">
+         <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </div>
       </div>
-   </nav>
-
-   <div role="main" class="container">
-      <div class="jumbotron">
-         <h1><spring:message code="app.page.header"/></h1>
-         <p class="lead"><spring:message code="app.page.body"/></p>
-
-
-         <!-- Dropdown for selecting language -->
-         <div class="dropdown">
-            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><spring:message code="app.lang.title"/></button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-               <a class="dropdown-item" href="?lang=en"><spring:message code="app.lang.english"/></a> 
-               <a class="dropdown-item" href="?lang=hi"><spring:message code="app.lang.hindi"/></a>
-               <a class="dropdown-item" href="?lang=te"><spring:message code="app.lang.telugu"/></a>
-               <a class="dropdown-item" href="?lang=cn"><spring:message code="app.lang.chinese"/></a>
+    </div>
+  </nav>
+   <!-- Page Content -->
+  <div class="container-fluid makeScroll homeccbground">
+      <div>
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
+<div class="row">
+        <div class="col-md-6">
+            <div class="todolist not-done">
+             <h1>Todos</h1>
+                <input type="text" class="form-control add-todo" placeholder="Add todo">
+                    <button id="checkAll" class="btn btn-success">Mark all as done</button>
+                    
+                    <hr>
+                    <ul id="sortable" class="list-unstyled">
+                    <li class="ui-state-default">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" />Take out the trash</label>
+                        </div>
+                    </li>
+                    <li class="ui-state-default">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" />Buy bread</label>
+                        </div>
+                    </li>
+                    <li class="ui-state-default">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="" />Teach penguins to fly</label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="todo-footer">
+                    <strong><span class="count-todos"></span></strong> Items Left
+                </div>
             </div>
-         </div>
-
+        </div>
+        <div class="col-md-6">
+            <div class="todolist">
+             <h1>Already Done</h1>
+                <ul id="done-items" class="list-unstyled">
+                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>        
       </div>
-   </div>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+  
+  </div>
+ <div class="fixed-bottom">
+
+	<footer class="page-footer font-small special-color-dark"
+		style="background-color: #2d6d3b !important">
+		<div class="row"> 
+				<a class="btn btn-primary col homebgcolor" href="/home" role="button">HOME</a>
+				<span class="border border-success homeccbg"></span>
+				<a class="btn btn-primary col homebgcolor" href="/tasks" role="button">Tasks</a>
+				<span class="border border-success homeccbg"></span>
+				<a class="btn btn-primary col homebgcolor" href="/board" role="button">LeaderBoard</a>
+		</div>
+	</footer>
+</div>
+<script type="text/javascript">
+$(window).on('load', function () { 
+   var modelAttributeValue = '${name}';
+   $("#name").val(modelAttributeValue);
+   console.log("modelAttributeValue");
+   console.log(modelAttributeValue);
+});
+</script>

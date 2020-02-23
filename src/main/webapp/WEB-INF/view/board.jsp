@@ -93,7 +93,7 @@
 	<footer class="page-footer font-small special-color-dark"
 		style="background-color: #2d6d3b !important">
 		<div class="row"> 
-				<a class="btn btn-primary col homebgcolor" href="#" role="button">HOME</a>
+				<a class="btn btn-primary col homebgcolor" href="/home" role="button">HOME</a>
 				<span class="border border-success homeccbg"></span>
 				<a class="btn btn-primary col homebgcolor" href="/tasks" role="button">Tasks</a>
 				<span class="border border-success homeccbg"></span>
