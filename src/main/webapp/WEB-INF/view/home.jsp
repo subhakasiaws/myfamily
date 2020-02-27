@@ -38,6 +38,13 @@
     </div>
   </nav>
    <!-- Page Content -->
+   <div class="row">
+	<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+  <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor!</p></marquee>
+</div>
+	</div>
+	
   <div class="container-fluid makeScroll">
       <div class="col-lg-12 text-center">
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
