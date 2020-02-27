@@ -67,8 +67,8 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-	<div class="container" >
-		<div class="page-header" >
+	<div class="container-fluid" >
+		<div class="page-header m-10" >
 			<div style="text-align: right">
 				<select class="selectpicker" data-width="fit"> 
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu' value="1"><spring:message code="app.lang.telugu"/></option>	
