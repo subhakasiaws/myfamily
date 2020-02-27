@@ -54,7 +54,7 @@
 						</time>
 						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
 						<div class="info">
-							<h2 class="title">Independence Day</h2>
+							<h2 class="title"><spring:message code="app.page.marriageday"/></h2>
 							<p class="desc">United States Holiday</p>
 						</div>
 						<div class="social">
