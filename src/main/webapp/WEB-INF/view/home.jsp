@@ -7,31 +7,31 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
     <div class="container-fluid"  style="height:71% !important">
-      <a class="navbar-brand" href="#">WELCOME</a>
+      <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="#"><spring:message code="app.page.home"/>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shopping</a>
+            <a class="nav-link" href="#"><spring:message code="app.page.shopping"/></a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#">News</a>
+            <a class="nav-link" href="#"><spring:message code="app.page.news"/></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
           </li>
         </ul>
         <div style="margin-left: 1rem">
          <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="text" placeholder="<spring:message code="app.page.search"/>" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><spring:message code="app.page.search"/></button>
         </form>
         </div>
       </div>
@@ -247,11 +247,11 @@
 	<footer class="page-footer font-small special-color-dark"
 		style="background-color: #2d6d3b !important">
 		<div class="row"> 
-				<a class="btn btn-primary col homebgcolor" href="#" role="button">HOME</a>
+				<a class="btn btn-primary col homebgcolor" href="#" role="button"><spring:message code="app.page.home"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor" href="/tasks" role="button">Tasks</a>
+				<a class="btn btn-primary col homebgcolor" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor" href="/board" role="button">LeaderBoard</a>
+				<a class="btn btn-primary col homebgcolor" href="/board" role="button"><spring:message code="app.page.awards"/></a>
 		</div>
 	</footer>
 </div>
