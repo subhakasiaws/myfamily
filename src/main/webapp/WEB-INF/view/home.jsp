@@ -74,7 +74,7 @@
 							<span class="time">12:00 AM</span>
 						</time>
 						<div class="info">
-							<h2 class="title">One Piece Unlimited World Red</h2>
+							<h2 class="title"><spring:message code="app.page.marriageday"/></h2>
 							<p class="desc">PS Vita</p>
 							<ul>
 								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
@@ -99,7 +99,7 @@
 						</time>
 						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
 						<div class="info">
-							<h2 class="title">Mouse0270's 24th Birthday!</h2>
+							<h2 class="title"><spring:message code="app.page.birthday"/></h2>
 							<p class="desc">Bar Hopping in Erie, Pa.</p>
 							<ul>
 								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
@@ -124,7 +124,7 @@
 							<span class="time">12:00 AM</span>
 						</time>
 						<div class="info">
-							<h2 class="title">One Piece Unlimited World Red</h2>
+							<h2 class="title"><spring:message code="app.page.marriageday"/></h2>
 							<p class="desc">PS Vita</p>
 							<ul>
 								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
@@ -149,7 +149,7 @@
 						</time>
 						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
 						<div class="info">
-							<h2 class="title">Mouse0270's 24th Birthday!</h2>
+							<h2 class="title"><spring:message code="app.page.birthday"/></h2>
 							<p class="desc">Bar Hopping in Erie, Pa.</p>
 							<ul>
 								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
@@ -173,7 +173,7 @@
 							<span class="time">12:00 AM</span>
 						</time>
 						<div class="info">
-							<h2 class="title">One Piece Unlimited World Red</h2>
+							<h2 class="title"><spring:message code="app.page.marriageday"/></h2>
 							<p class="desc">PS Vita</p>
 							<ul>
 								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
@@ -198,7 +198,7 @@
 						</time>
 						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
 						<div class="info">
-							<h2 class="title">Mouse0270's 24th Birthday!</h2>
+							<h2 class="title"><spring:message code="app.page.birthday"/></h2>
 							<p class="desc">Bar Hopping in Erie, Pa.</p>
 							<ul>
 								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
