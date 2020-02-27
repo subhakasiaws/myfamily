@@ -68,7 +68,7 @@ $(document).ready(function() {
 </head>
 <body>
 	<div class="container-fluid" >
-		<div class="page-header m-10" >
+		<div class="page-header" >
 			<div style="text-align: right">
 				<select class="selectpicker" data-width="fit"> 
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu' value="1"><spring:message code="app.lang.telugu"/></option>	
@@ -80,7 +80,7 @@ $(document).ready(function() {
 			</div>
 		</div>
 		<div class="d-flex justify-content-center">
-			<div class="card" >
+			<div class="card  m-10" >
 				<div class="card-header font20">
 					<h3><spring:message code="app.page.title"/></h3>
 				</div>
