@@ -1,4 +1,4 @@
 com\myfamily\controller\HomeController.class
-com\myfamily\Application.class
 com\myfamily\config\MvcConfiguration.class
+com\myfamily\Application.class
 com\myfamily\service\EmailSchedulerService.class

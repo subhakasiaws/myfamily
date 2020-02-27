@@ -5,7 +5,7 @@
    <link href="css/mystyle.css" rel="stylesheet" />
    <link rel="stylesheet" href="css/mycal.css" >
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
+  <nav id="mynavbar" class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
     <div class="container-fluid"  style="height:71% !important">
       <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -255,6 +255,7 @@
 		</div>
 	</footer>
 </div>
+<script src="js/myfamily.js"></script>
 <script type="text/javascript">
 $(window).on('load', function () { 
    var modelAttributeValue = '${name}';
@@ -262,4 +263,5 @@ $(window).on('load', function () {
    console.log("modelAttributeValue");
    console.log(modelAttributeValue);
 });
+
 </script>
