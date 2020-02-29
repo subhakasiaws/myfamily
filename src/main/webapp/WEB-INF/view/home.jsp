@@ -27,13 +27,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
           </li>
+  		 <li class="nav-item">
+            <a class="nav-link" href="#"><spring:message code="app.page.astrology"/></a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><spring:message code="app.page.celebrations"/></a>
+          </li>
         </ul>
-        <div style="margin-left: 1rem">
-         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="<spring:message code="app.page.search"/>" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><spring:message code="app.page.search"/></button>
-        </form>
-        </div>
+  
       </div>
     </div>
   </nav>
@@ -253,11 +254,11 @@
 
 	<footer class="page-footer font-small special-color-dark"
 		style="background-color: #2d6d3b !important">
-		<div class="row"> 
-				<a class="btn btn-primary col homebgcolor" href="#" role="button"><spring:message code="app.page.home"/></a>
+		<div class="row my-h-50"> 
+				<a class="btn btn-primary col homebgcolor my-padd-18" href="#" role="button"><spring:message code="app.page.home"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
-				<span class="border border-success homeccbg"></span>
+				<a class="btn btn-primary col homebgcolor my-padd-18" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
+				<span class="border border-success homeccbg my-padd-18"></span>
 				<a class="btn btn-primary col homebgcolor" href="/board" role="button"><spring:message code="app.page.awards"/></a>
 		</div>
 	</footer>
