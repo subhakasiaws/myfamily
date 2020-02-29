@@ -3,7 +3,8 @@
 <spring:message code=""/>
 
    <link href="css/mystyle.css" rel="stylesheet" />
-   <link rel="stylesheet" href="css/mycal.css" >
+   <link rel="stylesheet" href="css/mycal.css" />
+   <link rel="stylesheet" href="css/ourhome.css" />
   <!-- Navigation -->
   <nav id="mynavbar" class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
     <div class="container-fluid"  style="height:71% !important">
@@ -39,11 +40,10 @@
     </div>
   </nav>
    <!-- Page Content -->
-   <div class="row">
-	<div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-  <strong><i class="fa fa-warning"></i> Danger!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor!</p></marquee>
-</div>
+   <div class="row my-height-40">
+   <marquee behavior="scroll" direction="right" scrollamount="10" class="my-margin-top">
+   <p>• <spring:message code="app.page.marquee"/></p>
+   </marquee>
 	</div>
 	
   <div class="container-fluid makeScroll">
@@ -258,8 +258,8 @@
 				<a class="btn btn-primary col homebgcolor my-padd-18" href="#" role="button"><spring:message code="app.page.home"/></a>
 				<span class="border border-success homeccbg"></span>
 				<a class="btn btn-primary col homebgcolor my-padd-18" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
-				<span class="border border-success homeccbg my-padd-18"></span>
-				<a class="btn btn-primary col homebgcolor" href="/board" role="button"><spring:message code="app.page.awards"/></a>
+				<span class="border border-success homeccbg"></span>
+				<a class="btn btn-primary col homebgcolor my-padd-18" href="/board" role="button"><spring:message code="app.page.awards"/></a>
 		</div>
 	</footer>
 </div>

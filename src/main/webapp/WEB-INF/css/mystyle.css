@@ -104,6 +104,7 @@ background-color: #a9cfd5!important
 .makeScroll{
   height:100%;
   overflow-y: scroll;
+  background-color: lightblue;
 }
 .t-5{
 	margin-top: 5px
@@ -117,3 +118,10 @@ background-color: #a9cfd5!important
 .my-padd-18{
 	padding-top: 18px;	
 }
+.my-height-40{
+	height:40px;
+}
+.my-margin-top{
+	margin-top:10px;
+}
+
