@@ -272,4 +272,16 @@ $(window).on('load', function () {
    console.log(modelAttributeValue);
 });
 
+$(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('.my-margin-top').fadeOut();
+     }
+    else
+     {
+      $('.my-margin-top').fadeIn();
+     }
+ });
+
 </script>
