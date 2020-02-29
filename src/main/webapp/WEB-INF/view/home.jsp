@@ -19,10 +19,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><spring:message code="app.page.shopping"/></a>
+            <a class="nav-link" href="https://www.flipkart.com/"><spring:message code="app.page.shopping"/></a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="#"><spring:message code="app.page.news"/></a>
+            <a class="nav-link" href="https://www.sakshi.com/"><spring:message code="app.page.news"/></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>

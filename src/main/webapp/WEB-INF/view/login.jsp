@@ -103,7 +103,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-	<div class="fixed-bottom">
+	<div class="fixed-bottom my-h-50">
 		<footer class="page-footer font-small blue"
 			style="background-color:#9370DB"> <!-- Copyright -->
 		<div class="footer-copyright text-center py-3 wcolor"
