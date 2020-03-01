@@ -30,9 +30,6 @@
   	 <li class="nav-item">
        <a class="nav-link" href="#"><spring:message code="app.page.astrology"/></a>
      </li>
-     <li class="nav-item">
-       <a class="nav-link" href="/calendar"><spring:message code="app.page.celebrations"/></a>
-      </li>
     </ul>
   </div>
   <div>
@@ -40,7 +37,7 @@
               <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
+                <i class="fa fa-bell"></i>
                 <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
@@ -88,7 +85,7 @@
 	<li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
 	          aria-haspopup="true" aria-expanded="false">
-	          <i class="fas fa-user"></i> Profile </a>
+	          <i class="fa fa-users"></i> Profile </a>
 	        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 	          <a class="dropdown-item" href="#">My account</a>
 	           <a class="dropdown-item" href="#">Dashboard</a>
@@ -108,29 +105,25 @@
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
+      <th scope="col">Rank</th>
+      <th scope="col">Name</th>
       <th scope="col">Points</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <td>Chandra</td>
       <td>100</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
+      <td>Thulasi</td>
       <td>50</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
+      <td>Sankara</td>
       <td>50</td>
     </tr>
   </tbody>
@@ -145,9 +138,9 @@
 		<div class="row my-h-50"> 
 				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-home glyphicon glyphicon-home" href="#" role="button"><spring:message code="app.page.home"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-bars" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
+				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-bars" href="/tasks" role="button"> <spring:message code="app.page.task"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor my-padd-18" href="/calendar" role="button"><spring:message code="app.page.celebrations"/></a>
+				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-birthday-cake" href="/calendar" role="button"> <spring:message code="app.page.celebrations"/></a>
 		</div>
 	</footer>
 </div>
