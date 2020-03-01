@@ -1,4 +1,5 @@
 com\myfamily\controller\HomeController.class
 com\myfamily\config\MvcConfiguration.class
+com\myfamily\config\SecurityConfig.class
 com\myfamily\Application.class
 com\myfamily\service\EmailSchedulerService.class

@@ -3,44 +3,103 @@
 <spring:message code=""/>
 
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
-<link media="all" type="text/css" rel="stylesheet" href="css/fullscreen.css">
-<link rel="stylesheet" href="css/all.css" >
 <link rel="stylesheet" href="css/mystyle.css" >
 
  <!-- Navigation -->
-  <nav id="mynavbar" class="navbar navbar-expand-lg navbar-dark static-top homebgcolor" >
-    <div class="container-fluid"  style="height:71% !important">
-      <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><spring:message code="app.page.home"/>
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.flipkart.com/"><spring:message code="app.page.shopping"/></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="https://www.sakshi.com/"><spring:message code="app.page.news"/></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
-          </li>
-  		 <li class="nav-item">
-            <a class="nav-link" href="#"><spring:message code="app.page.astrology"/></a>
-          </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/calendar"><spring:message code="app.page.celebrations"/></a>
-          </li>
-        </ul>
-  
-      </div>
-    </div>
-  </nav>
+ <nav class="navbar navbar-expand-lg navbar-dark indigo static-top homebgcolor">
+ <div class="container-fluid"  style="height:71% !important">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
+    <ul class="navbar-nav mr-auto mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><spring:message code="app.page.home"/> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="https://www.flipkart.com/"><spring:message code="app.page.shopping"/></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.sakshi.com/"><spring:message code="app.page.news"/></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
+       </li>
+  	 <li class="nav-item">
+       <a class="nav-link" href="#"><spring:message code="app.page.astrology"/></a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" href="/calendar"><spring:message code="app.page.celebrations"/></a>
+      </li>
+    </ul>
+  </div>
+  <div>
+   <ul class="navbar-nav mr-auto mt-lg-0">
+              <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+	<li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+	          aria-haspopup="true" aria-expanded="false">
+	          <i class="fas fa-user"></i> Profile </a>
+	        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+	          <a class="dropdown-item" href="#">My account</a>
+	           <a class="dropdown-item" href="#">Dashboard</a>
+	           <a class="dropdown-item" href="#">Settings</a>
+	          <a class="dropdown-item" href="#">Log out</a>
+	        </div>
+	      </li>
+      </ul>
+  </div>
+  </div>
+</nav>
    <!-- Page Content -->
   <div class="container-fluid makeScroll homeccbground">
       <div>
@@ -84,11 +143,11 @@
 	<footer class="page-footer font-small special-color-dark"
 		style="background-color: #2d6d3b !important">
 		<div class="row my-h-50"> 
-				<a class="btn btn-primary col homebgcolor my-padd-18" href="#" role="button"><spring:message code="app.page.home"/></a>
+				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-home glyphicon glyphicon-home" href="#" role="button"><spring:message code="app.page.home"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor my-padd-18" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
+				<a class="btn btn-primary col homebgcolor my-padd-18 fa fa-bars" href="/tasks" role="button"><spring:message code="app.page.task"/></a>
 				<span class="border border-success homeccbg"></span>
-				<a class="btn btn-primary col homebgcolor my-padd-18" href="/board" role="button"><spring:message code="app.page.awards"/></a>
+				<a class="btn btn-primary col homebgcolor my-padd-18" href="/calendar" role="button"><spring:message code="app.page.celebrations"/></a>
 		</div>
 	</footer>
 </div>
