@@ -23,7 +23,7 @@ public class Application extends SpringBootServletInitializer{
         SpringApplication.run(Application.class, args);
         LOG.info("application started ");
     }
-	@Override
+		@Override
     	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
     }
