@@ -35,7 +35,7 @@
                 <span class="badge badge-danger badge-counter my-padding-top">3+</span>
               </a>
               <!-- Dropdown - Alerts -->
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in homebgcolor" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
                 </h6>
@@ -79,7 +79,7 @@
 	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
 	          aria-haspopup="true" aria-expanded="false">
 	          <i class="fa fa-users"></i> Profile </a>
-	        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
+	        <div class="dropdown-menu dropdown-menu-right dropdown-info homebgcolor" aria-labelledby="navbarDropdownMenuLink-4">
 	          <a class="dropdown-item" href="#">My account</a>
 	           <a class="dropdown-item" href="#">Dashboard</a>
 	           <a class="dropdown-item" href="#">Settings</a>
