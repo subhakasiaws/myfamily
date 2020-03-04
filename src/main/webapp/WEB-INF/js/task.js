@@ -5,6 +5,7 @@ countTodos();
 
 // all done btn
 $("#checkAll").click(function(){
+	console.log("checkAll clicked-->")
     AllDone();
 });
 
@@ -52,7 +53,7 @@ function createTodo(text){
 //mark task as done
 function done(doneItem){
     var done = doneItem;
-    var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>';
+    var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>';
     $('#done-items').append(markup);
     $('.remove').remove();
 }
@@ -67,7 +68,7 @@ function AllDone(){
     
     // add to done
     for (i = 0; i < myArray.length; i++) {
-        $('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>');
+        $('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>');
     }
     
     // myArray

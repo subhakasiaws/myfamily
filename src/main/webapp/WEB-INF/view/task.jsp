@@ -14,7 +14,6 @@
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
 <link rel="stylesheet" href="css/mystyle.css" >
 <link rel="stylesheet" href="css/task.css" >
-<script src="js/task.js"></script>
 
 
 </head>
@@ -60,7 +59,7 @@
             <div class="todolist">
              <h1>Already Done</h1>
                 <ul id="done-items" class="list-unstyled">
-                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="fa fa-trash my-display-block"></span></button></li>
                     
                 </ul>
             </div>
@@ -70,6 +69,7 @@
   
   </div>
 <%@ include file="footer.jsp" %> 
+<script src="js/task.js"></script>
 <script type="text/javascript">
 $(window).on('load', function () { 
    var modelAttributeValue = '${name}';
