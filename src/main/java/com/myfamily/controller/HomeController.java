@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
 import com.myfamily.service.UserService;
  
 /**
- * @author ChandraThulasi
+ * @author Chandra
  *
  */
 @Controller
@@ -44,6 +45,9 @@ public class HomeController {
      ModelAndView model = new ModelAndView();
      model.addObject("name", name);
      model.setViewName("home");
+     User user = new User();
+     user.setName(name);
+     Boolean flag = userService.addUser(user);
      LOG.info("HomeController method home -end ");
      return model;
     }

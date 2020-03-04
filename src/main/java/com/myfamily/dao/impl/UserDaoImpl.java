@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.myfamily.dao.UserDao;
+import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
 
 @Component
@@ -28,6 +29,17 @@ public class UserDaoImpl implements UserDao {
 		Root contactRoot = criteria.from(UserDetails.class);
 		criteria.select(contactRoot);
 		return session.createQuery(criteria).getResultList();
+	}
+
+	@Override
+	public Boolean addUserDao(User user) {
+		boolean flag = false;
+		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		 session.save(user);
+		if(user.getId() >0) {
+			flag= true;
+		}
+		return flag;
 	}
 
 }
