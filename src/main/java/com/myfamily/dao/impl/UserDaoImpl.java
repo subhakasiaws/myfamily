@@ -7,6 +7,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,11 +36,32 @@ public class UserDaoImpl implements UserDao {
 	public Boolean addUserDao(User user) {
 		boolean flag = false;
 		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		 session.save(user);
+		User u = findByName(user.getName());
+		if(null == u) {
+			//session.update(user);
+			//nothing
+		}else {
+			session.save(user);
+		}
+		
+		 
 		if(user.getId() >0) {
 			flag= true;
 		}
 		return flag;
+	}
+	
+	public User findByName(String name) {
+	    User user = null;
+	    Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+	    Query query = session.createQuery("SELECT u FROM User u WHERE u.name=:name");
+	    query.setParameter("name", name);
+	    try {
+	        user = (User) query.getSingleResult();
+	    } catch (Exception e) {
+	        // Handle exception
+	    }
+	    return user;
 	}
 
 }
