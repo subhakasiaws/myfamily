@@ -43,7 +43,7 @@
   </div>
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
-$(window).on('load', function () { 
+$(document).ready(function() {
    var modelAttributeValue = '${name}';
    $("#name").val(modelAttributeValue);
    console.log("modelAttributeValue");

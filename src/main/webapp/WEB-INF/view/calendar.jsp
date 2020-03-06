@@ -231,7 +231,7 @@
 <%@ include file="footer.jsp" %> 
 <script src="js/myfamily.js"></script>
 <script type="text/javascript">
-$(window).on('load', function () { 
+$(document).ready(function() {
    var modelAttributeValue = '${name}';
    $("#name").val(modelAttributeValue);
    console.log("modelAttributeValue");
