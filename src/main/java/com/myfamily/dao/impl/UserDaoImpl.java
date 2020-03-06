@@ -36,15 +36,7 @@ public class UserDaoImpl implements UserDao {
 	public Boolean addUserDao(User user) {
 		boolean flag = false;
 		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-		User u = findByName(user.getName());
-		if(null == u) {
-			//session.update(user);
-			//nothing
-		}else {
-			session.save(user);
-		}
-		
-		 
+			session.saveOrUpdate(user);
 		if(user.getId() >0) {
 			flag= true;
 		}
