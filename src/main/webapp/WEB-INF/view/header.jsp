@@ -78,12 +78,12 @@
 	  <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
 	          aria-haspopup="true" aria-expanded="false">
-	          <i class="fa fa-users"></i> Profile </a>
+	          <i class="fa fa-users"></i><spring:message code="app.page.profile"/></a>
 	        <div class="dropdown-menu dropdown-menu-right dropdown-info homebgcolor" aria-labelledby="navbarDropdownMenuLink-4">
-	          <a class="dropdown-item" href="#">My account</a>
-	           <a class="dropdown-item" href="#">Dashboard</a>
-	           <a class="dropdown-item" href="#">Settings</a>
-	          <a class="dropdown-item" href="#">Log out</a>
+	          <a class="dropdown-item" href="#"><spring:message code="app.page.myaccount"/></a>
+	           <a class="dropdown-item" href="#"><spring:message code="app.page.dashboard"/></a>
+	           <a class="dropdown-item" href="#"><spring:message code="app.page.settings"/></a>
+	          <a class="dropdown-item" href="#"><spring:message code="app.page.logout"/></a>
 	        </div>
 	  </li>
    </ul>
