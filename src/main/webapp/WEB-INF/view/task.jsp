@@ -22,20 +22,17 @@
                     <ul id="sortable" class="list-unstyled">
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" />Take out the trash</label>
+                            <label> <input type="checkbox" value="" />Wake Up Early</label>
                         </div>
                     </li>
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" />Buy bread</label>
+                            <label> <input type="checkbox" value="" />Take out the trash</label>
                         </div>
                     </li>
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="" />Teach penguins to fly</label>
+                            <label> <input type="checkbox" value="" />Do house work</label>
                         </div>
                     </li>
                 </ul>
@@ -48,7 +45,7 @@
             <div class="todolist">
              <h1>Already Done</h1>
                 <ul id="done-items" class="list-unstyled">
-                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="fa fa-trash my-display-block"></span></button></li>
+                    <li>Sleeping a lot <button class="remove-item btn btn-default btn-xs pull-right"><span class="fa fa-trash my-display-block"></span></button></li>
                     
                 </ul>
             </div>
