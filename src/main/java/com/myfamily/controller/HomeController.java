@@ -56,7 +56,7 @@ public class HomeController {
     public String Calendar(){
         return "calendar";
     }
-    @RequestMapping("/tasks")
+    @RequestMapping(value = "/tasks", method = RequestMethod.GET)
     public String Task(){
         return "task";
     }

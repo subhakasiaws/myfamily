@@ -48,5 +48,18 @@ $(document).ready(function() {
    $("#name").val(modelAttributeValue);
    console.log("modelAttributeValue");
    console.log(modelAttributeValue);
+   
+   $("#myTask").click(function() {
+	   console.log("loding tasks");
+		$("body").load("/tasks");
+		history.pushState(null, null, "/task");
+   });
+   
+   $("#calendar").click(function() {
+	   console.log("loding calendar");
+		$("body").load("/calendar");
+		history.pushState(null, null, "/calendar");
+   });
+   
 });
 </script>

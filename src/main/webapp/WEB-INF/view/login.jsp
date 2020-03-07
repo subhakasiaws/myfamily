@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <title>My Family</title>
 <script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.i18n.properties.min.js"></script>
 <link href="css/bootstrap.min.css"	rel="stylesheet" />
@@ -29,6 +30,7 @@ $(document).ready(function() {
 					console.log("correct name");
 					$('#myLogin').addClass("was-validated");
 					$("body").load("/home", {name:temp});
+					history.pushState(null, null, "/home");
 					}
 					
 			return false;
@@ -89,8 +91,7 @@ $(document).ready(function() {
 
 						</div>
 						<div class="form-group">
-							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"
-								class="btn float-right login_btn">
+							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"	class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>

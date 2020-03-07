@@ -1,21 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <spring:message code=""/>
-<!DOCTYPE html>
-<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>My Family</title>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.i18n.properties.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<link href="css/bootstrap.min.css"	rel="stylesheet" />
-<link href="css/font-awesome.min.css"	rel="stylesheet" />	
-<link rel="stylesheet" href="css/mystyle.css" >
 <link rel="stylesheet" href="css/task.css" >
-
-
+<script src="js/task.js"></script>
 </head>
 <%@ include file="header.jsp" %> 
    <!-- Page Content -->
@@ -68,13 +57,25 @@
       </div>
   
   </div>
-<%@ include file="footer.jsp" %> 
-<script src="js/task.js"></script>
+<%@ include file="footer.jsp" %>
 <script type="text/javascript">
 $(document).ready(function() {
    var modelAttributeValue = '${name}';
    $("#name").val(modelAttributeValue);
    console.log("modelAttributeValue");
    console.log(modelAttributeValue);
+   
+   $("#home").click(function() {
+	   console.log("loding home");
+	   var temp = "chandra";
+		$("body").load("/home",{name:temp});
+		history.pushState(null, null, "/home");
+   });
+   
+   $("#calendar").click(function() {
+	   console.log("loding calendar");
+		$("body").load("/calendar");
+		history.pushState(null, null, "/calendar");
+   });
 });
 </script>
