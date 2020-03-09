@@ -41,10 +41,10 @@ public class MvcConfiguration implements WebMvcConfigurer{
     
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-      registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
       registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/");
       registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/");
-      registry.addResourceHandler("/resources/**").addResourceLocations("/statics/")
+      registry.addResourceHandler("/resources/**").addResourceLocations("classpath:/statics/");
+      registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/")
       .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
     @Bean("messageSource")

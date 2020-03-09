@@ -7,6 +7,7 @@ countTodos();
 $("#checkAll").click(function(){
 	console.log("checkAll clicked-->")
     AllDone();
+	$('#pointscredit').modal("show");
 });
 
 //create todo
