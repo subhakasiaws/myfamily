@@ -101,11 +101,11 @@ border-color: #a9cfd5!important
 .homeccbground{
 background-color: #a9cfd5!important
 }
-.makeScroll{
+/* .makeScroll{
   height:100%;
   overflow-y: scroll;
   background-color: lightblue;
-}
+} */
 .t-5{
 	margin-top: 5px
 }

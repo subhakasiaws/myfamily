@@ -13,14 +13,18 @@
   <div class="container-fluid makeScroll homeccbground">
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
-        
-<ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#leaderBoard">LeaderBoard</a></li>
-    <li><a data-toggle="tab" href="#weeklyWinner">WeeklyWinner</a></li>
-  </ul>
 
-  <div class="tab-content">
-    <div id="leaderBoard" class="tab-pane fade in active">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+			<a class="nav-link active" data-toggle="tab" href="#leaderBoard">LeaderBoard</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" data-toggle="tab" href="#weeklyWinner">WeeklyWinner</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+    <div id="leaderBoard" class="container tab-pane active">
 <table class="table">
   <thead>
     <tr>
@@ -48,9 +52,23 @@
   </tbody>
 </table>
     </div>
-    <div id="weeklyWinner" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="weeklyWinner" class="container tab-pane fade">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Rank</th>
+      <th scope="col">Name</th>
+      <th scope="col">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Chandra</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
     </div>
   </div>
   
