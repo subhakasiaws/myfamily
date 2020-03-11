@@ -60,14 +60,11 @@
 					
                     <div class="modal-body">
                        
-						<div class="thank-you-pop">
+						<div class="thank-you-pop text-center">
 							<img src="images/Green-Round-Tick.png" alt="">
-							<h1>Thank You!</h1>
-							<p>Your submission is received and we will contact you soon</p>
-							<h3 class="cupon-pop">Your Id: <span>12345</span></h3>
-							
+							<h1>Congratulations!</h1>
+							<p>You earned <strong><span class="task-points"></span></strong> points</p>
  						</div>
-                         
                     </div>
 					
                 </div>

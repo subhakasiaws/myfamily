@@ -6,8 +6,12 @@ countTodos();
 // all done btn
 $("#checkAll").click(function(){
 	console.log("checkAll clicked-->")
-    AllDone();
+   
 	$('#pointscredit').modal("show");
+	var total=$('.count-todos').html();
+	console.log(total);
+	$('.task-points').html(total+'0');
+	 AllDone();
 });
 
 //create todo
@@ -25,6 +29,7 @@ $('.add-todo').on('keypress',function (e) {
 });
 // mark task as done
 $('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
+	console.log('todolist change');
     if($(this).prop('checked')){
         var doneItem = $(this).parent().parent().find('label').text();
         $(this).parent().parent().parent().addClass('remove');
@@ -57,6 +62,13 @@ function done(doneItem){
     var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>';
     $('#done-items').append(markup);
     $('.remove').remove();
+    console.log('done task');
+    if($("#sortable li").length == 0){
+    	$('#checkAll').attr("disabled", true);
+    }
+    
+    $('#pointscredit').modal("show");
+    $('.task-points').html(10);
 }
 
 //mark all tasks as done
@@ -74,6 +86,7 @@ function AllDone(){
     
     // myArray
     $('#sortable li').remove();
+    $('#checkAll').attr("disabled", true);
     countTodos();
 }
 
