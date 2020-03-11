@@ -2,7 +2,8 @@ package com.myfamily.dao.impl;
 
 import java.util.List;
 
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -10,18 +11,20 @@ import javax.persistence.criteria.Root;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.myfamily.dao.UserDao;
 import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
 
 @Component
+@Transactional
 public class UserDaoImpl implements UserDao {
 
-	@Autowired
-	private EntityManagerFactory entityManagerFactory;
+	@PersistenceContext
+	private EntityManager entityManagerFactory;
 
 	public List getUserDetails() {
 		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
@@ -33,10 +36,10 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public Boolean addUserDao(User user) {
 		boolean flag = false;
-		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
-			session.saveOrUpdate(user);
+		entityManagerFactory.persist(user);
 		if(user.getId() >0) {
 			flag= true;
 		}
