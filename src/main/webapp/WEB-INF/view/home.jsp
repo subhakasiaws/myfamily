@@ -14,7 +14,14 @@
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
         
-        <table class="table">
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#leaderBoard">LeaderBoard</a></li>
+    <li><a data-toggle="tab" href="#weeklyWinner">WeeklyWinner</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="leaderBoard" class="tab-pane fade in active">
+<table class="table">
   <thead>
     <tr>
       <th scope="col">Rank</th>
@@ -40,6 +47,13 @@
     </tr>
   </tbody>
 </table>
+    </div>
+    <div id="weeklyWinner" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+  
       </div>
   
   </div>
