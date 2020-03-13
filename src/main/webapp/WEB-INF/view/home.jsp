@@ -101,7 +101,7 @@ $(document).ready(function() {
 	   var url = 'whatsapp://send?text=';
 
 	   //define the message text
-	   var text = 'Hey check out this awesome blog at https://madole.xyz';
+	   var text = 'Chandra is the Winner of this Week from Our Family';
 
 	   //encode the text
 	   var encodedText = encodeURIComponent(text);
