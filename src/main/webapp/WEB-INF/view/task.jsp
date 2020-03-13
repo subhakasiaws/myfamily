@@ -8,7 +8,7 @@
 </head>
 <%@ include file="header.jsp" %> 
    <!-- Page Content -->
-  <div class="container-fluid makeScroll homeccbground">
+  <div class="container-fluid makeScroll homeccbground margin-b-100">
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
 <div class="row">

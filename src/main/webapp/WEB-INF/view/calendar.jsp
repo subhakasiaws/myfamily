@@ -15,7 +15,7 @@
    </marquee>
 	</div>
 	
-  <div class="container-fluid makeScroll">
+  <div class="container-fluid makeScroll margin-b-100">
       <div class="col-lg-12 text-center">
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
       </div>
