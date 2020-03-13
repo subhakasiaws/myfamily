@@ -75,7 +75,7 @@
               </div>
          </li>  -->
 	  <li class="nav-item">
-	        <a class="nav-link" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
+	        <a class="nav-link whitesmokec" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
 	          <spring:message code="app.page.profile"/>
 	          <span class="badge badge-danger badge-counter my-padding-top">100</span></a>
 	       <!--  <div class="dropdown-menu dropdown-menu-right dropdown-info homebgcolor" aria-labelledby="navbarDropdownMenuLink-4">
