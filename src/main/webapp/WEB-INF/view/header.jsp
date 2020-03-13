@@ -27,14 +27,13 @@
   <div>
   
    <ul class="navbar-nav mr-auto mt-lg-0">
-              <!-- Nav Item - Alerts -->
-        <!--  <li class="nav-item dropdown no-arrow mx-1">
+              <!-- Nav Item - Alerts 
+           <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-bell"></i>
-                Counter - Alerts
+                Notifications
                 <span class="badge badge-danger badge-counter my-padding-top">3+</span>
               </a>
-              Dropdown - Alerts
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in homebgcolor" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
@@ -74,17 +73,15 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-         </li> -->
-	  <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-	          aria-haspopup="true" aria-expanded="false">
-	          <i class="fa fa-users"></i><spring:message code="app.page.profile"/></a>
-	        <div class="dropdown-menu dropdown-menu-right dropdown-info homebgcolor" aria-labelledby="navbarDropdownMenuLink-4">
-	          <a class="dropdown-item" href="#"><spring:message code="app.page.myaccount"/></a>
+         </li>  -->
+	  <li class="nav-item">
+	        <a class="nav-link" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
+	          <spring:message code="app.page.profile"/>
+	          <span class="badge badge-danger badge-counter my-padding-top">100</span></a>
+	       <!--  <div class="dropdown-menu dropdown-menu-right dropdown-info homebgcolor" aria-labelledby="navbarDropdownMenuLink-4">
 	           <a class="dropdown-item" href="#"><spring:message code="app.page.dashboard"/></a>
-	           <a class="dropdown-item" href="#"><spring:message code="app.page.settings"/></a>
 	          <a class="dropdown-item" href="#"><spring:message code="app.page.logout"/></a>
-	        </div>
+	        </div> -->
 	  </li>
    </ul>
  </div>

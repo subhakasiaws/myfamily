@@ -80,7 +80,7 @@ $(document).ready(function() {
 		<div class="d-flex justify-content-center">
 			<div class="card  m-10" >
 				<div class="card-header font20">
-					<h3><spring:message code="app.page.title"/></h3>
+					<h4><i class="fa fa-users"></i> <spring:message code="app.page.title"/></h4>
 				</div>
 				<div class="card-body">
 					<form>
