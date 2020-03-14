@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.myfamily.dao.UserDao;
+import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
 
@@ -57,6 +58,12 @@ public class UserDaoImpl implements UserDao {
 	        // Handle exception
 	    }
 	    return user;
+	}
+
+	@Override
+	public Boolean creaditPointsDao(Leaderboard ll) {
+		entityManagerFactory.persist(ll);
+		return true;
 	}
 
 }

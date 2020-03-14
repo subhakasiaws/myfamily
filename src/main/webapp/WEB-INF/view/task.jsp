@@ -10,7 +10,7 @@
    <!-- Page Content -->
   <div class="container-fluid makeScroll homeccbground margin-b-100">
       <div>
-        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
 <div class="row">
         <div class="col-md-6">
             <div class="todolist not-done">
@@ -54,8 +54,8 @@
         <div class="modal fade" id="pointscredit" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label=""><span>×</span></button>
+                    <div class="modal-header align-popup-div">
+                        <button type="button" class="close align-popup-btn" data-dismiss="modal" aria-label=""><span>×</span></button>
                      </div>
 					
                     <div class="modal-body">
@@ -77,7 +77,7 @@
 <%@ include file="footer.jsp" %>
 <script type="text/javascript">
 $(document).ready(function() {
-   var modelAttributeValue = '${name}';
+   var modelAttributeValue = '${param.name}';
    $("#name").val(modelAttributeValue);
    console.log("modelAttributeValue");
    console.log(modelAttributeValue);

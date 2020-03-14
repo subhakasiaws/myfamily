@@ -10,9 +10,17 @@ $("#checkAll").click(function(){
 	$('#pointscredit').modal("show");
 	var total=$('.count-todos').html();
 	console.log(total);
-	$('.task-points').html(total+'0');
+	$('.task-points').html(total*10);
 	 AllDone();
+	 submitPost($('#name').val(),total*10);
 });
+
+function submitPost(name,points){
+	$.get("creditPoints", { name: name, points: points })
+	  .done(function( data ) {
+	    alert( "Data Loaded: " + data );
+	  });
+}
 
 //create todo
 $('.add-todo').on('keypress',function (e) {

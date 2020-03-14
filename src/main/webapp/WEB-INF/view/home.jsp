@@ -86,7 +86,7 @@ $(document).ready(function() {
    
    $("#myTask").click(function() {
 	   console.log("loding tasks");
-		$("body").load("/tasks");
+		$("body").load("/tasks?name=Chandra");
 		history.pushState(null, null, "/task");
    });
    

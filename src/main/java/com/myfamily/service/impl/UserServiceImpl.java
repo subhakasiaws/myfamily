@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myfamily.dao.UserDao;
+import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
 import com.myfamily.service.UserService;
@@ -28,6 +29,11 @@ public class UserServiceImpl implements UserService {
 	public Boolean addUser(User user) {
 		
 		return userDao.addUserDao(user);
+	}
+
+	@Override
+	public Boolean creaditPoints(Leaderboard ll) {
+		return userDao.creaditPointsDao(ll);
 	}
 
 }
