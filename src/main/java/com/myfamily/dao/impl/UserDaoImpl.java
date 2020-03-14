@@ -66,4 +66,10 @@ public class UserDaoImpl implements UserDao {
 		return true;
 	}
 
+	@Override
+	public List<Leaderboard> findAll() {
+		return entityManagerFactory.createQuery("select e from Leaderboard as e where e.name != null",
+				Leaderboard.class).getResultList();
+	}
+
 }

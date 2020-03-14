@@ -17,4 +17,6 @@ public interface UserService {
 
 	Boolean creaditPoints(Leaderboard ll);
 
+	List<Leaderboard> findAll();
+
 }

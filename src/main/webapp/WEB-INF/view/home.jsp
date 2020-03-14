@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <spring:message code=""/>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,7 +13,7 @@
    <!-- Page Content -->
   <div class="container-fluid makeScroll homeccbground">
       <div>
-        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${name}'>${name}</label> </h1>
 
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
@@ -34,21 +35,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Chandra</td>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Thulasi</td>
-      <td>50</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Sankara</td>
-      <td>50</td>
-    </tr>
+			<c:forEach var="user" items="${users}">
+				<tr>
+					<td>${user.id}</td>
+					<td>${user.name}</td>
+					<td>${user.points}</td>
+				</tr>
+			</c:forEach>
   </tbody>
 </table>
     </div>
@@ -79,14 +72,13 @@
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
 $(document).ready(function() {
-   var modelAttributeValue = '${name}';
-   $("#name").val(modelAttributeValue);
-   console.log("modelAttributeValue");
-   console.log(modelAttributeValue);
+   var loginName = '${name}';
+   $("#name").val(loginName);
+   console.log("loginName:"+loginName);
    
    $("#myTask").click(function() {
 	   console.log("loding tasks");
-		$("body").load("/tasks?name=Chandra");
+		$("body").load("/tasks?name="+loginName);
 		history.pushState(null, null, "/task");
    });
    

@@ -45,12 +45,15 @@ public class HomeController {
     public ModelAndView home(String name) {
     
     LOG.info("HomeController method home-started "+name);
+    User user = new User();
+    user.setName(name);
+    Boolean flag = userService.addUser(user);
+    
      ModelAndView model = new ModelAndView();
      model.addObject("name", name);
+     model.addObject("users", userService.findAll());
      model.setViewName("home");
-     User user = new User();
-     user.setName(name);
-     Boolean flag = userService.addUser(user);
+
      LOG.info("HomeController method home -end ");
      return model;
     }
@@ -76,11 +79,11 @@ public class HomeController {
 	}
 	
     @RequestMapping(path="/creditPoints", method= RequestMethod.GET)
-    public String creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
+    public ResponseEntity creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
     LOG.info("HomeController method creditPoints ");
     System.out.println(leaderboard); 
     userService.creaditPoints(leaderboard);
      LOG.info("HomeController method creditPoints -end ");
-     return "success";
+     return new ResponseEntity(leaderboard.getPoints(),HttpStatus.OK);
     }
 }

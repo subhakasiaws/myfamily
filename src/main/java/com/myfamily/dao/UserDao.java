@@ -14,4 +14,6 @@ public interface UserDao {
 
 	Boolean creaditPointsDao(Leaderboard ll);
 
+	List<Leaderboard> findAll();
+
 }

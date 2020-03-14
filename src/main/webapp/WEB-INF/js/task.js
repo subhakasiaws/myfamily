@@ -18,7 +18,8 @@ $("#checkAll").click(function(){
 function submitPost(name,points){
 	$.get("creditPoints", { name: name, points: points })
 	  .done(function( data ) {
-	    alert( "Data Loaded: " + data );
+	    //alert( "Data Loaded: " + data );
+	    $('#totalPoints').text(data);
 	  });
 }
 

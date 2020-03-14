@@ -36,4 +36,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.creaditPointsDao(ll);
 	}
 
+	@Override
+	public List<Leaderboard> findAll() {
+		return userDao.findAll();
+	}
+
 }
