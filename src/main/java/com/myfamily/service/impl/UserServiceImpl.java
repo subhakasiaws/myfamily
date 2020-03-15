@@ -41,4 +41,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAll();
 	}
 
+	@Override
+	public Boolean updateLeaderboard(Leaderboard leaderboard) {
+		return userDao.updateLeaderboardDao(leaderboard);
+	}
+
 }

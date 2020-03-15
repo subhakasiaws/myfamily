@@ -19,4 +19,6 @@ public interface UserService {
 
 	List<Leaderboard> findAll();
 
+	Boolean updateLeaderboard(Leaderboard leaderboard);
+
 }

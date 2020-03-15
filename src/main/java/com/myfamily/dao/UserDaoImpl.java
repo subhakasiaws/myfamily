@@ -1,4 +1,4 @@
-package com.myfamily.dao.impl;
+package com.myfamily.dao;
 
 import java.util.List;
 
@@ -25,10 +25,10 @@ import com.myfamily.model.UserDetails;
 public class UserDaoImpl implements UserDao {
 
 	@PersistenceContext
-	private EntityManager entityManagerFactory;
+	private EntityManager entityManager;
 
 	public List getUserDetails() {
-		Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+		Session session = entityManager.unwrap(SessionFactory.class).openSession();
 		CriteriaBuilder builder = session.getCriteriaBuilder();
 		CriteriaQuery criteria = builder.createQuery(UserDetails.class);
 		Root contactRoot = criteria.from(UserDetails.class);
@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao {
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public Boolean addUserDao(User user) {
 		boolean flag = false;
-		entityManagerFactory.persist(user);
+		entityManager.persist(user);
 		if(user.getId() >0) {
 			flag= true;
 		}
@@ -49,7 +49,7 @@ public class UserDaoImpl implements UserDao {
 	
 	public User findByName(String name) {
 	    User user = null;
-	    Session session = entityManagerFactory.unwrap(SessionFactory.class).openSession();
+	    Session session = entityManager.unwrap(SessionFactory.class).openSession();
 	    Query query = session.createQuery("SELECT u FROM User u WHERE u.name=:name");
 	    query.setParameter("name", name);
 	    try {
@@ -62,13 +62,20 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public Boolean creaditPointsDao(Leaderboard ll) {
-		entityManagerFactory.persist(ll);
+		entityManager.persist(ll);
+		return true;
+	}
+	
+	@Override
+	public Boolean updateLeaderboardDao(Leaderboard ll) {
+		entityManager.merge(ll);
 		return true;
 	}
 
 	@Override
+	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public List<Leaderboard> findAll() {
-		return entityManagerFactory.createQuery("select e from Leaderboard as e where e.name != null",
+		return entityManager.createQuery("select e from Leaderboard as e where e.name != null",
 				Leaderboard.class).getResultList();
 	}
 

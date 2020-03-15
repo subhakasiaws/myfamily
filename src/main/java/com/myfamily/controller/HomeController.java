@@ -6,7 +6,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,15 +41,21 @@ public class HomeController {
     }
     
     @RequestMapping(value="/home", method=RequestMethod.POST)
-    public ModelAndView home(String name) {
+    public ModelAndView home(String name, Boolean isFromLogin) {
     
     LOG.info("HomeController method home-started "+name);
-    User user = new User();
-    user.setName(name);
-    Boolean flag = userService.addUser(user);
-    
-     ModelAndView model = new ModelAndView();
-     model.addObject("name", name);
+   
+    ModelAndView model = new ModelAndView();
+    if(isFromLogin) {
+    	User user = new User();
+        user.setName(name);
+        userService.addUser(user);
+        model.addObject("name", name);
+        Leaderboard ll = new Leaderboard();
+        ll.setName(name);
+        ll.setPoints(0);
+        userService.creaditPoints(ll);
+    }
      model.addObject("users", userService.findAll());
      model.setViewName("home");
 
@@ -82,7 +87,7 @@ public class HomeController {
     public ResponseEntity creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
     LOG.info("HomeController method creditPoints ");
     System.out.println(leaderboard); 
-    userService.creaditPoints(leaderboard);
+    userService.updateLeaderboard(leaderboard);
      LOG.info("HomeController method creditPoints -end ");
      return new ResponseEntity(leaderboard.getPoints(),HttpStatus.OK);
     }

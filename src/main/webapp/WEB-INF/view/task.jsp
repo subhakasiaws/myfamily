@@ -85,7 +85,7 @@ $(document).ready(function() {
    $("#home").click(function() {
 	   console.log("loding home");
 	   var temp = "Chandra";
-		$("body").load("/home",{name:temp});
+		$("body").load("/home",{name:temp,isFromLogin:false});
 		history.pushState(null, null, "/home");
    });
    

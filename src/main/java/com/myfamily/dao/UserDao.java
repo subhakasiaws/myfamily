@@ -16,4 +16,6 @@ public interface UserDao {
 
 	List<Leaderboard> findAll();
 
+	Boolean updateLeaderboardDao(Leaderboard ll);
+
 }
