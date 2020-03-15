@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.myfamily.config.MyFamilyUtil;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
-import com.myfamily.model.UserDetails;
 import com.myfamily.service.UserService;
  
 /**
@@ -54,16 +53,19 @@ public class HomeController {
      if(isFromLogin) {
      	User user = new User();
          user.setName(name);
-         userService.addUser(user);
+        Integer id = userService.addUser(user);
          model.addObject("name", name);
          Leaderboard ll = new Leaderboard();
          ll.setName(name);
          ll.setPoints(0);
-         Integer id = userService.creaditPoints(ll);
-         model.addObject("userId", id);
+         ll.setUserId(id);
+         
+         Leaderboard leaderboard = userService.creaditPoints(ll);
+         
+         model.addObject("userId", leaderboard.getId());
          List<Leaderboard> userList= userService.findAll();
          model.addObject("users",userList);
-         model.addObject("points",ll.getPoints());
+         model.addObject("points",leaderboard.getPoints());
      }else {
          List<Leaderboard> userList= userService.findAll();
          model.addObject("users",userList);
@@ -88,13 +90,6 @@ public class HomeController {
         return "board";
     }
     
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ResponseEntity<List<UserDetails>> userDetails() {
-        
-		List<UserDetails> userDetails = userService.getUserDetails();
-		return new ResponseEntity<List<UserDetails>>(userDetails, HttpStatus.OK);
-	}
-	
     @RequestMapping(path="/creditPoints", method= RequestMethod.GET)
     public ResponseEntity creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
     LOG.info("HomeController method creditPoints ");

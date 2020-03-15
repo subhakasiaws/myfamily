@@ -19,6 +19,7 @@ $("#checkAll").click(function(){
 	console.log("ftotal: "+ftotal);
 	// $("#totalPoints").html(ftotal);
 	 AllDone();
+	 $("#taskNotification").remove();
 	 submitPost($('#name').val(),$('#userId').val(),total);
 	
 });

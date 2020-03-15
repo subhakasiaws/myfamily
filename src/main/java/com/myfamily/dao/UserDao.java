@@ -4,15 +4,12 @@ import java.util.List;
 
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
-import com.myfamily.model.UserDetails;
 
 public interface UserDao {
 	
-	List<UserDetails> getUserDetails();
+	Integer addUserDao(User user);
 
-	Boolean addUserDao(User user);
-
-	Integer creaditPointsDao(Leaderboard ll);
+	Leaderboard creaditPointsDao(Leaderboard ll);
 
 	List<Leaderboard> findAll();
 

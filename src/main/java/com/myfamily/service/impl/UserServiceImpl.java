@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.myfamily.dao.UserDao;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
-import com.myfamily.model.UserDetails;
 import com.myfamily.service.UserService;
 
 @Service
@@ -20,19 +19,13 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public List<UserDetails> getUserDetails() {
-		return userDao.getUserDetails();
-
-	}
-
 	@Override
-	public Boolean addUser(User user) {
-		
+	public Integer addUser(User user) {
 		return userDao.addUserDao(user);
 	}
 
 	@Override
-	public Integer creaditPoints(Leaderboard ll) {
+	public Leaderboard creaditPoints(Leaderboard ll) {
 		return userDao.creaditPointsDao(ll);
 	}
 

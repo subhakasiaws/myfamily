@@ -97,6 +97,7 @@ $(document).ready(function() {
    
    $("#calendar").click(function() {
 	   console.log("loding calendar");
+	   points = +$('#totalPoints').text();
 		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });

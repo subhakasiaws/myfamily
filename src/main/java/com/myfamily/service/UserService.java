@@ -7,15 +7,12 @@ import java.util.List;
 
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
-import com.myfamily.model.UserDetails;
 
 public interface UserService {
 
-	List<UserDetails> getUserDetails();
+	Integer addUser(User user);
 
-	Boolean addUser(User user);
-
-	Integer creaditPoints(Leaderboard ll);
+	Leaderboard creaditPoints(Leaderboard ll);
 
 	List<Leaderboard> findAll();
 

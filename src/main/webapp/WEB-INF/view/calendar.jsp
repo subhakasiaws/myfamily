@@ -17,7 +17,8 @@
 	
   <div class="container-fluid makeScroll margin-b-100">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" >${name}</label> </h1>
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
+         <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
       </div>
       		<div class="row" >
 			<div class="col">
@@ -119,9 +120,11 @@ $(document).ready(function() {
    
    $("#myTask").click(function() {
 	   console.log("loding tasks");
-		$("body").load("/tasks");
+		$("body").load("/tasks?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });
+   
+   $("#celebrNotification").remove();
    
 });
 
