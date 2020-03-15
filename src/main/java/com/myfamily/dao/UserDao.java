@@ -12,10 +12,10 @@ public interface UserDao {
 
 	Boolean addUserDao(User user);
 
-	Boolean creaditPointsDao(Leaderboard ll);
+	Integer creaditPointsDao(Leaderboard ll);
 
 	List<Leaderboard> findAll();
 
-	Boolean updateLeaderboardDao(Leaderboard ll);
+	Integer updateLeaderboardDao(Leaderboard ll);
 
 }

@@ -15,10 +15,10 @@ public interface UserService {
 
 	Boolean addUser(User user);
 
-	Boolean creaditPoints(Leaderboard ll);
+	Integer creaditPoints(Leaderboard ll);
 
 	List<Leaderboard> findAll();
 
-	Boolean updateLeaderboard(Leaderboard leaderboard);
+	Integer updateLeaderboard(Leaderboard leaderboard);
 
 }

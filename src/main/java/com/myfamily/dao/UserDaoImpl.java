@@ -61,15 +61,19 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public Boolean creaditPointsDao(Leaderboard ll) {
+	public Integer creaditPointsDao(Leaderboard ll) {
 		entityManager.persist(ll);
-		return true;
+		entityManager.flush();
+		return ll.getId();
 	}
 	
 	@Override
-	public Boolean updateLeaderboardDao(Leaderboard ll) {
-		entityManager.merge(ll);
-		return true;
+	public Integer updateLeaderboardDao(Leaderboard ll) {
+		Leaderboard leaderBoard = entityManager.find(Leaderboard.class,ll.getUserId());
+		leaderBoard.setPoints(leaderBoard.getPoints()+ll.getPoints());
+		entityManager.merge(leaderBoard);
+		entityManager.flush();
+		return leaderBoard.getPoints();
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myfamily.config.MyFamilyUtil;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 import com.myfamily.model.UserDetails;
@@ -41,24 +42,35 @@ public class HomeController {
     }
     
     @RequestMapping(value="/home", method=RequestMethod.POST)
-    public ModelAndView home(String name, Boolean isFromLogin) {
+    public ModelAndView home(String name,Integer userId, Boolean isFromLogin) {
     
     LOG.info("HomeController method home-started "+name);
    
     ModelAndView model = new ModelAndView();
-    if(isFromLogin) {
-    	User user = new User();
-        user.setName(name);
-        userService.addUser(user);
-        model.addObject("name", name);
-        Leaderboard ll = new Leaderboard();
-        ll.setName(name);
-        ll.setPoints(0);
-        userService.creaditPoints(ll);
-    }
-     model.addObject("users", userService.findAll());
+     model.addObject("userId", userId);
+     model.addObject("name", name);
      model.setViewName("home");
 
+     if(isFromLogin) {
+     	User user = new User();
+         user.setName(name);
+         userService.addUser(user);
+         model.addObject("name", name);
+         Leaderboard ll = new Leaderboard();
+         ll.setName(name);
+         ll.setPoints(0);
+         Integer id = userService.creaditPoints(ll);
+         model.addObject("userId", id);
+         List<Leaderboard> userList= userService.findAll();
+         model.addObject("users",userList);
+         model.addObject("points",ll.getPoints());
+     }else {
+         List<Leaderboard> userList= userService.findAll();
+         model.addObject("users",userList);
+         Leaderboard ll = MyFamilyUtil.getCurrentUser(userList,name);
+         model.addObject("points",ll.getPoints());
+     }
+     
      LOG.info("HomeController method home -end ");
      return model;
     }
@@ -87,8 +99,9 @@ public class HomeController {
     public ResponseEntity creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
     LOG.info("HomeController method creditPoints ");
     System.out.println(leaderboard); 
-    userService.updateLeaderboard(leaderboard);
+    Integer totalPoints = userService.updateLeaderboard(leaderboard);
+    System.out.println(totalPoints); 
      LOG.info("HomeController method creditPoints -end ");
-     return new ResponseEntity(leaderboard.getPoints(),HttpStatus.OK);
+     return new ResponseEntity(totalPoints,HttpStatus.OK);
     }
 }

@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Boolean creaditPoints(Leaderboard ll) {
+	public Integer creaditPoints(Leaderboard ll) {
 		return userDao.creaditPointsDao(ll);
 	}
 
@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Boolean updateLeaderboard(Leaderboard leaderboard) {
+	public Integer updateLeaderboard(Leaderboard leaderboard) {
 		return userDao.updateLeaderboardDao(leaderboard);
 	}
 

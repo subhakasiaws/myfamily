@@ -75,16 +75,21 @@ $(document).ready(function() {
    var loginName = '${name}';
    $("#name").val(loginName);
    console.log("loginName:"+loginName);
+   var userId = '${userId}';
+   console.log("userId:"+userId);
+   var points = '${points}';
+   console.log("points:"+points);
+   $("#totalPoints").text(points);
    
    $("#myTask").click(function() {
 	   console.log("loding tasks");
-		$("body").load("/tasks?name="+loginName);
+		$("body").load("/tasks?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });
    
    $("#calendar").click(function() {
 	   console.log("loding calendar");
-		$("body").load("/calendar");
+		$("body").load("/calendar?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
    

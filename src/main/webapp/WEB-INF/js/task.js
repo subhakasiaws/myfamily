@@ -8,15 +8,23 @@ $("#checkAll").click(function(){
 	console.log("checkAll clicked-->")
    
 	$('#pointscredit').modal("show");
-	var total=$('.count-todos').html();
-	console.log(total);
-	$('.task-points').html(total*10);
+	var total=+$('.count-todos').html();
+	console.log("total: "+total);
+	var expoints = +$('#totalPoints').html();
+	console.log("expoints: "+expoints);
+	total =total*10;
+	console.log("total*10: "+total);
+	var ftotal= (expoints+total);
+	$('.task-points').html(total);
+	console.log("ftotal: "+ftotal);
+	// $("#totalPoints").html(ftotal);
 	 AllDone();
-	 submitPost($('#name').val(),total*10);
+	 submitPost($('#name').val(),$('#userId').val(),total);
+	
 });
 
-function submitPost(name,points){
-	$.get("creditPoints", { name: name, points: points })
+function submitPost(name,userId,points){
+	$.get("creditPoints", { name: name,userId: userId, points: points })
 	  .done(function( data ) {
 	    //alert( "Data Loaded: " + data );
 	    $('#totalPoints').text(data);

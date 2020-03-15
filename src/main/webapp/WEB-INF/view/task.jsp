@@ -11,6 +11,7 @@
   <div class="container-fluid makeScroll homeccbground margin-b-100">
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
+        <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
 <div class="row">
         <div class="col-md-6">
             <div class="todolist not-done">
@@ -77,21 +78,26 @@
 <%@ include file="footer.jsp" %>
 <script type="text/javascript">
 $(document).ready(function() {
-   var modelAttributeValue = '${param.name}';
-   $("#name").val(modelAttributeValue);
-   console.log("modelAttributeValue");
-   console.log(modelAttributeValue);
+   var userName = '${param.name}';
+   $("#name").val(userName);
+   console.log("userName:"+userName);
+   var userId = '${param.userId}';
+   $("#userId").val(userId);
+   console.log(userId);
+   var points = '${param.points}';
+   $('#totalPoints').text(points);
+   console.log("points "+points);
    
    $("#home").click(function() {
 	   console.log("loding home");
-	   var temp = "Chandra";
-		$("body").load("/home",{name:temp,isFromLogin:false});
+	   var temp = userName;
+		$("body").load("/home",{name:temp,userId:userId,isFromLogin:false});
 		history.pushState(null, null, "/home");
    });
    
    $("#calendar").click(function() {
 	   console.log("loding calendar");
-		$("body").load("/calendar");
+		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
 });

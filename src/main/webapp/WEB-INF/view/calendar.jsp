@@ -99,15 +99,21 @@
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
 $(document).ready(function() {
-   var modelAttributeValue = '${name}';
-   $("#name").val(modelAttributeValue);
-   console.log("modelAttributeValue");
-   console.log(modelAttributeValue);
+
+	   var userName = '${param.name}';
+	   $("#name").val(userName);
+	   console.log("userName:"+userName);
+	   var userId = '${param.userId}';
+	   $("#userId").val(userId);
+	   console.log(userId);
+	   var points = '${param.points}';
+	   $('#totalPoints').text(points);
+	   console.log("points "+points);
    
    $("#home").click(function() {
 	   console.log("loding home");
-	   var temp = "Chandra";
-		$("body").load("/home",{name:temp,isFromLogin:false});
+	   var temp = userName;
+		$("body").load("/home",{name:temp,userId:userId,isFromLogin:false});
 		history.pushState(null, null, "/home");
    });
    
