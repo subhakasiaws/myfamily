@@ -7,9 +7,6 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
     <ul class="navbar-nav mr-auto mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><spring:message code="app.page.home"/> <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
        <a class="nav-link" href="https://www.flipkart.com/"><spring:message code="app.page.shopping"/></a>
       </li>

@@ -66,11 +66,13 @@ public class HomeController {
          List<Leaderboard> userList= userService.findAll();
          model.addObject("users",userList);
          model.addObject("points",leaderboard.getPoints());
+         model.addObject("isFromLogin",true);
      }else {
          List<Leaderboard> userList= userService.findAll();
          model.addObject("users",userList);
          Leaderboard ll = MyFamilyUtil.getCurrentUser(userList,name);
          model.addObject("points",ll.getPoints());
+         model.addObject("isFromLogin",false);
      }
      
      LOG.info("HomeController method home -end ");

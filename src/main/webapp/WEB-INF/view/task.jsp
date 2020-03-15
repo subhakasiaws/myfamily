@@ -101,5 +101,8 @@ $(document).ready(function() {
 		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
+   
+	 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+	 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
 });
 </script>

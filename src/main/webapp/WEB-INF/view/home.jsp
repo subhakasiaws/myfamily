@@ -14,6 +14,7 @@
   <div class="container-fluid makeScroll homeccbground">
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${name}'>${name}</label> </h1>
+        <label id="isFromLogin" name="isFromLogin" style="display: none;" value='${param.isFromLogin}'>${param.isFromLogin}</label>
 
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
@@ -110,8 +111,24 @@ $(document).ready(function() {
 	   $whatsApp.attr('href', url + encodedText);
 	 }
 
-	 //call the decorator function
-	 decorateWhatsAppLink()
-   
+		 //call the decorator function
+		 decorateWhatsAppLink();
+		 
+		    var isFromLogin = '${isFromLogin}';
+		    $("#isFromLogin").val(loginName);
+		    console.log("isFromLogin: "+isFromLogin);
+			/* localStorage.setItem("notifyTask", true);
+			localStorage.setItem("notifyCel", true); */
+		 
+		if('true' == isFromLogin){
+			
+			console.log("isFromLogin if cond: "+isFromLogin);
+			 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+			 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+		}else{
+			console.log("isFromLogin else: "+isFromLogin);
+			$("#taskNotification").remove();
+		}
+	
 });
 </script>
