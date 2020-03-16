@@ -28,9 +28,9 @@
 </p>
 
 <div class="collapse" id="collapseExample">
-  <div class="card card-body">
+  <div class="card card-body my-family-width-100">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm my-family-flex-width">
             <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> Evento</legend>
             <form action="#" method="post" class="form" role="form">
             <input class="form-control" name="eventName" placeholder="Nombre del evento" type="text" />
@@ -68,6 +68,7 @@
             </form>
         </div>
   </div>
+</div>
 </div>
       		<div class="row" >
 			<div class="col">
