@@ -20,6 +20,55 @@
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
          <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
       </div>
+	  
+	  <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Create Event
+  </a>
+</p>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> Evento</legend>
+            <form action="#" method="post" class="form" role="form">
+            <input class="form-control" name="eventName" placeholder="Nombre del evento" type="text" />
+            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message"></textarea>
+            <label for="">
+                Fecha del evento</label>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Day">Day</option>
+                        <option value="Day">01</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Month">Month</option>
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <select class="form-control">
+                        <option value="Year">Year</option>
+                    </select>
+                </div>
+            </div>
+            <label>Razón</label>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <select class="form-control">
+                        <option value="Tipo">Tipo (cena, quedada, etc...)</option>
+                    </select>
+                </div>    
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Crear evento</button>
+            </form>
+        </div>
+  </div>
+</div>
       		<div class="row" >
 			<div class="col">
 				<ul class="event-list">
