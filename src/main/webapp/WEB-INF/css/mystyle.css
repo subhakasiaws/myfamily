@@ -189,6 +189,7 @@ margin-left:-7px;
 }
 .my-family-width-100{
 	width:100% !important;
+	height:100% !important;
 }
 .my-family-flex-width{
 	flex: 100%; 
