@@ -123,11 +123,10 @@ $(document).ready(function() {
 		if('true' == isFromLogin){
 			
 			console.log("isFromLogin if cond: "+isFromLogin);
-			 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
-			 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+
 		}else{
 			console.log("isFromLogin else: "+isFromLogin);
-			$("#taskNotification").remove();
+			//$("#taskNotification").remove();
 		}
 	
 });

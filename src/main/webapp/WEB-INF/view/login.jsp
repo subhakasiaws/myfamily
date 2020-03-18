@@ -30,12 +30,18 @@ $(document).ready(function() {
 				} else {
 					console.log("correct name");
 					$('#myLogin').addClass("was-validated");
-					$("body").load("/home?name="+temp+"&isFromLogin=true");
+					$("body").load("/home?name="+temp+"&isFromLogin=true",setNotifications);
 					history.pushState(null, null, "/home");
 					}
 					
 			return false;
 		});
+
+		function setNotifications(){
+			  console.log("setting setNotifications");
+				 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+				 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+			}
 
 			$('.selectpicker').on('change', function() {
 				var selected = $(this).val();
