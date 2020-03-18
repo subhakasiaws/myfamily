@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.myfamily.config.MyFamilyConstants;
 import com.myfamily.config.MyFamilyUtil;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
@@ -46,15 +47,15 @@ public class HomeController {
     LOG.info("HomeController method home-started "+name);
    
     ModelAndView model = new ModelAndView();
-     model.addObject("userId", userId);
-     model.addObject("name", name);
-     model.setViewName("home");
+     model.addObject(MyFamilyConstants.USERID, userId);
+     model.addObject(MyFamilyConstants.NAME, name);
+     model.setViewName(MyFamilyConstants.HOME);
 
      if(isFromLogin) {
      	User user = new User();
          user.setName(name);
         Integer id = userService.addUser(user);
-         model.addObject("name", name);
+         model.addObject(MyFamilyConstants.NAME, name);
          Leaderboard ll = new Leaderboard();
          ll.setName(name);
          ll.setPoints(0);
@@ -62,17 +63,17 @@ public class HomeController {
          
          Leaderboard leaderboard = userService.creaditPoints(ll);
          
-         model.addObject("userId", leaderboard.getId());
+         model.addObject(MyFamilyConstants.USERID, leaderboard.getId());
          List<Leaderboard> userList= userService.findAll();
-         model.addObject("users",userList);
-         model.addObject("points",leaderboard.getPoints());
-         model.addObject("isFromLogin",true);
+         model.addObject(MyFamilyConstants.USERS,userList);
+         model.addObject(MyFamilyConstants.POINTS,leaderboard.getPoints());
+         model.addObject(MyFamilyConstants.IS_FORM_LOGIN,true);
      }else {
          List<Leaderboard> userList= userService.findAll();
-         model.addObject("users",userList);
+         model.addObject(MyFamilyConstants.USERS,userList);
          Leaderboard ll = MyFamilyUtil.getCurrentUser(userList,name);
-         model.addObject("points",ll.getPoints());
-         model.addObject("isFromLogin",false);
+         model.addObject(MyFamilyConstants.POINTS,ll.getPoints());
+         model.addObject(MyFamilyConstants.IS_FORM_LOGIN,false);
      }
      
      LOG.info("HomeController method home -end ");
