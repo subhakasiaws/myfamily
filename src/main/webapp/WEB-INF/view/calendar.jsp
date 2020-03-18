@@ -39,7 +39,7 @@
                 Fecha del evento</label>
             <div class="row">
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
+                    <select class="form-control" id="day">
                         <option value="Day">Day</option>
                         <option value="Day">01</option>
                     </select>
@@ -55,6 +55,7 @@
                     </select>
                 </div>
             </div>
+
             <label>Razón</label>
             <div class="row">
                 <div class="col-xs-12 col-md-12">
@@ -164,7 +165,7 @@ $(document).ready(function() {
    $("#home").click(function() {
 	   console.log("loding home");
 	   var temp = userName;
-		$("body").load("/home",{name:temp,userId:userId,isFromLogin:false});
+		$("body").load("/home?name="+temp+"&userId="+userId+"&isFromLogin=false");
 		history.pushState(null, null, "/home");
    });
    
@@ -175,6 +176,12 @@ $(document).ready(function() {
    });
    
    $("#celebrNotification").remove();
+   
+   var option = '';
+   for (var i=1;i<=31;i++){
+      option += '<option value="'+ i + '">' + i + '</option>';
+   }
+   $('#day').append(option);
    
 });
 

@@ -30,7 +30,7 @@ $(document).ready(function() {
 				} else {
 					console.log("correct name");
 					$('#myLogin').addClass("was-validated");
-					$("body").load("/home", {name:temp,isFromLogin:true});
+					$("body").load("/home?name="+temp+"&isFromLogin=true");
 					history.pushState(null, null, "/home");
 					}
 					

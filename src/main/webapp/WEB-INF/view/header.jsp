@@ -8,7 +8,7 @@
     <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
     <ul class="navbar-nav mr-auto mt-lg-0">
       <li class="nav-item">
-       <a class="nav-link" href="https://www.flipkart.com/"><spring:message code="app.page.shopping"/></a>
+       <a class="nav-link" href="shopping"><spring:message code="app.page.shopping"/></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://www.sakshi.com/"><spring:message code="app.page.news"/></a>

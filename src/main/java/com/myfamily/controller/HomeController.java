@@ -40,7 +40,7 @@ public class HomeController {
         return "login";
     }
     
-    @RequestMapping(value="/home", method=RequestMethod.POST)
+    @RequestMapping(value="/home", method=RequestMethod.GET)
     public ModelAndView home(String name,Integer userId, Boolean isFromLogin) {
     
     LOG.info("HomeController method home-started "+name);
@@ -83,6 +83,12 @@ public class HomeController {
     public String Calendar(){
         return "calendar";
     }
+    
+    @RequestMapping("/shopping")
+    public String shopping(){
+        return "shopping";
+    }
+    
     @RequestMapping(value = "/tasks", method = RequestMethod.GET)
     public String Task(){
         return "task";
