@@ -41,16 +41,16 @@
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" id="day">
                         <option value="Day">Day</option>
-                        <option value="Day">01</option>
+                        <option value="Day">1</option>
                     </select>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
-                        <option value="Month">Month</option>
+                    <select class="form-control" id="month">
+                        <option value="Month">January</option>
                     </select>
                 </div>
                 <div class="col-xs-4 col-md-4">
-                    <select class="form-control">
+                    <select class="form-control" id="year">
                         <option value="Year">Year</option>
                     </select>
                 </div>
@@ -177,11 +177,24 @@ $(document).ready(function() {
    
    $("#celebrNotification").remove();
    
-   var option = '';
-   for (var i=1;i<=31;i++){
-      option += '<option value="'+ i + '">' + i + '</option>';
+   var dayOption = '';
+   for (var i=2;i<=31;i++){
+	   dayOption += '<option value="'+ i + '">' + i + '</option>';
    }
-   $('#day').append(option);
+   $('#day').append(dayOption);
+   
+   var month= ["February","March","April","May","June","July","August","September","October","November","December"];
+   var monthOption = '';
+   for (var i=0;i<month.length;i++){
+	   monthOption += '<option value="'+ i + '">' + month[i] + '</option>';
+   }
+   $('#month').append(monthOption);
+   
+   var yearOption = '';
+   for (var i=1920;i<2021;i++){
+	   yearOption += '<option value="'+ i + '">' + i + '</option>';
+   }
+   $('#year').append(yearOption);
    
 });
 
