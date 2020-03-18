@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.myfamily.service.impl;
+package com.myfamily.service;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.myfamily.dao.UserDao;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
-import com.myfamily.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
