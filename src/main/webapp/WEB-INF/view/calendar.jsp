@@ -6,11 +6,13 @@
    <link href="css/mystyle.css" rel="stylesheet" />
    <link rel="stylesheet" href="css/mycal.css" />
    <link rel="stylesheet" href="css/ourhome.css" />
+  <script src="js/calendar.js"></script>
+</head> 
   <!-- Navigation -->
 <%@ include file="header.jsp" %> 
    <!-- Page Content -->
    <div class="row my-height-40">
-   <marquee behavior="scroll" direction="right" scrollamount="10" class="my-margin-top">
+   <marquee behavior="scroll" direction="left" scrollamount="10" class="my-margin-top">
    <p>• <spring:message code="app.page.marquee"/></p>
    </marquee>
 	</div>

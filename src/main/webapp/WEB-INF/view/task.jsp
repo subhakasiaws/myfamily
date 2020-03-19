@@ -63,7 +63,7 @@
                        
 						<div class="thank-you-pop text-center">
 							<img src="images/Green-Round-Tick.png" alt="">
-							<h1>Congratulations!</h1>
+							<h1 class="font-2rem">Congratulations!</h1>
 							<p>You earned <strong><span class="task-points"></span></strong> points</p>
  						</div>
                     </div>
