@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.myfamily.config.MyFamilyConstants;
 import com.myfamily.config.MyFamilyUtil;
+import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 import com.myfamily.service.UserService;
@@ -94,6 +95,13 @@ public class HomeController {
     public String Task(){
         return "task";
     }
+    
+    @RequestMapping(value = "/createEvent", method = RequestMethod.GET)
+    public String createEvent(@ModelAttribute(value="event") Event event){
+    	userService.saveEvent(event);
+        return "success";
+    }
+    
     @RequestMapping("/board")
     public String Board(){
         return "board";

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 
@@ -75,8 +76,19 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
 	public List<Leaderboard> findAll() {
-		return entityManager.createQuery("select e from Leaderboard as e where e.name != null",
+		return entityManager.createQuery("select e from Leaderboard as e where e.name is not null order by points desc",
 				Leaderboard.class).getResultList();
+	}
+
+	@Override
+	public Boolean saveEventDao(Event event) {
+		entityManager.persist(event);
+		entityManager.flush();
+		if(event.getId()!=null) {
+			return true;
+		}
+		return false;
+		
 	}
 
 }

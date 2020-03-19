@@ -5,6 +5,7 @@ package com.myfamily.service;
 
 import java.util.List;
 
+import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 
@@ -17,5 +18,7 @@ public interface UserService {
 	List<Leaderboard> findAll();
 
 	Integer updateLeaderboard(Leaderboard leaderboard);
+
+	Boolean saveEvent(Event event);
 
 }

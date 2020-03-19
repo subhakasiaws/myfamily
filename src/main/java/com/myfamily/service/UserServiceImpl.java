@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myfamily.dao.UserDao;
+import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 
@@ -36,6 +37,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Integer updateLeaderboard(Leaderboard leaderboard) {
 		return userDao.updateLeaderboardDao(leaderboard);
+	}
+
+	@Override
+	public Boolean saveEvent(Event event) {
+		return userDao.saveEventDao(event);
 	}
 
 }

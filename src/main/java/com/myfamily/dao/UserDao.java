@@ -2,6 +2,7 @@ package com.myfamily.dao;
 
 import java.util.List;
 
+import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
 import com.myfamily.model.User;
 
@@ -14,5 +15,7 @@ public interface UserDao {
 	List<Leaderboard> findAll();
 
 	Integer updateLeaderboardDao(Leaderboard ll);
+
+	Boolean saveEventDao(Event event);
 
 }

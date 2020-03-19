@@ -33,12 +33,11 @@
   <div class="card card-body my-family-width-100">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm my-family-flex-width">
-            <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a> Evento</legend>
-            <form action="#" method="post" class="form" role="form">
-            <input class="form-control" name="eventName" placeholder="Nombre del evento" type="text" />
-            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message"></textarea>
+            <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a></legend>
+            <input class="form-control" name="eventName" id="eventName" placeholder="Event Name" type="text" />
+            <textarea name="desc" id="desc" class="form-control" rows="9" cols="25" required="required" placeholder="Event Description"></textarea>
             <label for="">
-                Fecha del evento</label>
+                Event Date</label>
             <div class="row">
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" id="day">
@@ -57,18 +56,7 @@
                     </select>
                 </div>
             </div>
-
-            <label>Razón</label>
-            <div class="row">
-                <div class="col-xs-12 col-md-12">
-                    <select class="form-control">
-                        <option value="Tipo">Tipo (cena, quedada, etc...)</option>
-                    </select>
-                </div>    
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Crear evento</button>
-            </form>
+            <button id="eventSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Create Event</button>
         </div>
   </div>
 </div>
@@ -197,6 +185,15 @@ $(document).ready(function() {
 	   yearOption += '<option value="'+ i + '">' + i + '</option>';
    }
    $('#year').append(yearOption);
+   
+   $('#eventSubmit').click(function() {
+	   var fullDate = $('#day').val()+$('#month').val()+$('#year').val();
+	   console.log('in eventSubmit');
+	   console.log('date: '+fullDate);
+	   console.log('name: '+$('#eventName').val());
+	   console.log('desc: '+$('#desc').val());
+	   eventDataSubmit($('#eventName').val(),$('#desc').val(),fullDate,$('#name').val());
+   });
    
 });
 
