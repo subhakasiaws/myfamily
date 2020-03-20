@@ -1,10 +1,13 @@
 package com.myfamily.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,13 +20,11 @@ public class Leaderboard {
 	private Integer id;
 	
 	@Column
-	private Integer userId;
-	
-	@Column
 	private Integer points;
 	
-	@Column
-	private String name;
+	@OneToOne(targetEntity=Users.class,cascade=CascadeType.ALL)
+	@JoinColumn(name="userId",referencedColumnName="userId")
+	private Users users;
 
 	public int getId() {
 		return id;
@@ -33,22 +34,6 @@ public class Leaderboard {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Integer getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
-
 	public Integer getPoints() {
 		return points;
 	}
@@ -56,5 +41,12 @@ public class Leaderboard {
 	public void setPoints(Integer points) {
 		this.points = points;
 	}
-	
+
+	public Users getUsers() {
+		return users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
+	}
 }

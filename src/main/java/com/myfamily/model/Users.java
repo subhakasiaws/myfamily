@@ -9,22 +9,23 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="USERS")
-public class User {
+public class Users implements java.io.Serializable{
 
+	private static final long serialVersionUID = 1;
+	
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-
+	private Integer userId;
 	@Column
 	private String name;
 
-	public int getId() {
-		return id;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	public String getName() {
@@ -34,5 +35,5 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 }

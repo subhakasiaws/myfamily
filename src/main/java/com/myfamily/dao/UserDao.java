@@ -4,11 +4,10 @@ import java.util.List;
 
 import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
-import com.myfamily.model.User;
 
 public interface UserDao {
 	
-	Integer addUserDao(User user);
+	List<Leaderboard> createBoardDao(Leaderboard user);
 
 	Leaderboard creaditPointsDao(Leaderboard ll);
 

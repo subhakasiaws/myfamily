@@ -15,9 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.myfamily.config.MyFamilyConstants;
 import com.myfamily.config.MyFamilyUtil;
+import com.myfamily.exception.MyFamilyException;
 import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
-import com.myfamily.model.User;
+import com.myfamily.model.UserBoard;
+import com.myfamily.model.Users;
 import com.myfamily.service.UserService;
  
 /**
@@ -43,50 +45,43 @@ public class HomeController {
     }
     
     @RequestMapping(value="/home", method=RequestMethod.GET)
-    public ModelAndView home(String name,Integer userId) {
-    
-    LOG.info("HomeController method home-started "+name);
-   
-    ModelAndView model = new ModelAndView();
-     model.addObject(MyFamilyConstants.USERID, userId);
-     model.addObject(MyFamilyConstants.NAME, name);
-     model.setViewName(MyFamilyConstants.HOME);
+	public ModelAndView home(String name, Integer userId) {
 
-     if(userId == null) {
-     	User user = new User();
-         user.setName(name);
-        Integer id = userService.addUser(user);
-         model.addObject(MyFamilyConstants.NAME, name);
-         Leaderboard ll = new Leaderboard();
-         ll.setName(name);
-         ll.setPoints(0);
-         ll.setUserId(id);
-         
-         Leaderboard leaderboard = userService.creaditPoints(ll);
-         
-         model.addObject(MyFamilyConstants.USERID, leaderboard.getId());
-         List<Leaderboard> userList= userService.findAll();
-         model.addObject(MyFamilyConstants.USERS,userList);
-         model.addObject(MyFamilyConstants.POINTS,leaderboard.getPoints());
-         model.addObject(MyFamilyConstants.IS_FORM_LOGIN,true);
-     }else {
-         List<Leaderboard> userList= userService.findAll();
-         model.addObject(MyFamilyConstants.USERS,userList);
-         Leaderboard ll = MyFamilyUtil.getCurrentUser(userList,name);
-         model.addObject(MyFamilyConstants.POINTS,ll.getPoints());
-         model.addObject(MyFamilyConstants.IS_FORM_LOGIN,false);
-     }
-     
-     LOG.info("HomeController method home -end ");
-     return model;
-    }
+		LOG.info("HomeController method home-started " + name);
+
+		if (MyFamilyUtil.isBlankString(name)) {
+			throw new MyFamilyException("Name is empty");
+		}
+		ModelAndView model = new ModelAndView();
+		model.setViewName(MyFamilyConstants.HOME);
+
+		if (userId == null) {
+			Users user = new Users();
+			user.setName(name);
+			Leaderboard leaderboard = new Leaderboard();
+			leaderboard.setPoints(0);
+			leaderboard.setUsers(user);
+			List<Leaderboard> leaderList = userService.createBoard(leaderboard);
+			model.addObject(MyFamilyConstants.LEADERBOARD, leaderList);
+			UserBoard userBoard = MyFamilyUtil.getUserIdPoints(leaderList, name);
+			model.addObject(MyFamilyConstants.USERBOARD, userBoard);
+		} else {
+			List<Leaderboard> userList = userService.findAll();
+			model.addObject(MyFamilyConstants.LEADERBOARD, userList);
+			UserBoard userBoard = MyFamilyUtil.getUserIdPoints(userList, name);
+			model.addObject(MyFamilyConstants.USERBOARD,userBoard);
+		}
+
+		LOG.info("HomeController method home -end ");
+		return model;
+	}
     
     @RequestMapping("/calendar")
     public ModelAndView Calendar(){
     	 ModelAndView model = new ModelAndView();
     	 List<Event> eventList= userService.findAllEvents();
     	 LOG.info("eventList : "+eventList.size());
-    	 model.addObject("events",eventList);
+    	 model.addObject(MyFamilyConstants.EVENTS,eventList);
     	 model.setViewName("calendar");
         return model;
     }
@@ -102,9 +97,9 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/createEvent", method = RequestMethod.GET)
-    public ResponseEntity createEvent(@ModelAttribute(value="event") Event event){
+    public ResponseEntity<String> createEvent(@ModelAttribute(value="event") Event event){
     	userService.saveEvent(event);
-        return new ResponseEntity("success",HttpStatus.OK);
+        return new ResponseEntity<String>(MyFamilyConstants.SUCCESS,HttpStatus.OK);
     }
     
     @RequestMapping("/board")
@@ -113,12 +108,12 @@ public class HomeController {
     }
     
     @RequestMapping(path="/creditPoints", method= RequestMethod.GET)
-    public ResponseEntity creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
+    public ResponseEntity<Integer> creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
     LOG.info("HomeController method creditPoints ");
     System.out.println(leaderboard); 
     Integer totalPoints = userService.updateLeaderboard(leaderboard);
     System.out.println(totalPoints); 
      LOG.info("HomeController method creditPoints -end ");
-     return new ResponseEntity(totalPoints,HttpStatus.OK);
+     return new ResponseEntity<Integer>(totalPoints,HttpStatus.OK);
     }
 }

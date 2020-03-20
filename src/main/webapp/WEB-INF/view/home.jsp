@@ -13,9 +13,7 @@
    <!-- Page Content -->
   <div class="container-fluid makeScroll homeccbground">
       <div>
-        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${name}'>${name}</label> </h1>
-        <label id="isFromLogin" name="isFromLogin" style="display: none;" value='${param.isFromLogin}'>${param.isFromLogin}</label>
-
+        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${userBoard.userName}'>${userBoard.userName}</label> </h1>
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
 			<a class="nav-link active" data-toggle="tab" href="#leaderBoard">LeaderBoard</a>
@@ -35,12 +33,14 @@
       <th scope="col">Points</th>
     </tr>
   </thead>
-  <tbody>
-			<c:forEach var="user" items="${users}">
+  <tbody> 
+  <c:set var="count" value="1" scope="page" />
+			<c:forEach var="users" items="${leaderList}">
 				<tr>
-					<td>${user.id}</td>
-					<td>${user.name}</td>
-					<td>${user.points}</td>
+					<td>${count}</td>
+					<c:set var="count" value="${count + 1}" scope="page"/>
+					<td>${users.users.name}</td>
+					<td>${users.points}</td>
 				</tr>
 			</c:forEach>
   </tbody>
@@ -73,12 +73,10 @@
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
 $(document).ready(function() {
-   var loginName = '${name}';
-   $("#name").val(loginName);
-   console.log("loginName:"+loginName);
-   var userId = '${userId}';
+	   var loginName = '${userBoard.userName}';
+   var userId = '${userBoard.userId}';
    console.log("userId:"+userId);
-   var points = '${points}';
+   var points = '${userBoard.points}';
    console.log("points:"+points);
    $("#totalPoints").text(points);
    
@@ -114,20 +112,7 @@ $(document).ready(function() {
 		 //call the decorator function
 		 decorateWhatsAppLink();
 		 
-		    var isFromLogin = '${isFromLogin}';
-		    $("#isFromLogin").val(loginName);
-		    console.log("isFromLogin: "+isFromLogin);
 			/* localStorage.setItem("notifyTask", true);
 			localStorage.setItem("notifyCel", true); */
-		 
-		if('true' == isFromLogin){
-			
-			console.log("isFromLogin if cond: "+isFromLogin);
-
-		}else{
-			console.log("isFromLogin else: "+isFromLogin);
-			//$("#taskNotification").remove();
-		}
-	
 });
 </script>

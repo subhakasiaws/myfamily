@@ -3,16 +3,23 @@ package com.myfamily.config;
 import java.util.List;
 
 import com.myfamily.model.Leaderboard;
+import com.myfamily.model.UserBoard;
 
 public class MyFamilyUtil {
 
-	public static Leaderboard getCurrentUser(List<Leaderboard> userList, String name) {
-		Leaderboard ll= null;
+	public static boolean isBlankString(String string) {
+	    return string == null || string.trim().isEmpty();
+	}
+
+	public static UserBoard getUserIdPoints(List<Leaderboard> userList, String name) {
+		UserBoard userBoard= new UserBoard();
         for (Leaderboard temp : userList) {
-            if (name.equals(temp.getName())) {
-                ll = temp;
+            if (name.equalsIgnoreCase(temp.getUsers().getName())) {
+            	userBoard.setPoints(temp.getPoints());
+            	userBoard.setUserId(temp.getUsers().getUserId());
+            	userBoard.setUserName(name);
             }
         }
-		return ll;
+		return userBoard;
 	}
 }

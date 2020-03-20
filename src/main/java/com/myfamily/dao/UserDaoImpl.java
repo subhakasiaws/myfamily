@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
-import com.myfamily.model.User;
+import com.myfamily.model.Users;
 
 @Component
 @Transactional
@@ -23,25 +23,24 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRES_NEW)
-	public Integer addUserDao(User user) {
-		User isExists = findByName(user.getName());
+	public List<Leaderboard> createBoardDao(Leaderboard users) {
+		Users isExists = findByName(users.getUsers().getName());
 		if (isExists == null) {
-			entityManager.persist(user);
+			entityManager.persist(users);
 			entityManager.flush();
-			return user.getId();
 		}
-		return isExists.getId();
+		return findAll();
 	}
 	
-	public User findByName(String name) {
-	    User user = null;
-	    Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.name=:name");
+	public Users findByName(String name) {
+	    Users users = null;
+	    Query query = entityManager.createQuery("SELECT u FROM Users u WHERE u.name=:name");
 	    query.setParameter("name", name);
 	    try {
-	        user = (User) query.getSingleResult();
+	    	users = (Users) query.getSingleResult();
 	    } catch (Exception e) {
 	    }
-	    return user;
+	    return users;
 	}
 	public Leaderboard findByNameFromLeader(String name) {
 		Leaderboard leaderboard = null;
@@ -55,7 +54,7 @@ public class UserDaoImpl implements UserDao {
 	}
 	@Override
 	public Leaderboard creaditPointsDao(Leaderboard ll) {
-		Leaderboard leaderboard = findByNameFromLeader(ll.getName());
+		Leaderboard leaderboard = findByNameFromLeader(ll.getUsers().getName());
 		if (leaderboard == null) {
 		entityManager.persist(ll);
 		entityManager.flush();
@@ -66,7 +65,7 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public Integer updateLeaderboardDao(Leaderboard ll) {
-		Leaderboard leaderBoard = entityManager.find(Leaderboard.class,ll.getUserId());
+		Leaderboard leaderBoard = entityManager.find(Leaderboard.class,ll.getId());
 		leaderBoard.setPoints(leaderBoard.getPoints()+ll.getPoints());
 		entityManager.merge(leaderBoard);
 		entityManager.flush();
@@ -74,9 +73,9 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	@Transactional(propagation = Propagation.REQUIRED)
 	public List<Leaderboard> findAll() {
-		return entityManager.createQuery("select e from Leaderboard as e where e.name is not null order by points desc",
+		return entityManager.createQuery("select e from Leaderboard as e where e.points >=0 order by points desc",
 				Leaderboard.class).getResultList();
 	}
 

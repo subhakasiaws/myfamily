@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.myfamily.dao.UserDao;
 import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
-import com.myfamily.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,8 +19,8 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Override
-	public Integer addUser(User user) {
-		return userDao.addUserDao(user);
+	public List<Leaderboard> createBoard(Leaderboard leaderboard) {
+		return userDao.createBoardDao(leaderboard);
 	}
 
 	@Override

@@ -7,11 +7,8 @@ import java.util.List;
 
 import com.myfamily.model.Event;
 import com.myfamily.model.Leaderboard;
-import com.myfamily.model.User;
 
 public interface UserService {
-
-	Integer addUser(User user);
 
 	Leaderboard creaditPoints(Leaderboard ll);
 
@@ -22,5 +19,7 @@ public interface UserService {
 	Boolean saveEvent(Event event);
 
 	List<Event> findAllEvents();
+
+	List<Leaderboard> createBoard(Leaderboard leaderboard);
 
 }
