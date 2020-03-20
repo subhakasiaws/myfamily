@@ -18,4 +18,6 @@ public interface UserDao {
 
 	Boolean saveEventDao(Event event);
 
+	List<Event> findAllEventsDao();
+
 }

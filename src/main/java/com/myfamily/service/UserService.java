@@ -21,4 +21,6 @@ public interface UserService {
 
 	Boolean saveEvent(Event event);
 
+	List<Event> findAllEvents();
+
 }

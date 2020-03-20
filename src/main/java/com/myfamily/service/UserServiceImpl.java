@@ -44,4 +44,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.saveEventDao(event);
 	}
 
+	@Override
+	public List<Event> findAllEvents() {
+		return userDao.findAllEventsDao();
+	}
+
 }

@@ -82,8 +82,13 @@ public class HomeController {
     }
     
     @RequestMapping("/calendar")
-    public String Calendar(){
-        return "calendar";
+    public ModelAndView Calendar(){
+    	 ModelAndView model = new ModelAndView();
+    	 List<Event> eventList= userService.findAllEvents();
+    	 LOG.info("eventList : "+eventList.size());
+    	 model.addObject("events",eventList);
+    	 model.setViewName("calendar");
+        return model;
     }
     
     @RequestMapping("/shopping")
