@@ -32,8 +32,10 @@ $("#checkAll").click(function(){
 function eventDataSubmit(name,desc,date,createdBy){
 	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
 	  .done(function( data ) {
-	    //alert( "Data Loaded: " + data );
-	    $('#totalPoints').text(data);
+		//$('#createEvent').click();
+		//$('#createEvent').attr("href","javascript:;");
+		$('#createEvent').css("display","none");
+	    //$('#eventSubmit').attr('disabled', 'disabled');
 	  });
 }
 

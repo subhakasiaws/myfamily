@@ -102,9 +102,9 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/createEvent", method = RequestMethod.GET)
-    public String createEvent(@ModelAttribute(value="event") Event event){
+    public ResponseEntity createEvent(@ModelAttribute(value="event") Event event){
     	userService.saveEvent(event);
-        return "success";
+        return new ResponseEntity("success",HttpStatus.OK);
     }
     
     @RequestMapping("/board")
