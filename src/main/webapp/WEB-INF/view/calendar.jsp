@@ -126,7 +126,7 @@ $(document).ready(function() {
    $("#home").click(function() {
 	   console.log("loding home");
 	   var temp = userName;
-		$("body").load("/home?name="+temp+"&userId="+userId+"&isFromLogin=false");
+		$("body").load("/home?name="+temp+"&userId="+userId);
 		history.pushState(null, null, "/home");
    });
    

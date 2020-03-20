@@ -32,10 +32,8 @@ $("#checkAll").click(function(){
 function eventDataSubmit(name,desc,date,createdBy){
 	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
 	  .done(function( data ) {
-		//$('#createEvent').click();
-		//$('#createEvent').attr("href","javascript:;");
+		$('#createEvent').click();
 		$('#createEvent').css("display","none");
-	    //$('#eventSubmit').attr('disabled', 'disabled');
 	  });
 }
 

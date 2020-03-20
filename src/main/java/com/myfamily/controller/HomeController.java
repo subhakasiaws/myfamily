@@ -43,7 +43,7 @@ public class HomeController {
     }
     
     @RequestMapping(value="/home", method=RequestMethod.GET)
-    public ModelAndView home(String name,Integer userId, Boolean isFromLogin) {
+    public ModelAndView home(String name,Integer userId) {
     
     LOG.info("HomeController method home-started "+name);
    
@@ -52,7 +52,7 @@ public class HomeController {
      model.addObject(MyFamilyConstants.NAME, name);
      model.setViewName(MyFamilyConstants.HOME);
 
-     if(isFromLogin) {
+     if(userId == null) {
      	User user = new User();
          user.setName(name);
         Integer id = userService.addUser(user);
