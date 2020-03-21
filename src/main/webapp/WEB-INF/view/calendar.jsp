@@ -86,15 +86,15 @@
 													<h2 class="title">${event.eventDescription}</h2>
 												    <p class="desc"><spring:message code="app.page.marriageday"/></p>
 													<ul>
-														<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
-														<li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
+														<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> </a></li>
+														<li style="width:50%;"><span class="fa fa-money"></span> </li>
 													</ul>
 												 </c:otherwise>
 											</c:choose>
 												<ul>
 													<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
-													<li style="width:34%;">3 <span class="fa fa-question"></span></li>
-													<li style="width:33%;">103 <span class="fa fa-envelope"></span></li>
+													<li style="width:34%;">3 <span class="fa fa-thumbs-up"></span></li>
+													<li style="width:33%;"> <span class="fa fa-envelope"></span></li>
 												</ul>
 											</div>
 											<div class="social">
