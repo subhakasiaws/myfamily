@@ -25,12 +25,13 @@ $("#checkAll").click(function(){
 	 }
 	 */
 	 $("#taskNotification").remove();
-	 submitPost($('#name').val(),$('#userId').val(),total);
+	 submitPost($('#userId').val(),total);
 	
 });
 
-function submitPost(name,userId,points){
-	$.get("creditPoints", { name: name,userId: userId, points: points })
+function submitPost(userId,points){
+	var data = {userId:userId,points: points};
+	$.get("creditPoints",data)
 	  .done(function( data ) {
 	    //alert( "Data Loaded: " + data );
 	    $('#totalPoints').text(data);

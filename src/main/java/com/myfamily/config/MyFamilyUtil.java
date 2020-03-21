@@ -17,9 +17,17 @@ public class MyFamilyUtil {
             if (name.equalsIgnoreCase(temp.getUsers().getName())) {
             	userBoard.setPoints(temp.getPoints());
             	userBoard.setUserId(temp.getUsers().getUserId());
-            	userBoard.setUserName(name);
+            	userBoard.setUserName(capitalize(name));
             }
         }
 		return userBoard;
+	}
+	
+	public static String capitalize(String str) {
+	    if(str == null || str.isEmpty()) {
+	        return str;
+	    }
+
+	    return str.substring(0, 1).toUpperCase() + str.substring(1);
 	}
 }

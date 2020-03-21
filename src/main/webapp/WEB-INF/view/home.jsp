@@ -14,23 +14,24 @@
   <div class="container-fluid makeScroll homeccbground">
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${userBoard.userName}'>${userBoard.userName}</label> </h1>
+		<div>
 		<ul class="nav nav-tabs" role="tablist">
 			<li class="nav-item">
-			<a class="nav-link active" data-toggle="tab" href="#leaderBoard">LeaderBoard</a>
+			<a class="nav-link active" data-toggle="tab" href="#leaderBoard"><spring:message code="app.page.leaders"/></a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#weeklyWinner">WeeklyWinner</a>
+			<a class="nav-link" data-toggle="tab" href="#weeklyWinner"><spring:message code="app.page.weekly"/></a>
 			</li>
 		</ul>
-
+		</div>
 		<div class="tab-content">
     <div id="leaderBoard" class="container tab-pane active">
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Rank</th>
-      <th scope="col">Name</th>
-      <th scope="col">Points</th>
+      <th scope="col"><spring:message code="app.page.rank"/></th>
+      <th scope="col"><spring:message code="app.page.name"/></th>
+      <th scope="col"><spring:message code="app.page.points"/></th>
     </tr>
   </thead>
   <tbody> 
@@ -50,20 +51,24 @@
       <table class="table">
   <thead>
     <tr>
-      <th scope="col">Rank</th>
-      <th scope="col">Name</th>
-      <th scope="col">Points</th>
+      <th scope="col"><spring:message code="app.page.rank"/></th>
+      <th scope="col"><spring:message code="app.page.name"/></th>
+      <th scope="col"><spring:message code="app.page.points"/></th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Chandra</td>
-      <td>100</td>
+      <td><c:out   value="${leaderList[0].users.name}"/></td>
+      <td><c:out   value="${leaderList[0].points}"/></td>
     </tr>
   </tbody>
 </table>
+
+<div> <h4><spring:message code="app.page.whatsapp"/></h4>
 <div class="whatsapp"><a class="fa fa-whatsapp" href="" target="_blank"></a></div>
+</div>
+
     </div>
   </div>
   

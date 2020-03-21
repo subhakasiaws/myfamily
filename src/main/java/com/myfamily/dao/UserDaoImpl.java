@@ -64,9 +64,9 @@ public class UserDaoImpl implements UserDao {
 	}
 	
 	@Override
-	public Integer updateLeaderboardDao(Leaderboard ll) {
-		Leaderboard leaderBoard = entityManager.find(Leaderboard.class,ll.getId());
-		leaderBoard.setPoints(leaderBoard.getPoints()+ll.getPoints());
+	public Integer updateLeaderboardDao(Integer userId, Integer points) {
+		Leaderboard leaderBoard = entityManager.find(Leaderboard.class,userId);
+		leaderBoard.setPoints(leaderBoard.getPoints()+points);
 		entityManager.merge(leaderBoard);
 		entityManager.flush();
 		return leaderBoard.getPoints();

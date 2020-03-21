@@ -17,23 +17,23 @@
             <div class="todolist not-done">
              <h1>Todos</h1>
                 <input type="text" class="form-control add-todo" placeholder="Add todo">
-                    <button id="checkAll" class="btn btn-success">Mark all as done</button>
+                    <button id="checkAll" class="btn btn-success"><spring:message code="app.page.done"/></button>
                     
                     <hr>
                     <ul id="sortable" class="list-unstyled">
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label> <input type="checkbox" value="" />Wake Up Early</label>
+                            <label> <input type="checkbox" value="" /><spring:message code="app.page.task1"/></label>
                         </div>
                     </li>
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label> <input type="checkbox" value="" />Take out the trash</label>
+                            <label> <input type="checkbox" value="" /><spring:message code="app.page.task2"/></label>
                         </div>
                     </li>
                     <li class="ui-state-default">
                         <div class="checkbox">
-                            <label> <input type="checkbox" value="" />Do house work</label>
+                            <label> <input type="checkbox" value="" /><spring:message code="app.page.task3"/></label>
                         </div>
                     </li>
                 </ul>
@@ -44,10 +44,8 @@
         </div>
         <div class="col-md-6">
             <div class="todolist">
-             <h1>Already Done</h1>
+             <h1><spring:message code="app.page.done"/></h1>
                 <ul id="done-items" class="list-unstyled">
-                    <li>Sleeping a lot <button class="remove-item btn btn-default btn-xs pull-right"><span class="fa fa-trash my-display-block"></span></button></li>
-                    
                 </ul>
             </div>
         </div>
@@ -64,7 +62,7 @@
 						<div class="thank-you-pop text-center">
 							<img src="images/Green-Round-Tick.png" alt="">
 							<h1 class="font-2rem">Congratulations!</h1>
-							<p>You earned <strong><span class="task-points"></span></strong> points</p>
+							<p><spring:message code="app.page.earned"/> <strong><span class="task-points"></span></strong><spring:message code="app.page.pointss"/></p>
  						</div>
                     </div>
 					

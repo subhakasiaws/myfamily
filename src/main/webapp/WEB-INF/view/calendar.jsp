@@ -20,13 +20,13 @@
 	
   <div class="container-fluid makeScroll margin-b-100">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
+        <h4><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h4>
          <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
       </div>
 	  
 	  <p>
   <a id="createEvent" class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Create Event
+  <spring:message code="app.page.event"/>
   </a>
 </p>
 
@@ -34,30 +34,27 @@
   <div class="card card-body my-family-width-100">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 well well-sm my-family-flex-width">
-            <legend><a href="http://www.jquery2dotnet.com"><i class="glyphicon glyphicon-globe"></i></a></legend>
-            <input class="form-control" name="eventName" id="eventName" placeholder="Event Name" type="text" />
-            <textarea name="desc" id="desc" class="form-control" rows="9" cols="25" required="required" placeholder="Event Description"></textarea>
-            <label for="">
-                Event Date</label>
+            <legend></legend>
+             <select class="form-control" id="eventName" name="eventName">
+                        <option value="birthday"><spring:message code="app.page.birthday"/></option>
+                        <option value="marriageday"><spring:message code="app.page.marriageday"/></option>
+             </select>
+            <textarea name="desc" id="desc" class="form-control" rows="9" cols="25" required="required" placeholder="<spring:message code="app.page.eventDesc"/>"></textarea>
+            <label class="t-5" for=""><spring:message code="app.page.eventdate"/></label>
             <div class="row">
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" id="day">
-                        <option value="Day">Day</option>
+                        <option value="Day"><spring:message code="app.page.day"/></option>
                         <option value="Day">1</option>
                     </select>
                 </div>
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" id="month">
-                        <option value="Month">January</option>
-                    </select>
-                </div>
-                <div class="col-xs-4 col-md-4">
-                    <select class="form-control" id="year">
-                        <option value="Year">Year</option>
+                        <option value="Month"><spring:message code="app.page.month"/></option>
                     </select>
                 </div>
             </div>
-            <button id="eventSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Create Event</button>
+            <button id="eventSubmit" class="btn btn-lg btn-primary btn-block" type="submit"><spring:message code="app.page.submit"/></button>
         </div>
   </div>
 </div>
@@ -74,16 +71,20 @@
 												<span class="year">${event.eventDate}</span>
 												<span class="time">8:00 PM</span>
 											</time>
-											<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+
+											<c:if test="${event.eventName == 'birthday'}">
+											 <img alt="Birthday" src="images/birthday.jpg" />
+											</c:if>
+
 											<div class="info">
 											<c:choose>
-												<c:when test="${event.eventName == 'Birthday'}">
-												<h2 class="title"><spring:message code="app.page.birthday"/></h2>
-												<p class="desc">${event.eventDescription}</p>
+												<c:when test="${event.eventName == 'birthday'}">
+												<h2 class="title">${event.eventDescription}</h2>
+												<p class="desc"><spring:message code="app.page.birthday"/></p>
 												</c:when>
 												<c:otherwise>
-												    <h2 class="title"><spring:message code="app.page.marriageday"/></h2>
-													<p class="desc">PS Vita</p>
+													<h2 class="title">${event.eventDescription}</h2>
+												    <p class="desc"><spring:message code="app.page.marriageday"/></p>
 													<ul>
 														<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
 														<li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
@@ -144,26 +145,18 @@ $(document).ready(function() {
    }
    $('#day').append(dayOption);
    
-   var month= ["February","March","April","May","June","July","August","September","October","November","December"];
+   var month= ["January","February","March","April","May","June","July","August","September","October","November","December"];
    var monthOption = '';
    for (var i=0;i<month.length;i++){
 	   monthOption += '<option value="'+ i + '">' + month[i] + '</option>';
    }
    $('#month').append(monthOption);
    
-   var yearOption = '';
-   for (var i=1920;i<2021;i++){
-	   yearOption += '<option value="'+ i + '">' + i + '</option>';
-   }
-   $('#year').append(yearOption);
-   
    $('#eventSubmit').click(function() {
-	   var fullDate = $('#day').val()+$('#month').val()+$('#year').val();
-	   console.log('in eventSubmit');
-	   console.log('date: '+fullDate);
-	   console.log('name: '+$('#eventName').val());
-	   console.log('desc: '+$('#desc').val());
-	   eventDataSubmit($('#eventName').val(),$('#desc').val(),fullDate,$('#name').val());
+	   var day = $('#day').val();
+	   var month =$('#month').val();
+	   var date = day+'-'+month;
+	   eventDataSubmit($('#eventName').val(),$('#desc').val(),date,$('#name').val());
    });
    
 });

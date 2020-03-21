@@ -14,7 +14,7 @@ public interface UserService {
 
 	List<Leaderboard> findAll();
 
-	Integer updateLeaderboard(Leaderboard leaderboard);
+	Integer updateLeaderboard(Integer userId, Integer points);
 
 	Boolean saveEvent(Event event);
 

@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#"><spring:message code="app.page.welcome"/></a>
+    <a class="navbar-brand" id="welcome"><spring:message code="app.page.welcome"/></a>
     <ul class="navbar-nav mr-auto mt-lg-0">
       <li class="nav-item">
        <a class="nav-link" href="shopping"><spring:message code="app.page.shopping"/></a>
@@ -26,7 +26,7 @@
    <ul class="navbar-nav mr-auto mt-lg-0">
 	  <li class="nav-item">
 	        <a class="nav-link whitesmokec" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
-	          <spring:message code="app.page.profile"/>
+	          <spring:message code="app.page.points"/>
 	          <span id="totalPoints" class="badge badge-danger badge-counter my-padding-top">0</span></a>
 	  </li>
    </ul>

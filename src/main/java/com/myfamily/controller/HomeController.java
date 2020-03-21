@@ -57,7 +57,7 @@ public class HomeController {
 
 		if (userId == null) {
 			Users user = new Users();
-			user.setName(name);
+			user.setName(MyFamilyUtil.capitalize(name));
 			Leaderboard leaderboard = new Leaderboard();
 			leaderboard.setPoints(0);
 			leaderboard.setUsers(user);
@@ -77,7 +77,7 @@ public class HomeController {
 	}
     
     @RequestMapping("/calendar")
-    public ModelAndView Calendar(){
+    public ModelAndView calendar(){
     	 ModelAndView model = new ModelAndView();
     	 List<Event> eventList= userService.findAllEvents();
     	 LOG.info("eventList : "+eventList.size());
@@ -108,10 +108,9 @@ public class HomeController {
     }
     
     @RequestMapping(path="/creditPoints", method= RequestMethod.GET)
-    public ResponseEntity<Integer> creditPoints(@ModelAttribute(value="leaderboard") Leaderboard leaderboard) {
+    public ResponseEntity<Integer> creditPoints(Integer userId, Integer points) {
     LOG.info("HomeController method creditPoints ");
-    System.out.println(leaderboard); 
-    Integer totalPoints = userService.updateLeaderboard(leaderboard);
+    Integer totalPoints = userService.updateLeaderboard(userId,points);
     System.out.println(totalPoints); 
      LOG.info("HomeController method creditPoints -end ");
      return new ResponseEntity<Integer>(totalPoints,HttpStatus.OK);

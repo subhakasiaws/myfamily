@@ -1,119 +1,38 @@
-$("#sortable").sortable();
-$("#sortable").disableSelection();
-
-countTodos();
-
-// all done btn
-$("#checkAll").click(function(){
-	console.log("checkAll clicked-->")
-   
-	$('#pointscredit').modal("show");
-	var total=+$('.count-todos').html();
-	console.log("total: "+total);
-	var expoints = +$('#totalPoints').html();
-	console.log("expoints: "+expoints);
-	total =total*10;
-	console.log("total*10: "+total);
-	var ftotal= (expoints+total);
-	$('.task-points').html(total);
-	console.log("ftotal: "+ftotal);
-	// $("#totalPoints").html(ftotal);
-	 AllDone();
-/*	 if(localStorage.getItem("notifyTask")){
-		 localStorage.setItem("notifyTask", false);
-		 $("#taskNotification").remove();
-	 }
-	 */
-	 $("#taskNotification").remove();
-	 submitPost($('#name').val(),$('#userId').val(),total);
-	
-});
 
 function eventDataSubmit(name,desc,date,createdBy){
 	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
 	  .done(function( data ) {
 		$('#createEvent').click();
 		$('#createEvent').css("display","none");
+		
+		var title = '';
+		var birthdayImg = '';
+		if('marriageday'== name){
+			title = 'Marriage Day';
+		}else{
+			title = 'Birthday';
+			birthdayImg = '<img alt="My 24th Birthday!" src="images/birthday.jpg" />';
+		}
+		
+		var newList = '<li> <time datetime="2014-07-20 2000"> <span class="day">20</span> <span class="month">Jan</span> <span class="time">8:00 PM</span> </time>'  
+			+birthdayImg
+			+'<div class="info"> <h2 class="title">'+desc+'</h2>'
+			+'<p class="desc">'+title+'</p>'
+			+'<ul>'
+			+'<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>'
+			+'<li style="width:34%;">3 <span class="fa fa-question"></span></li>'
+			+'<li style="width:33%;">103 <span class="fa fa-envelope"></span></li>'
+			+'</ul>'
+			+'</div>'
+			+'<div class="social">'
+			+'<ul> '
+			+'<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>'
+			+'<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>'
+			+'<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>'
+			+'</ul>'
+			+'</div>'
+			+'</li>';
+		
+		$('.event-list').prepend(newList);
 	  });
-}
-
-//create todo
-$('.add-todo').on('keypress',function (e) {
-      e.preventDefault
-      if (e.which == 13) {
-           if($(this).val() != ''){
-           var todo = $(this).val();
-            createTodo(todo); 
-            countTodos();
-           }else{
-               // some validation
-           }
-      }
-});
-// mark task as done
-$('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
-	console.log('todolist change');
-    if($(this).prop('checked')){
-        var doneItem = $(this).parent().parent().find('label').text();
-        $(this).parent().parent().parent().addClass('remove');
-        done(doneItem);
-        countTodos();
-    }
-});
-
-//delete done task from "already done"
-$('.todolist').on('click','.remove-item',function(){
-    removeItem(this);
-});
-
-// count tasks
-function countTodos(){
-    var count = $("#sortable li").length;
-    $('.count-todos').html(count);
-}
-
-//create task
-function createTodo(text){
-    var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
-    $('#sortable').append(markup);
-    $('.add-todo').val('');
-}
-
-//mark task as done
-function done(doneItem){
-    var done = doneItem;
-    var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>';
-    $('#done-items').append(markup);
-    $('.remove').remove();
-    console.log('done task');
-    if($("#sortable li").length == 0){
-    	$('#checkAll').attr("disabled", true);
-    }
-    
-    $('#pointscredit').modal("show");
-    $('.task-points').html(10);
-}
-
-//mark all tasks as done
-function AllDone(){
-    var myArray = [];
-
-    $('#sortable li').each( function() {
-         myArray.push($(this).text());   
-    });
-    
-    // add to done
-    for (i = 0; i < myArray.length; i++) {
-        $('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>');
-    }
-    
-    // myArray
-    $('#sortable li').remove();
-    $('#checkAll').attr("disabled", true);
-    countTodos();
-}
-
-//remove done task from list
-function removeItem(element){
-    $(element).parent().remove();
 }

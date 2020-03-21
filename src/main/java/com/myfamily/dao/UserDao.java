@@ -13,7 +13,7 @@ public interface UserDao {
 
 	List<Leaderboard> findAll();
 
-	Integer updateLeaderboardDao(Leaderboard ll);
+	Integer updateLeaderboardDao(Integer userId, Integer points);
 
 	Boolean saveEventDao(Event event);
 

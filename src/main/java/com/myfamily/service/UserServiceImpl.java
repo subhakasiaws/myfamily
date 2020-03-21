@@ -34,8 +34,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Integer updateLeaderboard(Leaderboard leaderboard) {
-		return userDao.updateLeaderboardDao(leaderboard);
+	public Integer updateLeaderboard(Integer userId, Integer points) {
+		return userDao.updateLeaderboardDao(userId,points);
 	}
 
 	@Override
