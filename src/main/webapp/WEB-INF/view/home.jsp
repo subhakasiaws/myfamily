@@ -27,7 +27,7 @@
 		</div>
 		<div class="tab-content homeccbground"  id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-<table class="table">
+<table class="table my-border-co">
   <thead>
     <tr>
       <th scope="col"><spring:message code="app.page.rank"/></th>
@@ -49,7 +49,7 @@
 </table>
     </div>
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-      <table class="table">
+      <table class="table my-border-co">
   <thead>
     <tr>
       <th scope="col"><spring:message code="app.page.rank"/></th>
