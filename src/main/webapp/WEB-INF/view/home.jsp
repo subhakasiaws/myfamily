@@ -99,14 +99,16 @@ $(document).ready(function() {
    });
    
    $("#pills-home-tab").click(function() {
-	   console.log("tab1 clicked");
-	  
+	   $("#pills-profile-tab").removeClass('my-tab-active');
+	   $( this ).css("background-color","#a9cfd5!important");
+	   $( this ).addClass('my-tab-active');
    });
    
    $("#pills-profile-tab").click(function() {
 	   console.log("tab2 clicked");
-	   console.log($(this));
-	   //$(this).find("a").addClass("homeccbground");
+	   $( this ).css("background-color","#a9cfd5!important");
+	   $( this ).addClass('my-tab-active');
+	   $("#pills-home-tab").removeClass('my-tab-active');
    });
 
    function decorateWhatsAppLink() {
