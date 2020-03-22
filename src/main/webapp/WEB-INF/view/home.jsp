@@ -11,21 +11,22 @@
 <%@ include file="header.jsp" %> 
 
    <!-- Page Content -->
-  <div class="container-fluid makeScroll homeccbground">
+  <div class="container-fluid makeScroll">
+		
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${userBoard.userName}'>${userBoard.userName}</label> </h1>
-		<div>
-		<ul class="nav nav-tabs" role="tablist">
-			<li class="nav-item">
-			<a class="nav-link active" data-toggle="tab" href="#leaderBoard"><spring:message code="app.page.leaders"/></a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#weeklyWinner"><spring:message code="app.page.weekly"/></a>
-			</li>
+		<div class="div-h-40">
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="nav-item">
+				<a class="nav-link my-tab-active active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><spring:message code="app.page.leaders"/></a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><spring:message code="app.page.weekly"/></a>
+				</li>
 		</ul>
 		</div>
-		<div class="tab-content">
-    <div id="leaderBoard" class="container tab-pane active">
+		<div class="tab-content homeccbground"  id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 <table class="table">
   <thead>
     <tr>
@@ -47,7 +48,7 @@
   </tbody>
 </table>
     </div>
-    <div id="weeklyWinner" class="container tab-pane fade">
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
       <table class="table">
   <thead>
     <tr>
@@ -97,6 +98,17 @@ $(document).ready(function() {
 		history.pushState(null, null, "/calendar");
    });
    
+   $("#pills-home-tab").click(function() {
+	   console.log("tab1 clicked");
+	  
+   });
+   
+   $("#pills-profile-tab").click(function() {
+	   console.log("tab2 clicked");
+	   console.log($(this));
+	   //$(this).find("a").addClass("homeccbground");
+   });
+
    function decorateWhatsAppLink() {
 	   //set up the url
 	   var url = 'whatsapp://send?text=';

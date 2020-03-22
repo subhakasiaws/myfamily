@@ -45,7 +45,7 @@
                 <div class="col-xs-4 col-md-4">
                     <select class="form-control" id="day">
                         <option value="Day"><spring:message code="app.page.day"/></option>
-                        <option value="Day">1</option>
+                        <option value="1">1</option>
                     </select>
                 </div>
                 <div class="col-xs-4 col-md-4">
@@ -66,8 +66,8 @@
 				                <c:forEach var="event" items="${events}">
 										<li>
 											<time datetime="2014-07-20 2000">
-												<span class="day">20</span>
-												<span class="month">Jan</span>
+												<span class="day">${event.eventDate.split('-')[0]}</span>
+												<span class="month">${event.eventDate.split('-')[1]}</span>
 												<span class="year">${event.eventDate}</span>
 												<span class="time">8:00 PM</span>
 											</time>
@@ -116,23 +116,18 @@ $(document).ready(function() {
 
 	   var userName = '${param.name}';
 	   $("#name").val(userName);
-	   console.log("userName:"+userName);
 	   var userId = '${param.userId}';
 	   $("#userId").val(userId);
-	   console.log(userId);
 	   var points = '${param.points}';
 	   $('#totalPoints').text(points);
-	   console.log("points "+points);
    
    $("#home").click(function() {
-	   console.log("loding home");
 	   var temp = userName;
 		$("body").load("/home?name="+temp+"&userId="+userId);
 		history.pushState(null, null, "/home");
    });
    
    $("#myTask").click(function() {
-	   console.log("loding tasks");
 		$("body").load("/tasks?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });
@@ -145,10 +140,10 @@ $(document).ready(function() {
    }
    $('#day').append(dayOption);
    
-   var month= ["January","February","March","April","May","June","July","August","September","October","November","December"];
+   var month= ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
    var monthOption = '';
    for (var i=0;i<month.length;i++){
-	   monthOption += '<option value="'+ i + '">' + month[i] + '</option>';
+	   monthOption += '<option value="'+  month[i] + '">' + month[i] + '</option>';
    }
    $('#month').append(monthOption);
    
@@ -156,7 +151,16 @@ $(document).ready(function() {
 	   var day = $('#day').val();
 	   var month =$('#month').val();
 	   var date = day+'-'+month;
-	   eventDataSubmit($('#eventName').val(),$('#desc').val(),date,$('#name').val());
+	   
+	   if(day == "Day"){
+		   $('#day').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");   
+	   }else if(month == "Month"){
+		   $('#month').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");   
+	   }else {
+		   eventDataSubmit($('#eventName').val(),$('#desc').val(),date,$('#name').val());
+	   }
+	   
+	   
    });
    
 });

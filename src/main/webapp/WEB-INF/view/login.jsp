@@ -19,16 +19,14 @@
 $(document).ready(function() {
 						
 		$('#login').click(function() {
-			console.log("your clicked");
+
 			var $regexname = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 			var temp = $('#name').val();
 			
 			if (!temp.match($regexname)) {
-			
-				console.log("worng name");
+				
 				$('#myLogin').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");
 				} else {
-					console.log("correct name");
 					$('#myLogin').addClass("was-validated");
 					$("body").load("/home?name="+temp,setNotifications);
 					history.pushState(null, null, "/home");
@@ -38,14 +36,14 @@ $(document).ready(function() {
 		});
 
 		function setNotifications(){
-			  console.log("setting setNotifications");
+			 
 				 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
 				 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
 			}
 
 			$('.selectpicker').on('change', function() {
 				var selected = $(this).val();
-				console.log("selected val is" + selected);
+				
 				$('.selectpicker option[value='+selected+']').attr('selected','selected');
 	
 				localStorage.setItem("selectedLanguage", selected);

@@ -15,7 +15,7 @@
 <div class="row">
         <div class="col-md-6">
             <div class="todolist not-done">
-             <h1>Todos</h1>
+             <h1><spring:message code="app.page.todos"/></h1>
                 <input type="text" class="form-control add-todo" placeholder="Add todo">
                     <button id="checkAll" class="btn btn-success"><spring:message code="app.page.done"/></button>
                     
@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="todo-footer">
-                    <strong><span class="count-todos"></span></strong> Items Left
+                    <strong><span class="count-todos"></span></strong><spring:message code="app.page.todosleft"/>
                 </div>
             </div>
         </div>

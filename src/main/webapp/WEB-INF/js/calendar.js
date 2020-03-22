@@ -14,7 +14,9 @@ function eventDataSubmit(name,desc,date,createdBy){
 			birthdayImg = '<img alt="My 24th Birthday!" src="images/birthday.jpg" />';
 		}
 		
-		var newList = '<li> <time datetime="2014-07-20 2000"> <span class="day">20</span> <span class="month">Jan</span> <span class="time">8:00 PM</span> </time>'  
+		var output=date.split('-');
+		
+		var newList = '<li> <time datetime="2014-07-20 2000"> <span class="day">'+output[0]+'</span> <span class="month">'+output[1]+'</span> <span class="time">8:00 PM</span> </time>'  
 			+birthdayImg
 			+'<div class="info"> <h2 class="title">'+desc+'</h2>'
 			+'<p class="desc">'+title+'</p>'
