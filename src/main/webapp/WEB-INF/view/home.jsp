@@ -12,7 +12,7 @@
 
    <!-- Page Content -->
   <div class="container-fluid makeScroll">
-		
+		<c:set var="notiCount" value="1" scope="request" />
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${userBoard.userName}'>${userBoard.userName}</label> </h1>
 		<div class="div-h-40">

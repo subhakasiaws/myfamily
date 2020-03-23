@@ -76,6 +76,10 @@
 <%@ include file="footer.jsp" %>
 <script type="text/javascript">
 $(document).ready(function() {
+	 var notiCount = '${requestScope.notiCount}';
+	 
+	 console.log("notiCount: "+notiCount);
+	 
    var userName = '${param.name}';
    $("#name").val(userName);
    var userId = '${param.userId}';
@@ -94,6 +98,9 @@ $(document).ready(function() {
 		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
+   
+   //clear items
+   clearItems();
    
 });
 </script>

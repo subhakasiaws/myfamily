@@ -23,3 +23,7 @@ $(function () {
   startRedirect();
   $(document).mousemove(restartTimer).keyup(restartTimer);
 });
+
+function clearItems(){
+	$('#welcome').remove();
+}

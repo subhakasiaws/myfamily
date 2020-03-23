@@ -80,6 +80,7 @@ function done(doneItem){
     
     $('#pointscredit').modal("show");
     $('.task-points').html(10);
+    submitPost($('#userId').val(),10);
 }
 
 //mark all tasks as done

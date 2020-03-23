@@ -103,6 +103,9 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
+	 var notiCount = '${requestScope.notiCount}';
+	 console.log("notiCount: "+notiCount);
+	 
 	   var userName = '${param.name}';
 	   $("#name").val(userName);
 	   var userId = '${param.userId}';
@@ -121,6 +124,7 @@ $(document).ready(function() {
 		history.pushState(null, null, "/task");
    });
    
+   clearItems();
    $("#celebrNotification").remove();
    
    var dayOption = '';
