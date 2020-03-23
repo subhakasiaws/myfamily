@@ -11,6 +11,10 @@ countTodos();
 $("#taskNotification").remove();
 localStorage.setItem("taskNoti", "0");
 
+if(localStorage.getItem("calNoti") == '1'){
+	 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+}
+
 // all done btn
 $("#checkAll").click(function(){
    

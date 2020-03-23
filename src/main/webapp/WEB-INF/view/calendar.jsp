@@ -128,6 +128,10 @@ $(document).ready(function() {
    $("#celebrNotification").remove();
    localStorage.setItem("calNoti", "0");
    
+	 if(localStorage.getItem("taskNoti") == '1'){
+		 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+	 }
+   
    var dayOption = '';
    for (var i=2;i<=31;i++){
 	   dayOption += '<option value="'+ i + '">' + i + '</option>';
