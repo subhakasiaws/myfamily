@@ -1,7 +1,15 @@
 $("#sortable").sortable();
 $("#sortable").disableSelection();
 
+//logout
+$('#logout').click(function() {
+	 window.location.replace("/logout");
+	});
+
 countTodos();
+
+$("#taskNotification").remove();
+localStorage.setItem("taskNoti", "0");
 
 // all done btn
 $("#checkAll").click(function(){
@@ -13,7 +21,6 @@ $("#checkAll").click(function(){
 	var ftotal= (expoints+total);
 	$('.task-points').html(total);
 	 AllDone();
-	 $("#taskNotification").remove();
 	 submitPost($('#userId').val(),total);
 	
 });

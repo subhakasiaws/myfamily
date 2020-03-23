@@ -126,6 +126,7 @@ $(document).ready(function() {
    
    clearItems();
    $("#celebrNotification").remove();
+   localStorage.setItem("calNoti", "0");
    
    var dayOption = '';
    for (var i=2;i<=31;i++){

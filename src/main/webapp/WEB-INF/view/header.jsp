@@ -25,7 +25,7 @@
 	        <a class="nav-link whitesmokec" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
 	          <spring:message code="app.page.points"/>
 	          <span id="totalPoints" class="badge badge-danger badge-counter my-padding-top">0</span>
-	          <span class="fa fa-sign-out"></span>
+	          <span class="fa fa-sign-out align-my-logout" id="logout"></span>
 	          </a>
 	  </li>
    </ul>

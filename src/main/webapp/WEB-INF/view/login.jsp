@@ -37,8 +37,11 @@ $(document).ready(function() {
 
 		function setNotifications(){
 			 
-				 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
-				 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+				// $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+				 //$("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+				 //TODO
+				 localStorage.setItem("taskNoti", "1");
+				 localStorage.setItem("calNoti", "1");
 			}
 
 			$('.selectpicker').on('change', function() {

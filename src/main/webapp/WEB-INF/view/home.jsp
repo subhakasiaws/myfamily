@@ -106,6 +106,11 @@ $(document).ready(function() {
 	   $("#pills-home-tab").removeClass('my-tab-active');
    });
 
+   //logout
+   $('#logout').click(function() {
+	 window.location.replace("/logout");
+	});
+   
    function decorateWhatsAppLink() {
 	   //set up the url
 	   var url = 'whatsapp://send?text=';
@@ -126,7 +131,13 @@ $(document).ready(function() {
 		 //call the decorator function
 		 decorateWhatsAppLink();
 		 
-			/* localStorage.setItem("notifyTask", true);
-			localStorage.setItem("notifyCel", true); */
+		   
+		 if(localStorage.getItem("taskNoti") == '1'){
+			 $("#myTask").append('<span id="taskNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+		 }
+		 if(localStorage.getItem("calNoti") == '1'){
+			 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
+		 }
+
 });
 </script>

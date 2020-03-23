@@ -1,4 +1,9 @@
 
+   //logout
+   $('#logout').click(function() {
+	 window.location.replace("/logout");
+	});
+   
 function eventDataSubmit(name,desc,date,createdBy){
 	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
 	  .done(function( data ) {
