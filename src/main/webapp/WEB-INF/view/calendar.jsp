@@ -72,10 +72,6 @@
 												<span class="time">8:00 PM</span>
 											</time>
 
-											<c:if test="${event.eventName == 'birthday'}">
-											 <img alt="Birthday" src="images/birthday.jpg" />
-											</c:if>
-
 											<div class="info">
 											<c:choose>
 												<c:when test="${event.eventName == 'birthday'}">
@@ -95,13 +91,6 @@
 													<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
 													<li style="width:34%;">3 <span class="fa fa-thumbs-up"></span></li>
 													<li style="width:33%;"> <span class="fa fa-envelope"></span></li>
-												</ul>
-											</div>
-											<div class="social">
-												<ul>
-													<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-													<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-													<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
 												</ul>
 											</div>
 										</li>

@@ -5,25 +5,14 @@ countTodos();
 
 // all done btn
 $("#checkAll").click(function(){
-	console.log("checkAll clicked-->")
    
 	$('#pointscredit').modal("show");
 	var total=+$('.count-todos').html();
-	console.log("total: "+total);
 	var expoints = +$('#totalPoints').html();
-	console.log("expoints: "+expoints);
 	total =total*10;
-	console.log("total*10: "+total);
 	var ftotal= (expoints+total);
 	$('.task-points').html(total);
-	console.log("ftotal: "+ftotal);
-	// $("#totalPoints").html(ftotal);
 	 AllDone();
-/*	 if(localStorage.getItem("notifyTask")){
-		 localStorage.setItem("notifyTask", false);
-		 $("#taskNotification").remove();
-	 }
-	 */
 	 $("#taskNotification").remove();
 	 submitPost($('#userId').val(),total);
 	
@@ -53,7 +42,6 @@ $('.add-todo').on('keypress',function (e) {
 });
 // mark task as done
 $('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
-	console.log('todolist change');
     if($(this).prop('checked')){
         var doneItem = $(this).parent().parent().find('label').text();
         $(this).parent().parent().parent().addClass('remove');
@@ -86,7 +74,6 @@ function done(doneItem){
     var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="fa fa-trash my-display-block"></span></button></li>';
     $('#done-items').append(markup);
     $('.remove').remove();
-    console.log('done task');
     if($("#sortable li").length == 0){
     	$('#checkAll').attr("disabled", true);
     }

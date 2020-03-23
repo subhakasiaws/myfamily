@@ -81,19 +81,15 @@
 $(document).ready(function() {
 	   var loginName = '${userBoard.userName}';
    var userId = '${userBoard.userId}';
-   console.log("userId:"+userId);
    var points = '${userBoard.points}';
-   console.log("points:"+points);
    $("#totalPoints").text(points);
    
    $("#myTask").click(function() {
-	   console.log("loding tasks");
 		$("body").load("/tasks?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });
    
    $("#calendar").click(function() {
-	   console.log("loding calendar");
 		$("body").load("/calendar?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
@@ -105,7 +101,6 @@ $(document).ready(function() {
    });
    
    $("#pills-profile-tab").click(function() {
-	   console.log("tab2 clicked");
 	   $( this ).css("background-color","#a9cfd5!important");
 	   $( this ).addClass('my-tab-active');
 	   $("#pills-home-tab").removeClass('my-tab-active');

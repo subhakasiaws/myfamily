@@ -78,23 +78,18 @@
 $(document).ready(function() {
    var userName = '${param.name}';
    $("#name").val(userName);
-   console.log("userName:"+userName);
    var userId = '${param.userId}';
    $("#userId").val(userId);
-   console.log(userId);
    var points = '${param.points}';
    $('#totalPoints').text(points);
-   console.log("points "+points);
    
    $("#home").click(function() {
-	   console.log("loding home");
 	   var temp = userName;
 		$("body").load("/home?name="+temp+"&userId="+userId);
 		history.pushState(null, null, "/home");
    });
    
    $("#calendar").click(function() {
-	   console.log("loding calendar");
 	   points = +$('#totalPoints').text();
 		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");

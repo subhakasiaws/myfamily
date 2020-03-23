@@ -1,6 +1,7 @@
 com\myfamily\dao\UserDaoImpl.class
 com\myfamily\controller\HomeController.class
 com\myfamily\config\MyFamilyUtil.class
+com\myfamily\model\Users.class
 com\myfamily\config\MyFamilyConstants.class
 com\myfamily\Application.class
 com\myfamily\controller\MyFamilyErrorController.class
@@ -9,8 +10,7 @@ com\myfamily\model\Audit.class
 com\myfamily\model\Event.class
 com\myfamily\exception\MyFamilyException.class
 com\myfamily\service\UserService.class
-com\myfamily\model\User.class
-com\myfamily\model\UserDetails.class
+com\myfamily\model\UserBoard.class
 com\myfamily\config\SecurityConfiguration.class
 com\myfamily\model\Notifications.class
 com\myfamily\config\MvcConfiguration.class

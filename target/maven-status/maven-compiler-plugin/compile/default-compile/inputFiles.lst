@@ -16,6 +16,6 @@ D:\Development\myfamily\src\main\java\com\myfamily\controller\HomeController.jav
 D:\Development\myfamily\src\main\java\com\myfamily\exception\MyFamilyException.java
 D:\Development\myfamily\src\main\java\com\myfamily\model\CreditPoints.java
 D:\Development\myfamily\src\main\java\com\myfamily\dao\UserDaoImpl.java
-D:\Development\myfamily\src\main\java\com\myfamily\model\UserDetails.java
-D:\Development\myfamily\src\main\java\com\myfamily\model\User.java
+D:\Development\myfamily\src\main\java\com\myfamily\model\Users.java
 D:\Development\myfamily\src\main\java\com\myfamily\service\UserService.java
+D:\Development\myfamily\src\main\java\com\myfamily\model\UserBoard.java
