@@ -109,6 +109,7 @@ $(document).ready(function() {
    //logout
    $('#logout').click(function() {
 	 window.location.replace("/logout");
+	 //history.pushState(null, null, "/login?lang=te");
 	});
    
    function decorateWhatsAppLink() {
