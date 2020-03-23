@@ -23,6 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	  .authorizeRequests() 
         .antMatchers("/*").permitAll()
         .antMatchers("/*/*").permitAll()
+        .antMatchers( "/favicon.ico").permitAll()
         .antMatchers(HttpMethod.POST,"/home").permitAll()
         .antMatchers("/login").permitAll(); 
   } 
