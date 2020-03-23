@@ -26,4 +26,5 @@ $(function () {
 
 function clearItems(){
 	$('#welcome').remove();
+	$('#shopping').remove();
 }

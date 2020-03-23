@@ -96,6 +96,7 @@ $(document).ready(function() {
 
 						</div>
 						<div class="form-group">
+							<span style="float: right; margin-left: -2px;"><i class="fa fa-sign-in" aria-hidden="true" style="float:right;font-size: 40px;background-color: #FFC312;height: 38px;width: 38px;"></i></span>
 							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"	class="btn float-right login_btn">
 						</div>
 					</form>

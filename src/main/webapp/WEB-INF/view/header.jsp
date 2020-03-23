@@ -8,7 +8,7 @@
     <a class="navbar-brand" id="welcome"><spring:message code="app.page.welcome"/></a>
     <ul class="navbar-nav mr-auto mt-lg-0">
       <li class="nav-item">
-       <a class="nav-link" href="shopping"><spring:message code="app.page.shopping"/></a>
+       <a class="nav-link"  id="shopping" href="shopping"><spring:message code="app.page.shopping"/></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
@@ -24,7 +24,9 @@
 	  <li class="nav-item">
 	        <a class="nav-link whitesmokec" id="navbarDropdownMenuLink-4"><i class="fa fa-trophy my-font-20"></i>
 	          <spring:message code="app.page.points"/>
-	          <span id="totalPoints" class="badge badge-danger badge-counter my-padding-top">0</span></a>
+	          <span id="totalPoints" class="badge badge-danger badge-counter my-padding-top">0</span>
+	          <span class="fa fa-sign-out"></span>
+	          </a>
 	  </li>
    </ul>
  </div>
