@@ -8,7 +8,7 @@
     <a class="navbar-brand" id="welcome"><spring:message code="app.page.welcome"/></a>
     <ul class="navbar-nav mr-auto mt-lg-0">
       <li class="nav-item">
-       <a class="nav-link"  id="shopping" href="shopping"><spring:message code="app.page.shopping"/></a>
+       <a class="nav-link"  id="shopping"><spring:message code="app.page.shopping"/></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>

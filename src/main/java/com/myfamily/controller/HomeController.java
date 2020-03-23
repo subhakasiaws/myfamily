@@ -47,7 +47,7 @@ public class HomeController {
     @RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView home(String name, Integer userId) {
 
-		LOG.info("HomeController method home-started " + name);
+		LOG.info("home -start" + name);
 
 		if (MyFamilyUtil.isBlankString(name)) {
 			throw new MyFamilyException("Name is empty");
@@ -72,33 +72,41 @@ public class HomeController {
 			model.addObject(MyFamilyConstants.USERBOARD,userBoard);
 		}
 
-		LOG.info("HomeController method home -end ");
+		LOG.info("home -end ");
 		return model;
 	}
     
     @RequestMapping("/calendar")
     public ModelAndView calendar(){
+    	LOG.info("calendar -start ");
     	 ModelAndView model = new ModelAndView();
     	 List<Event> eventList= userService.findAllEvents();
     	 LOG.info("eventList : "+eventList.size());
     	 model.addObject(MyFamilyConstants.EVENTS,eventList);
     	 model.setViewName("calendar");
+    	 LOG.info("calendar -end ");
         return model;
     }
     
-    @RequestMapping("/shopping")
+    @RequestMapping(value="/shopping", method= RequestMethod.GET)
     public String shopping(){
+    	LOG.info("shopping-- start");
+    	 LOG.info("shopping-- end");
         return "shopping";
     }
     
     @RequestMapping(value = "/tasks", method = RequestMethod.GET)
     public String Task(){
+    	LOG.info("Task-- start");
+    	LOG.info("Task-- end");
         return "task";
     }
     
     @RequestMapping(value = "/createEvent", method = RequestMethod.GET)
     public ResponseEntity<String> createEvent(@ModelAttribute(value="event") Event event){
+    	LOG.info("createEvent-- start");
     	userService.saveEvent(event);
+    	LOG.info("createEvent-- end");
         return new ResponseEntity<String>(MyFamilyConstants.SUCCESS,HttpStatus.OK);
     }
     
@@ -109,7 +117,7 @@ public class HomeController {
     
     @RequestMapping(path="/creditPoints", method= RequestMethod.GET)
     public ResponseEntity<Integer> creditPoints(Integer userId, Integer points) {
-    LOG.info("HomeController method creditPoints ");
+    LOG.info("HomeController method creditPoints -start");
     Integer totalPoints = userService.updateLeaderboard(userId,points);
     System.out.println(totalPoints); 
      LOG.info("HomeController method creditPoints -end ");

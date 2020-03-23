@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<spring:message code=""/>
 <head>
-	<title> Shoping Cart Design Using Bootstrap 4.0 </title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-<style>	
-	body{
-	background-color: #f5f5f5;
-}
-.Product-img img{
-	width: 100%;
-}
-.main-section{
-	font-family: 'Roboto Condensed', sans-serif;
-	margin-top:100px;
-}
-</style>
+<meta name="viewport" http-equiv="Refresh" content="width=device-width, initial-scale=1, maximum-scale=1, 5; url=/login">
+
+<link href="css/font-awesome.min.css"	rel="stylesheet" />	
+<link rel="stylesheet" href="css/mystyle.css" >
+
 </head>
-<body>
+<%@ include file="header.jsp" %> 
+
 	<div class="container main-section">
+	        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
+        <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
 		<div class="row">
 			<div class="col-lg-12 pb-2">
-				<h4>Shoping Cart Design Using Bootstrap 4.0</h4>
+				<h4>MyFamily Shoping Cart</h4>
 			</div>
 			<div class="col-lg-12 pl-3 pt-3">
 				<table class="table table-hover border bg-white">
@@ -95,5 +89,13 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+<%@ include file="footer.jsp" %> 
+<script type="text/javascript">
+$(document).ready(function() {
+	   $("#home").click(function() {
+		   var temp = userName;
+			$("body").load("/home?name="+temp+"&userId="+userId);
+			history.pushState(null, null, "/home");
+	   });
+});
+</script>

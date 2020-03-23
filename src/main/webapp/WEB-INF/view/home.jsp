@@ -94,6 +94,11 @@ $(document).ready(function() {
 		history.pushState(null, null, "/calendar");
    });
    
+   $("#shopping").click(function() {
+		$("body").load("/shopping?name="+loginName+"&userId="+userId+"&points="+points);
+		history.pushState(null, null, "/shopping");
+  });
+   
    $("#pills-home-tab").click(function() {
 	   $("#pills-profile-tab").removeClass('my-tab-active');
 	   $( this ).css("background-color","#a9cfd5!important");
