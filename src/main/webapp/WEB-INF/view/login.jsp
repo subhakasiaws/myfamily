@@ -107,7 +107,7 @@ $(document).ready(function() {
 
 	<div class="fixed-bottom my-h-50">
 		<footer class="page-footer font-small blue"
-			style="background-color:#9370DB"> <!-- Copyright -->
+			style="background-color:#2d6d3b!important"> <!-- Copyright -->
 		<div class="footer-copyright text-center py-3 wcolor"
 			style="padding-bottom: 2rem !important; color: white">
 			 <a style="color: white"
