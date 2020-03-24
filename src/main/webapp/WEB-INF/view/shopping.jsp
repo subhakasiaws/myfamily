@@ -113,15 +113,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	   var userName = '${param.name}';
-	   $("#name").val(userName);
+	   var loginName = '${param.name}';
+	   $("#name").val(loginName);
 	   var userId = '${param.userId}';
 	   $("#userId").val(userId);
 	   var points = '${param.points}';
 	   $('#totalPoints').text(points);
 	   
 	   $("#home").click(function() {
-		   var temp = userName;
+		   var temp = loginName;
 			$("body").load("/home?name="+temp+"&userId="+userId);
 			history.pushState(null, null, "/home");
 	   });
