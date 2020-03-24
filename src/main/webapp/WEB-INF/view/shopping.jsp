@@ -7,7 +7,7 @@
 
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
 <link rel="stylesheet" href="css/mystyle.css" >
-
+<script src="js/task.js"></script>
 </head>
 <%@ include file="header.jsp" %> 
 
