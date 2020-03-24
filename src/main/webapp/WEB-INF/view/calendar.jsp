@@ -40,15 +40,15 @@
                         <option value="marriageday"><spring:message code="app.page.marriageday"/></option>
              </select>
             <textarea name="desc" id="desc" class="form-control" rows="9" cols="25" required="required" placeholder="<spring:message code="app.page.eventDesc"/>"></textarea>
-            <label class="t-5" for=""><spring:message code="app.page.eventdate"/></label>
+            <label class="t-5" style="color: white;" for=""><spring:message code="app.page.eventdate"/></label>
             <div class="row">
-                <div class="col-xs-4 col-md-4">
+                <div class="col-xs-6 col-md-6">
                     <select class="form-control" id="day">
                         <option value="Day"><spring:message code="app.page.day"/></option>
                         <option value="1">1</option>
                     </select>
                 </div>
-                <div class="col-xs-4 col-md-4">
+                <div class="col-xs-6 col-md-6">
                     <select class="form-control" id="month">
                         <option value="Month"><spring:message code="app.page.month"/></option>
                     </select>
@@ -103,9 +103,6 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-	 var notiCount = '${requestScope.notiCount}';
-	 console.log("notiCount: "+notiCount);
-	 
 	   var userName = '${param.name}';
 	   $("#name").val(userName);
 	   var userId = '${param.userId}';
@@ -149,12 +146,14 @@ $(document).ready(function() {
 	   var day = $('#day').val();
 	   var month =$('#month').val();
 	   var date = day+'-'+month;
-	   
-	   if(day == "Day"){
-		   $('#day').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");   
+	   var desc = $('#desc').val();
+	   if(desc ==''){
+		   $('#desc').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger my-alert-text-color");  
+	   }else  if(day == "Day"){
+		   $('#day').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger my-alert-text-color");   
 	   }else if(month == "Month"){
-		   $('#month').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");   
-	   }else {
+		   $('#month').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger my-alert-text-color");   
+	   }else{
 		   eventDataSubmit($('#eventName').val(),$('#desc').val(),date,$('#name').val());
 	   }
 	   

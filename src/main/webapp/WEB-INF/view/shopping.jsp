@@ -12,42 +12,62 @@
 <%@ include file="header.jsp" %> 
 
 	<div class="container main-section">
-	        <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${param.name}' >${param.name}</label> </h1>
         <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
 		<div class="row">
-			<div class="col-lg-12 pb-2">
-				<h4>MyFamily Shoping Cart</h4>
+			<div class="col-lg-12 pb-2 my-shopping">
+				<h4>Welcome to Shopping Cart</h4>
 			</div>
-			<div class="col-lg-12 pl-3 pt-3">
+			<div class="col-lg-12 pl-3 pt-3" style="margin-bottom: 66px;">
 				<table class="table table-hover border bg-white">
 				    <thead>
 				      	<tr>
 					        <th>Product</th>
-					        <th>Price</th>
+					        <th>Points</th>
 					        <th style="width:10%;">Quantity</th>
 					        <th>Subtotal</th>
 					        <th>Action</th>
 				      	</tr>
 				    </thead>
 				    <tbody>
-				      	<tr>
+				    	<tr>
 					        <td>
 					        	<div class="row">
-									<div class="col-lg-2 Product-img">
-										<img src="http://nicesnippets.com/demo/sc-images.jpg" alt="..." class="img-responsive"/>
+									<div class="col-lg-4 Product-img">
+										<img src="images/coffee.jpg" alt="..." class="img-responsive"/>
 									</div>
-									<div class="col-lg-10">
-										<h4 class="nomargin">Lenovo K6 Power</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-										tempor incididunt ut labore et dolore magna aliqua.</p>
+									<div class="col-lg-4">
+										<h4 class="nomargin">Coffee Cup's</h4>
+										<p>It's better than glass, your coffee will stay warmer much longer.</p>
 									</div>
 								</div>
 					        </td>
-					        <td> 12,000 </td>
+					        <td> 500 </td>
 					        <td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td>12,000</td>
+							<td> 500 </td>
+					        <td class="actions" data-th="" style="width:10%;">
+								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+							</td>
+				      	</tr>
+				    	<tr>
+					        <td>
+					        	<div class="row">
+									<div class="col-lg-4 Product-img">
+										<img src="images/iphone11-pro.jpg" alt="..." class="img-responsive"/>
+									</div>
+									<div class="col-lg-4">
+										<h4 class="nomargin">Iphone 11 PRO</h4>
+										<p> The first iPhone powerful enough to be called Pro.</p>
+									</div>
+								</div>
+					        </td>
+					        <td> 2000 </td>
+					        <td data-th="Quantity">
+								<input type="number" class="form-control text-center" value="1">
+							</td>
+							<td> 2000 </td>
 					        <td class="actions" data-th="" style="width:10%;">
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
@@ -56,21 +76,20 @@
 				      	<tr>
 					        <td>
 					        	<div class="row">
-									<div class="col-lg-2 Product-img">
-										<img src="http://nicesnippets.com/demo/sc-KHIP6xxGLD-webres.jpg" alt="..." class="img-responsive"/>
+									<div class="col-lg-4 Product-img">
+										<img src="images/gold_biscut.JPG" alt="..." class="img-responsive"/>
 									</div>
-									<div class="col-lg-10">
-										<h4 class="nomargin">Iphone 6s</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-										tempor incididunt ut labore et dolore magna aliqua.</p>
+									<div class="col-lg-4">
+										<h4 class="nomargin">Gold Biscuit</h4>
+										<p>24K is pure gold, it is usually more expensive than 22K or 18K.</p>
 									</div>
 								</div>
 					        </td>
-					        <td> 35,000 </td>
+					        <td> 5000 </td>
 					        <td data-th="Quantity">
 								<input type="number" class="form-control text-center" value="1">
 							</td>
-							<td> 35,000 </td>
+							<td> 5000 </td>
 					        <td class="actions" data-th="" style="width:10%;">
 								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
 								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
@@ -97,5 +116,18 @@ $(document).ready(function() {
 			$("body").load("/home?name="+temp+"&userId="+userId);
 			history.pushState(null, null, "/home");
 	   });
+	   
+	   $('#logout').click(function() {
+		   
+		   var lang = getLanguageConverter(localStorage.getItem("selectedLanguage"));
+		   if(null == lang){
+				 $("body").load("/login?lang=te");
+				 history.pushState(null, null, "/login?lang=te");
+		   }else{
+				 $("body").load("/login"+lang);
+				 history.pushState(null, null, "/login"+lang);
+		   }
+
+    	});
 });
 </script>

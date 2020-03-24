@@ -1,13 +1,3 @@
-/*var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("mynavbar").style.top = "0";
-  } else {
-    document.getElementById("mynavbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}*/
 
 var timer = 0;
 function startRedirect() {
@@ -29,4 +19,18 @@ function clearItems(){
 	$('#shopping').remove();
 }
 
+function getLanguageConverter(selected){
+	if("1" == selected ){
+		selected = "?lang=te";
+	}else if("2" == selected){
+		selected = "?lang=en";
+	}else if("3" == selected){
+		selected = "?lang=hi";
+	}else if("4" == selected){
+		selected = "?lang=cn";
+	}else if("5" == selected){
+		selected = "?lang=de";
+	}
+	return selected;
+}
 

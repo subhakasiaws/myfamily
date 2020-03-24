@@ -12,7 +12,6 @@
 
    <!-- Page Content -->
   <div class="container-fluid makeScroll">
-		<c:set var="notiCount" value="1" scope="request" />
       <div>
         <h1 class="mt-5"><spring:message code="app.page.hi"/> <label for="name" id="name" value='${userBoard.userName}'>${userBoard.userName}</label> </h1>
 		<div class="div-h-40">
@@ -113,8 +112,14 @@ $(document).ready(function() {
 
    //logout
    $('#logout').click(function() {
-	 window.location.replace("/logout");
-	 //history.pushState(null, null, "/login?lang=te");
+	   var lang = getLanguageConverter(localStorage.getItem("selectedLanguage"));
+	   if(null == lang){
+			 $("body").load("/login?lang=te");
+			 history.pushState(null, null, "/login?lang=te");
+	   }else{
+			 $("body").load("/login"+lang);
+			 history.pushState(null, null, "/login"+lang);
+	   }
 	});
    
    function decorateWhatsAppLink() {

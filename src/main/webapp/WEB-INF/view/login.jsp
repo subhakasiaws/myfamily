@@ -76,7 +76,7 @@ $(document).ready(function() {
 	<div class="container-fluid" >
 		<div class="page-header" >
 			<div style="text-align: right">
-				<select class="selectpicker" data-width="fit"> 
+				<select class="selectpicker" data-width="fit" style="padding-bottom: 3px;"> 
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Telugu' value="1"><spring:message code="app.lang.telugu"/></option>	
 					<option data-content='<span class="flag-icon flag-icon-us"></span> English' value="2"><spring:message code="app.lang.english"/></option>
 					<option data-content='<span class="flag-icon flag-icon-us"></span> Hindi' value="3"><spring:message code="app.lang.hindi"/></option>
@@ -99,7 +99,7 @@ $(document).ready(function() {
 
 						</div>
 						<div class="form-group">
-							<span style="float: right; margin-left: -2px;"><i class="fa fa-sign-in" aria-hidden="true" style="float:right;font-size: 40px;background-color: #FFC312;height: 38px;width: 38px;"></i></span>
+							<span class="login_icon" style="cursor: pointer;float: right; margin-left: -2px;"><i class="fa fa-sign-in" aria-hidden="true" style="float:right;font-size: 40px;background-color: #FFC312;height: 38px;width: 38px;"></i></span>
 							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"	class="btn float-right login_btn">
 						</div>
 					</form>

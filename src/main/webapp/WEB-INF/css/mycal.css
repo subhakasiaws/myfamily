@@ -186,3 +186,7 @@
 			padding: 10px 0px 9px;
 		}
 	}
+	
+	.my-alert-text-color{
+	color: white !important;
+	}

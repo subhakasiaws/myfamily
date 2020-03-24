@@ -76,9 +76,6 @@
 <%@ include file="footer.jsp" %>
 <script type="text/javascript">
 $(document).ready(function() {
-	 var notiCount = '${requestScope.notiCount}';
-	 
-	 console.log("notiCount: "+notiCount);
 	 
    var userName = '${param.name}';
    $("#name").val(userName);
