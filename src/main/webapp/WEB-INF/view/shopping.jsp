@@ -13,6 +13,7 @@
 
 	<div class="container main-section">
         <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
+        <label id="name" name="name" style="display: none;" value='${param.name}'>${param.name}</label>
 		<div class="row">
 			<div class="col-lg-12 pb-2 my-shopping">
 				<h4>Welcome to Shopping Cart</h4>
@@ -111,10 +112,28 @@
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
 $(document).ready(function() {
+	
+	   var userName = '${param.name}';
+	   $("#name").val(userName);
+	   var userId = '${param.userId}';
+	   $("#userId").val(userId);
+	   var points = '${param.points}';
+	   $('#totalPoints').text(points);
+	   
 	   $("#home").click(function() {
 		   var temp = userName;
 			$("body").load("/home?name="+temp+"&userId="+userId);
 			history.pushState(null, null, "/home");
+	   });
+	   
+	   $("#myTask").click(function() {
+			$("body").load("/tasks?name="+loginName+"&userId="+userId+"&points="+points);
+			history.pushState(null, null, "/task");
+	   });
+	   
+	   $("#calendar").click(function() {
+			$("body").load("/calendar?name="+loginName+"&userId="+userId+"&points="+points);
+			history.pushState(null, null, "/calendar");
 	   });
 	   
 	   $('#logout').click(function() {
