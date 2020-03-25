@@ -41,3 +41,18 @@ $("#gold_q" ).change(function() {
 	  }
 	  
 	});
+
+$('#place_order').click(function(){
+	var orderPoints = parseInt($('#totalVal').html());
+	var earnedPoints = parseInt($('#totalPoints').html());
+	console.log(orderPoints +"-->"+earnedPoints);
+	
+	if(orderPoints <= earnedPoints){
+		console.log("you can place order");
+		 $('#orderplaced').modal('show');
+	}else{
+		console.log("you can't place order");
+		$('#cancelOrder').modal('show');
+	}
+	
+});

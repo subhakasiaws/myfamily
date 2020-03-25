@@ -17,7 +17,48 @@
        		        			<div class="col-lg-12 pb-2 my-shopping">
 							<h4><spring:message code="app.page.shoptitle"/></h4>
 							</div>
-							
+					
+					 <!-- Modal -->
+						<div class="modal fade" id="orderplaced" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						  <div class="modal-dialog modal-dialog-centered" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        Your order is placed.
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						      </div>
+						    </div>
+						  </div>
+						</div> 
+						
+						<div class="modal fade" id="cancelOrder" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						  <div class="modal-dialog modal-dialog-centered" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLongTitle">Failure</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						          <span aria-hidden="true">&times;</span>
+						        </button>
+						      </div>
+						      <div class="modal-body">
+						        You don't have enough points to place order, please complete the task to get more points.
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-primary">Save changes</button>
+						      </div>
+						    </div>
+						  </div>
+						</div> 
+		
 		        <div class="row" style="background-color: white;">
 		    	  <div class="col my-margin-top my-m-b">
 				        <div class="my-shopping-item">
@@ -62,7 +103,7 @@
     	<div class="row" style="background-color: white;margin-bottom: 70px;">
 	    	<div style="margin-left: 75%; margin-bottom: 20px;">
 	    	<span style="margin-left: 10px;"><spring:message code="app.page.total"/>: <span id="totalVal">500</span></span>
-	    	<span><a href="#" class="btn btn-success btn-block"><spring:message code="app.page.order"/><i class="fa fa-angle-right"></i></a></span>
+	    	<span><a id="place_order" class="btn btn-success btn-block"><spring:message code="app.page.order"/><i class="fa fa-angle-right"></i></a></span>
 	    	</div>
     	</div>
 		
