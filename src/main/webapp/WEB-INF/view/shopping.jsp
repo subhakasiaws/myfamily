@@ -6,108 +6,64 @@
 <meta name="viewport" http-equiv="Refresh" content="width=device-width, initial-scale=1, maximum-scale=1, 5; url=/login">
 
 <link href="css/font-awesome.min.css"	rel="stylesheet" />	
-<link rel="stylesheet" href="css/mystyle.css" >
-<script src="js/task.js"></script>
+<script src="js/shopping.js"></script>
 </head>
 <%@ include file="header.jsp" %> 
 
 	<div class="container main-section">
         <label id="userId" name="userId" style="display: none;" value='${param.userId}'>${param.userId}</label>
         <label id="name" name="name" style="display: none;" value='${param.name}'>${param.name}</label>
-		<div class="row">
-			<div class="col-lg-12 pb-2 my-shopping">
-				<h4>Welcome to Shopping Cart</h4>
-			</div>
-			<div class="col-lg-12 pl-3 pt-3" style="margin-bottom: 66px;">
-				<table class="table table-hover border bg-white">
-				    <thead>
-				      	<tr>
-					        <th>Product</th>
-					        <th>Points</th>
-					        <th style="width:10%;">Quantity</th>
-					        <th>Subtotal</th>
-					        <th>Action</th>
-				      	</tr>
-				    </thead>
-				    <tbody>
-				    	<tr>
-					        <td>
-					        	<div class="row">
-									<div class="col-lg-4 Product-img">
-										<img src="images/coffee.jpg" alt="..." class="img-responsive"/>
-									</div>
-									<div class="col-lg-4">
-										<h4 class="nomargin">Coffee Cup's</h4>
-										<p>It's better than glass, your coffee will stay warmer much longer.</p>
-									</div>
-								</div>
-					        </td>
-					        <td> 500 </td>
-					        <td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td> 500 </td>
-					        <td class="actions" data-th="" style="width:10%;">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
-							</td>
-				      	</tr>
-				    	<tr>
-					        <td>
-					        	<div class="row">
-									<div class="col-lg-4 Product-img">
-										<img src="images/iphone11-pro.jpg" alt="..." class="img-responsive"/>
-									</div>
-									<div class="col-lg-4">
-										<h4 class="nomargin">Iphone 11 PRO</h4>
-										<p> The first iPhone powerful enough to be called Pro.</p>
-									</div>
-								</div>
-					        </td>
-					        <td> 2000 </td>
-					        <td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td> 2000 </td>
-					        <td class="actions" data-th="" style="width:10%;">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
-							</td>
-				      	</tr>
-				      	<tr>
-					        <td>
-					        	<div class="row">
-									<div class="col-lg-4 Product-img">
-										<img src="images/gold_biscut.JPG" alt="..." class="img-responsive"/>
-									</div>
-									<div class="col-lg-4">
-										<h4 class="nomargin">Gold Biscuit</h4>
-										<p>24K is pure gold, it is usually more expensive than 22K or 18K.</p>
-									</div>
-								</div>
-					        </td>
-					        <td> 5000 </td>
-					        <td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1">
-							</td>
-							<td> 5000 </td>
-					        <td class="actions" data-th="" style="width:10%;">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
-							</td>
-				      	</tr>
-				    </tbody>
-				    <tfoot>
-						<tr>
-							<td><a href="#" class="btn btn-warning text-white"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center" style="width:10%;"><strong>Total : 47,000</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-		</div>
+       
+       		        			<div class="col-lg-12 pb-2 my-shopping">
+							<h4><spring:message code="app.page.shoptitle"/></h4>
+							</div>
+							
+		        <div class="row" style="background-color: white;">
+		    	  <div class="col my-margin-top my-m-b">
+				        <div class="my-shopping-item">
+						  <img class="" src="images/coffee.jpg" alt="Card image cap" style="height: 233px;">
+						  <div class="card-block my-shopping-item-align">
+						    <h4 class="card-title"><spring:message code="app.page.coffeecup"/></h4>
+						    <p><spring:message code="app.page.coffeecupTitle"/>.</p>
+						    <p class="card-text"><spring:message code="app.page.pointss"/>: 500</p>
+						    <span><spring:message code="app.page.quantity"/></span>
+						    <input type="number" class="text-center" value="1" style="width: 60%;">
+						    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+						  </div>
+						</div>
+				      </div>
+				      <div class="col my-margin-top">
+				        <div class="my-shopping-item">
+				  <img class="" src="images/iphone11-pro.jpg" alt="Card image cap" style="height: 172px;">
+				  <div class="card-block my-shopping-item-align my-margin-top my-m-b">
+				    <h4 class="card-title"><spring:message code="app.page.iphone"/></h4>
+				    <p><spring:message code="app.page.iphoneText"/>.</p>
+				    <p class="card-text"><spring:message code="app.page.pointss"/>: 2000</p>
+					   <span style="margin-right:5px;"><spring:message code="app.page.quantity"/></span>
+					   <input type="number" class="text-center" value="0" style="width: 60%;">
+					   <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+				  </div>
+				</div>
+				      </div>
+				      <div class="col my-margin-top my-m-b">
+				        <div class="my-shopping-item">
+				  <img class="" src="images/gold_biscut.JPG" alt="Card image cap" style="height: 188px;">
+				  <div class="card-block my-shopping-item-align my-margin-top">
+				    <h4 class="card-title"><spring:message code="app.page.gold"/></h4>
+				    <p><spring:message code="app.page.goldText"/>.</p>
+				    <p class="card-text"><spring:message code="app.page.pointss"/>: 5000</p>
+				      <span><spring:message code="app.page.quantity"/></span>
+					   <input type="number" class="text-center" value="0" style="width: 60%;">
+					   <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+				  </div>
+				</div>
+		      </div>
+		    </div>
+    	<div class="row" style="background-color: white;float: right;">
+    	<span><spring:message code="app.page.pointss"/>: 2000</span>
+    	<a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+    	</div>
+		
 	</div>
 <%@ include file="footer.jsp" %> 
 <script type="text/javascript">
