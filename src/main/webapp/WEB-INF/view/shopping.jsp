@@ -61,7 +61,7 @@
 		    </div>
     	<div class="row" style="background-color: white;margin-bottom: 70px;">
 	    	<div style="margin-left: 75%; margin-bottom: 20px;">
-	    	<span style="margin-left: 10px;" id="totalVal"><spring:message code="app.page.total"/>: 500</span>
+	    	<span style="margin-left: 10px;"><spring:message code="app.page.total"/>: <span id="totalVal">500</span></span>
 	    	<span><a href="#" class="btn btn-success btn-block"><spring:message code="app.page.order"/><i class="fa fa-angle-right"></i></a></span>
 	    	</div>
     	</div>
