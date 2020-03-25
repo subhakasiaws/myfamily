@@ -27,7 +27,7 @@
 						    <p><spring:message code="app.page.coffeecupTitle"/>.</p>
 						    <p class="card-text"><spring:message code="app.page.pointss"/>: 500</p>
 						    <span><spring:message code="app.page.quantity"/></span>
-						    <input type="number" class="text-center" value="1" style="width: 60%;">
+						    <input type="number" class="text-center" value="1" style="width: 60%;" id="cup_q">
 						    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 						  </div>
 						</div>
@@ -40,7 +40,7 @@
 				    <p><spring:message code="app.page.iphoneText"/>.</p>
 				    <p class="card-text"><spring:message code="app.page.pointss"/>: 2000</p>
 					   <span style="margin-right:5px;"><spring:message code="app.page.quantity"/></span>
-					   <input type="number" class="text-center" value="0" style="width: 60%;">
+					   <input type="number" class="text-center" value="0" style="width: 60%;" id="iphone_q">
 					   <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 				  </div>
 				</div>
@@ -53,15 +53,17 @@
 				    <p><spring:message code="app.page.goldText"/>.</p>
 				    <p class="card-text"><spring:message code="app.page.pointss"/>: 5000</p>
 				      <span><spring:message code="app.page.quantity"/></span>
-					   <input type="number" class="text-center" value="0" style="width: 60%;">
+					   <input type="number" class="text-center" value="0" style="width: 60%;" id="gold_q">
 					   <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
 				  </div>
 				</div>
 		      </div>
 		    </div>
-    	<div class="row" style="background-color: white;float: right;">
-    	<span><spring:message code="app.page.pointss"/>: 2000</span>
-    	<a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+    	<div class="row" style="background-color: white;margin-bottom: 70px;">
+	    	<div style="margin-left: 75%; margin-bottom: 20px;">
+	    	<span style="margin-left: 10px;" id="totalVal"><spring:message code="app.page.total"/>: 500</span>
+	    	<span><a href="#" class="btn btn-success btn-block"><spring:message code="app.page.order"/><i class="fa fa-angle-right"></i></a></span>
+	    	</div>
     	</div>
 		
 	</div>
