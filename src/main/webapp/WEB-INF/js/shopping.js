@@ -2,9 +2,10 @@
 $("#cup_q" ).change(function() {
 	var temp = $(this).val();
 	var exVal = $('#totalVal').html();
+	console.log('exVal :'+exVal);
 	  if(temp <= 5){
-		  var sub_t=temp*500;
-		  var ftotal =exVal+sub_t;
+		  var ftotal =parseInt(exVal)+500;
+		  console.log('ftotal total :'+ftotal);
 		  $('#totalVal').html('');
 		 $('#totalVal').html(ftotal); 
 	  }
