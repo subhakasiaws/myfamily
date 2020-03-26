@@ -23,16 +23,16 @@
 						  <div class="modal-dialog modal-dialog-centered" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLongTitle">Success</h5>
+						        <h5 class="modal-title" id="exampleModalLongTitle"> <spring:message code="app.page.success"/></h5>
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        Your order is placed.
+						        <spring:message code="app.page.successText"/>
 						      </div>
 						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal"><spring:message code="app.page.close"/></button>
 						      </div>
 						    </div>
 						  </div>
@@ -42,16 +42,16 @@
 						  <div class="modal-dialog modal-dialog-centered" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLongTitle">Failure</h5>
+						        <h5 class="modal-title" id="exampleModalLongTitle"><spring:message code="app.page.failure"/></h5>
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        You don't have enough points to place order, please complete the task to get more points.
+						        <spring:message code="app.page.failText"/>
 						      </div>
 						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal"><spring:message code="app.page.close"/></button>
 						      </div>
 						    </div>
 						  </div>
