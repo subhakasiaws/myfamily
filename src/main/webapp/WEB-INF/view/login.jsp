@@ -26,6 +26,10 @@ $(document).ready(function() {
 				
 				$('#myLogin').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger");
 				} else {
+					$(this).prop("disabled", true);
+					 
+					$(this).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...');
+					$('#login').html("<i class='fa fa-spinner'/>");
 					$('#myLogin').addClass("was-validated");
 					$("body").load("/home?name="+temp,setNotifications);
 					history.pushState(null, null, "/home");
@@ -94,12 +98,11 @@ $(document).ready(function() {
 						<div id="myLogin" class="input-group form-group">
 							<div class="input-group-prepend">
 							</div>
-							<input id="name" type="text" class="form-control" placeholder="<spring:message code="app.page.enteryourname"/>">
+							<input id="name" type="text" class="form-control" placeholder="<spring:message code="app.page.enteryourname"/>"></input>
 
 						</div>
 						<div class="form-group">
-							<span class="login_icon" style="cursor: pointer;float: right; margin-left: -2px;"><i class="fa fa-sign-in" aria-hidden="true" style="float:right;font-size: 40px;background-color: #FFC312;height: 38px;width: 38px;"></i></span>
-							<input type="submit" value="<spring:message code="app.page.login"/>" id="login"	class="btn float-right login_btn">
+							<button type="button" id="login" class="btn btn-primary mb-2" style="float: right;padding-top: 10px;"><spring:message code="app.page.login"/><i class="fa fa-sign-in" aria-hidden="true" style="float:right;font-size: 30px;width: 38px;margin-top: -3px;"></i></button>
 						</div>
 					</form>
 				</div>

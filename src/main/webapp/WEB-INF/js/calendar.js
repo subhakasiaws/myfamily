@@ -5,6 +5,7 @@
 	});
    
 function eventDataSubmit(name,desc,date,createdBy){
+	$('#eventSubmit').attr('disabled',true);
 	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
 	  .done(function( data ) {
 		$('#createEvent').click();
