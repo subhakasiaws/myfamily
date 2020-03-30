@@ -64,7 +64,7 @@
 				<ul class="event-list">
 				             
 				                <c:forEach var="event" items="${events}">
-										<li id='${event.id+"_p"}'>
+										<li id='${event.id}'>
 											<time datetime="2014-07-20 2000">
 												<span class="day">${event.eventDay}</span>
 												<span class="month">${event.stringMonth}</span>
@@ -90,7 +90,7 @@
 												<ul id="dropEvent">
 													<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
 													<li style="width:34%;">3 <span class="fa fa-thumbs-up"></span></li>
-													<li id='${event.id}' style="width:33%;"> <span class="fa fa-trash my-display-block"></span></li>
+													<li data-id='${event.id}' style="width:33%;"> <span class="fa fa-trash my-display-block"></span></li>
 												</ul>
 											</div>
 										</li>

@@ -36,10 +36,11 @@ function eventDataSubmit(name,desc,day,month,stringMonth,createdBy){
 }
 
 $("#dropEvent li").click(function() {
-	var id = this.id;
+	var id = $(this).data("id");
     $.get("dropEvent", { eventId: id })
 	  .done(function( data ) {
-		  console.log("deleted "+id)
+		  console.log("deleted "+id);
+		  $('#'+id).remove();
 	  });
     
 });
