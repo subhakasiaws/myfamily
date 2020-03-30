@@ -112,6 +112,14 @@ public class HomeController {
         return new ResponseEntity<String>(MyFamilyConstants.SUCCESS,HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/dropEvent", method = RequestMethod.GET)
+    public ResponseEntity<String> dropEvent(Integer eventId){
+    	LOG.info("createEvent-- start");
+    	userService.dropEvent(eventId);
+    	LOG.info("createEvent-- end");
+        return new ResponseEntity<String>(MyFamilyConstants.SUCCESS,HttpStatus.OK);
+    }
+    
     @RequestMapping("/board")
     public String Board(){
         return "board";

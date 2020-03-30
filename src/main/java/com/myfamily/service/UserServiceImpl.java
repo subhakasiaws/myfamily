@@ -48,4 +48,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findAllEventsDao();
 	}
 
+	@Override
+	public Boolean dropEvent(Integer eventId) {
+		return userDao.dropEvent(eventId);
+	}
+
 }

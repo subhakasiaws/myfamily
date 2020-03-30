@@ -34,3 +34,12 @@ function eventDataSubmit(name,desc,day,month,stringMonth,createdBy){
 		$('.event-list').prepend(newList);
 	  });
 }
+
+$("#dropEvent li").click(function() {
+	var id = this.id;
+    $.get("dropEvent", { eventId: id })
+	  .done(function( data ) {
+		  console.log("deleted "+id)
+	  });
+    
+});

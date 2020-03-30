@@ -19,4 +19,6 @@ public interface UserDao {
 
 	List<Event> findAllEventsDao();
 
+	Boolean dropEvent(Integer eventId);
+
 }

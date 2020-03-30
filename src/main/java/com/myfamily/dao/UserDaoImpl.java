@@ -95,4 +95,11 @@ public class UserDaoImpl implements UserDao {
 		return entityManager.createQuery("Select t from " + Event.class.getSimpleName() + " t  order by t.eventMonth desc, t.eventDay desc").getResultList();
 	}
 
+	@Override
+	public Boolean dropEvent(Integer eventId) {
+		Event event = entityManager.find(Event.class, eventId);
+		entityManager.remove(event);
+		return true;
+	}
+
 }

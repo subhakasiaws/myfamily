@@ -22,4 +22,6 @@ public interface UserService {
 
 	List<Leaderboard> createBoard(Leaderboard leaderboard);
 
+	Boolean dropEvent(Integer eventId);
+
 }
