@@ -16,9 +16,6 @@
       <li class="nav-item">
         <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
        </li>
-  	 <li class="nav-item">
-       <a class="nav-link" href="#"><spring:message code="app.page.astrology"/></a>
-     </li>
     </ul>
   </div>
   <div>

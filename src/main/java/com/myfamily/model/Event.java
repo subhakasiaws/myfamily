@@ -20,7 +20,11 @@ public class Event {
 	@Column
 	private String eventDescription;
 	@Column
-	private String eventDate;
+	private Integer eventDay;
+	@Column
+	private Integer eventMonth;
+	@Column
+	private String stringMonth;
 	@Column
 	private String eventCreatedBy;
 	
@@ -42,17 +46,30 @@ public class Event {
 	public void setEventDescription(String eventDescription) {
 		this.eventDescription = eventDescription;
 	}
-	public String getEventDate() {
-		return eventDate;
-	}
-	public void setEventDate(String eventDate) {
-		this.eventDate = eventDate;
-	}
 	public String getEventCreatedBy() {
 		return eventCreatedBy;
 	}
 	public void setEventCreatedBy(String eventCreatedBy) {
 		this.eventCreatedBy = eventCreatedBy;
 	}
+	public Integer getEventDay() {
+		return eventDay;
+	}
+	public void setEventDay(Integer eventDay) {
+		this.eventDay = eventDay;
+	}
+	public Integer getEventMonth() {
+		return eventMonth;
+	}
+	public void setEventMonth(Integer eventMonth) {
+		this.eventMonth = eventMonth;
+	}
+	public String getStringMonth() {
+		return stringMonth;
+	}
+	public void setStringMonth(String stringMonth) {
+		this.stringMonth = stringMonth;
+	}
+
 	
 }

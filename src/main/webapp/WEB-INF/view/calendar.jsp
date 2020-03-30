@@ -66,9 +66,9 @@
 				                <c:forEach var="event" items="${events}">
 										<li>
 											<time datetime="2014-07-20 2000">
-												<span class="day">${event.eventDate.split('-')[0]}</span>
-												<span class="month">${event.eventDate.split('-')[1]}</span>
-												<span class="year">${event.eventDate}</span>
+												<span class="day">${event.eventDay}</span>
+												<span class="month">${event.stringMonth}</span>
+												<span class="year">${event.eventMonth}</span>
 												<span class="time">8:00 PM</span>
 											</time>
 
@@ -88,9 +88,10 @@
 												 </c:otherwise>
 											</c:choose>
 												<ul>
+												 <label id="eventId" name="eventId" style="display: none;" value='${event.id}'>${event.id}</label>
 													<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
 													<li style="width:34%;">3 <span class="fa fa-thumbs-up"></span></li>
-													<li style="width:33%;"> <span class="fa fa-envelope"></span></li>
+													<li style="width:33%;"> <span class="fa fa-trash my-display-block"></span></li>
 												</ul>
 											</div>
 										</li>
@@ -149,6 +150,7 @@ $(document).ready(function() {
    $('#eventSubmit').click(function() {
 	   var day = $('#day').val();
 	   var month =$('#month').val();
+	   var monthNum =month.indexOf(month);
 	   var date = day+'-'+month;
 	   var desc = $('#desc').val();
 	   if(desc ==''){
@@ -158,7 +160,7 @@ $(document).ready(function() {
 	   }else if(month == "Month"){
 		   $('#month').addClass("alert alert-danger alert-dismissible fade show text-danger p-3 mb-2 bg-danger my-alert-text-color");   
 	   }else{
-		   eventDataSubmit($('#eventName').val(),$('#desc').val(),date,$('#name').val());
+		   eventDataSubmit($('#eventName').val(),$('#desc').val(),day,monthNum,month,$('#name').val());
 	   }
 	   
 	   

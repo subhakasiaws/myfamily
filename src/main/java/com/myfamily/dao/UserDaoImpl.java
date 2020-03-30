@@ -92,7 +92,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public List<Event> findAllEventsDao() {
-		return entityManager.createQuery("Select t from " + Event.class.getSimpleName() + " t  order by t.id desc").getResultList();
+		return entityManager.createQuery("Select t from " + Event.class.getSimpleName() + " t  order by t.eventMonth desc, t.eventDay desc").getResultList();
 	}
 
 }

@@ -5,9 +5,9 @@ $('.event-list').sortable();
 	 window.location.replace("/logout");
 	});
    
-function eventDataSubmit(name,desc,date,createdBy){
+function eventDataSubmit(name,desc,day,month,stringMonth,createdBy){
 	$('#eventSubmit').attr('disabled',true);
-	$.get("createEvent", { eventName: name,eventDescription: desc,eventDate: date, eventCreatedBy: createdBy })
+	$.get("createEvent", { eventName: name,eventDescription: desc,eventDay: day,eventMonth: month,stringMonth:stringMonth, eventCreatedBy: createdBy })
 	  .done(function( data ) {
 		$('#createEvent').click();
 		$('#createEvent').css("display","none");
@@ -19,9 +19,8 @@ function eventDataSubmit(name,desc,date,createdBy){
 			title = 'Birthday';
 		}
 		
-		var output=date.split('-');
 		
-		var newList = '<li> <time datetime="2014-07-20 2000"> <span class="day">'+output[0]+'</span> <span class="month">'+output[1]+'</span> <span class="time">8:00 PM</span> </time>'  
+		var newList = '<li> <time datetime="2014-07-20 2000"> <span class="day">'+day+'</span> <span class="month">'+stringMonth+'</span> <span class="time">8:00 PM</span> </time>'  
 			+'<div class="info"> <h2 class="title">'+desc+'</h2>'
 			+'<p class="desc">'+title+'</p>'
 			+'<ul>'
