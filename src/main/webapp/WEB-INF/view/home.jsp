@@ -84,11 +84,15 @@ $(document).ready(function() {
    $("#totalPoints").text(points);
    
    $("#myTask").click(function() {
+	   $('#myTask').removeClass('fa-bars');
+	   $('#myTask').html("<i class='fa fa-spinner'/>");
 		$("body").load("/tasks?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });
    
    $("#calendar").click(function() {
+	   $('#calendar').removeClass('fa-birthday-cake');
+	   $('#calendar').html("<i class='fa fa-spinner'/>");
 		$("body").load("/calendar?name="+loginName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");
    });
@@ -126,8 +130,9 @@ $(document).ready(function() {
 	   //set up the url
 	   var url = 'whatsapp://send?text=';
 
-	   //define the message text
-	   var text = 'Chandra is the Winner of this Week from Our Family';
+	   //define the message text, weekly winnder
+	   var winner ='${leaderList[0].users.name}';
+	   var text = winner+' is the Winner of this Week from Our Family';
 
 	   //encode the text
 	   var encodedText = encodeURIComponent(text);

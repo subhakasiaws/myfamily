@@ -111,12 +111,16 @@ $(document).ready(function() {
 	   $('#totalPoints').text(points);
    
    $("#home").click(function() {
+	   $('#home').removeClass('fa-home');
+  	   $('#home').html("<i class='fa fa-spinner'/>");
 	   var temp = userName;
 		$("body").load("/home?name="+temp+"&userId="+userId);
 		history.pushState(null, null, "/home");
    });
    
    $("#myTask").click(function() {
+	   $('#myTask').removeClass('fa-bars');
+	   $('#myTask').html("<i class='fa fa-spinner'/>");
 		$("body").load("/tasks?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/task");
    });

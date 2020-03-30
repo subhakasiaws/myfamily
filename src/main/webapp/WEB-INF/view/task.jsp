@@ -85,12 +85,16 @@ $(document).ready(function() {
    $('#totalPoints').text(points);
    
    $("#home").click(function() {
+	   $('#home').removeClass('fa-home');
+  	   $('#home').html("<i class='fa fa-spinner'/>");
 	   var temp = userName;
 		$("body").load("/home?name="+temp+"&userId="+userId);
 		history.pushState(null, null, "/home");
    });
    
    $("#calendar").click(function() {
+	   $('#calendar').removeClass('fa-birthday-cake');
+	   $('#calendar').html("<i class='fa fa-spinner'/>");
 	   points = +$('#totalPoints').text();
 		$("body").load("/calendar?name="+userName+"&userId="+userId+"&points="+points);
 		history.pushState(null, null, "/calendar");

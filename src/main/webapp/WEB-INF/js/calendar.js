@@ -1,3 +1,4 @@
+$('.event-list').sortable();
 
    //logout
    $('#logout').click(function() {
