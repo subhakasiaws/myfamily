@@ -15,6 +15,6 @@ public class MyFamilyErrorController implements ErrorController {
 
     @RequestMapping(value = PATH)
     public String error() {
-        return "<h1>Something went wrong, click here to <a href='http://localhost:8080/login?lang=te'>Login</a></h1>";
+        return "<h1>Something went wrong, click here to <a href='http://manafamily.ml'>Login</a></h1>";
     }
 }
