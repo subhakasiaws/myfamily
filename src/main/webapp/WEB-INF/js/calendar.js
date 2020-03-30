@@ -44,3 +44,7 @@ $("#dropEvent li").click(function() {
 	  });
     
 });
+
+$( "#quiz_1" ).click(function() {
+	$(this).html('Coming Soon');
+});

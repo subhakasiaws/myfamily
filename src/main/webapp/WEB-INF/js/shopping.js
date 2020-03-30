@@ -63,3 +63,7 @@ if(localStorage.getItem("taskNoti") == '1'){
 if(localStorage.getItem("calNoti") == '1'){
 	 $("#calendar").append('<span id="celebrNotification" class="badge badge-pill badge-danger my-top-12">1</span>');
 }
+
+$( "#quiz_1" ).click(function() {
+	$(this).html('Coming Soon');
+});

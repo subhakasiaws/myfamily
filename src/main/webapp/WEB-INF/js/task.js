@@ -8,6 +8,10 @@ $('#logout').click(function() {
 
 countTodos();
 
+$( "#quiz_1" ).click(function() {
+	$(this).html('Coming Soon');
+});
+
 $("#taskNotification").remove();
 localStorage.setItem("taskNoti", "0");
 
