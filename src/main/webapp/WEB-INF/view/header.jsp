@@ -11,11 +11,8 @@
        <a class="nav-link" style="cursor: pointer;" id="shopping"><spring:message code="app.page.shopping"/></a>
       </li>
        <li class="nav-item">
-       <a class="nav-link" href="#"><spring:message code="app.page.quiz"/></a>
+       <a class="nav-link" id="quiz_1"><spring:message code="app.page.quiz"/></a>
      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><spring:message code="app.page.contact"/></a>
-       </li>
     </ul>
   </div>
   <div>

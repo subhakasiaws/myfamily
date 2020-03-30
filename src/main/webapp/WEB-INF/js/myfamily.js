@@ -34,3 +34,6 @@ function getLanguageConverter(selected){
 	return selected;
 }
 
+$( "#quiz_1" ).click(function() {
+	$('#quiz_1').html('Coming Soon');
+	});
